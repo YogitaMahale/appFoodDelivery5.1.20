@@ -35,7 +35,7 @@ function loadtable() {
         Edit
     </a>
    
-<a href="/ManagerCollection/collect?id=${row['id']}&name==${row['name']}&name==${row['collectOrderAmtfromDeliveryboy']}" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+<a href="/ManagerCollection/collect?mgrId=${row['id']}&amount=${row['collectOrderAmtfromDeliveryboy']}" class='btn btn-primary text-white btn-lg' style='cursor:pointer; width:80px;'>Collect Amount</a>
 
 
  

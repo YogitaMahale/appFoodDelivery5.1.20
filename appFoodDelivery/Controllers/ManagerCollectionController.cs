@@ -13,7 +13,7 @@ namespace appFoodDelivery.Controllers
     {
         // GET: /<controller>/
         [HttpGet]
-        public async Task<IActionResult> collect(int id, string name, decimal amount)
+        public async Task<IActionResult> collect(string mgrId, decimal amount)
         {
             //var model = new collectAmountViewModel
             //{

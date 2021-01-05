@@ -11,7 +11,9 @@ namespace appFoodDelivery.Models.dtos
         public string Email { get; set; }
         public string name { get; set; }
         public string mobileno { get; set; }
-       //public decimal CollectOrderAmtfromDeliveryboy { get; set; }
+       public decimal CollectOrderAmtfromDeliveryboy { get; set; }
+
+        public string role { get; set; }
 
         //  Id,Email,name ,mobileno
     }
