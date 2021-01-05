@@ -9,6 +9,10 @@ namespace appFoodDelivery.Entity
     {
         public int id { get; set; }
 
+        [ForeignKey("ApplicationUser")]
+        public string  collectManagerId { get; set; }       
+
+
         [ForeignKey("driverRegistration")]
         public int? deliveryboyid { get; set; }
 

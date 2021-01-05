@@ -1,0 +1,48 @@
+﻿
+
+@{
+    ViewData["Title"] = "Employee List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-primary">@ViewData["Title"] </h2>
+    </div>
+
+
+    <div class="col-6 text-right">
+
+
+        <a class="btn btn-primary" asp-action="Register"><i class="fas fa-plus"></i> &nbsp; New Registration</a>
+    </div>
+</div>
+
+<div class="p-4 border rounded bg-white">
+    <table id="tblData" class="table  table-bordered" style="width:100%">
+        <thead class="thead-dark">
+            <tr class="table-info">
+
+                @*<th style="display:none;">id</th>*@
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile No</th>
+              
+                <th class="text-warning">Actions</th>
+            </tr>
+        </thead>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+
+@section Scripts{
+    <script src="~/js/userdetail.js"></script>
+    
+
+}

@@ -3821,9 +3821,11 @@ E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFood
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.RazorCoreGenerate.cache
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\CreateRole.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\EditListUsers.cshtml.g.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\EmployeeList.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\forgetpassword.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\ListUsers.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\ManagerList.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\ProductList.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
@@ -3831,6 +3833,8 @@ E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\V
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\storeDetails.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\storeForgotPasswordConfimation.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\StoreListDetails.cshtml.g.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\AssignDeliveryboyToManager\Create.cshtml.g.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\AssignDeliveryboyToManager\Index.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\charges\Edit.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\CityRegistration\Create.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\CityRegistration\Create2.cshtml.g.cs

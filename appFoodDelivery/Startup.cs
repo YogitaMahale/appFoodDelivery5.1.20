@@ -104,6 +104,7 @@ namespace appFoodDelivery
             services.AddScoped<IchargesServices, chargesServices>();
             services.AddScoped<IdenyOrdersServices, denyOrdersServices>();
             services.AddScoped<IversionsServices, versionsServices>();
+            services.AddScoped<IAssignDeliveryboyToManagerServices, AssignDeliveryboyToManagerServices>();
             //services.AddScoped<IEmailSender, EmailSender>();
 
             services.AddScoped<IdeliveryboyPendingAmtServices, deliveryboyPendingAmtServices>();

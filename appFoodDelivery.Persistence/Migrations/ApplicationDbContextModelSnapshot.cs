@@ -158,6 +158,9 @@ namespace appFoodDelivery.Persistence.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("CollectOrderAmtfromDeliveryboy")
+                        .HasColumnType("decimal(18, 2)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -245,6 +248,28 @@ namespace appFoodDelivery.Persistence.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("appFoodDelivery.Entity.AssignDeliveryboyToManager", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("deliveryboyid")
+                        .HasColumnType("int");
+
+                    b.Property<string>("managerId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("deliveryboyid");
+
+                    b.HasIndex("managerId");
+
+                    b.ToTable("AssignDeliveryboyToManager");
                 });
 
             modelBuilder.Entity("appFoodDelivery.Entity.CityRegistration", b =>
@@ -543,6 +568,9 @@ namespace appFoodDelivery.Persistence.Migrations
 
                     b.Property<decimal>("amount")
                         .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("collectManagerId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("date1")
                         .HasColumnType("datetime2");
@@ -1272,6 +1300,19 @@ namespace appFoodDelivery.Persistence.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("appFoodDelivery.Entity.AssignDeliveryboyToManager", b =>
+                {
+                    b.HasOne("appFoodDelivery.Entity.driverRegistration", "driverRegistration")
+                        .WithMany()
+                        .HasForeignKey("deliveryboyid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("appFoodDelivery.Entity.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("managerId");
                 });
 
             modelBuilder.Entity("appFoodDelivery.Entity.CityRegistration", b =>

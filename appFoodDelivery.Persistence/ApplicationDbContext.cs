@@ -49,5 +49,10 @@ namespace appFoodDelivery.Persistence
         public DbSet<status> status { get; set; }
         public DbSet<StoredPayamount> StoredPayamount { get; set; }
         public DbSet<DriverPayamount> DriverPayamount { get; set; }
+
+
+        public DbSet<AssignDeliveryboyToManager> AssignDeliveryboyToManager { get; set; }
+
+        
     }
 }

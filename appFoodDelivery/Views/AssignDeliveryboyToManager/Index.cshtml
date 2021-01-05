@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AssignDeliveryboyToManagerViewModel>;
+@{
+    ViewBag.Title = "Assign Deliveryboy Details";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <br /><br />
+                <div class="row">
+                    <div class="col-md-12 table-responsive-md">
+                        <a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> Add Deliveryboy</a>
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Deliveryboy Name</th>
+                                    <th class="text-warning">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td>
+                                            @item.deliveryboyname
+                                        </td>
+
+                                        <td>
+                                           
+
+                                            <a class="text-danger" asp-action="Delete" asp-route-id="@item.Id">
+                                                <i class="far fa-trash-alt"></i> Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table><br />
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

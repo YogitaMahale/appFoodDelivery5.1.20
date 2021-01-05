@@ -33,7 +33,8 @@ namespace appFoodDelivery.Entity
         public Boolean isdeleted { get; set; }
 
         public Boolean isactive { get; set; }
-       
 
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal CollectOrderAmtfromDeliveryboy { get; set; } = 0;
     }
 }

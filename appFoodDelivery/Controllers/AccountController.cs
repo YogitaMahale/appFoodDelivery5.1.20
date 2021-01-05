@@ -3,6 +3,7 @@ using appFoodDelivery.Models;
 using appFoodDelivery.Models.dtos;
 using appFoodDelivery.pagination;
 using appFoodDelivery.Services;
+using Dapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -115,6 +116,10 @@ namespace appFoodDelivery.Controllers
                     if (!await roleManager.RoleExistsAsync(SD.Role_Store))
                     {
                         await roleManager.CreateAsync(new IdentityRole(SD.Role_Store));
+                    }
+                    if (!await roleManager.RoleExistsAsync(SD.Role_Manager))
+                    {
+                        await roleManager.CreateAsync(new IdentityRole(SD.Role_Manager));
                     }
                     //----------------------------------
                     //  usermanager.AddToRoleAsync(user, "Store").Wait();
@@ -243,16 +248,53 @@ namespace appFoodDelivery.Controllers
         {
             return View();
         }
-
-
         [HttpGet]
-
         public IActionResult GetStoreListDetails()
         {
+          
             var storeDetails = _sP_Call.List<storedetailsList>("selectallstoreDetails", null);
             return Json(new { data = storeDetails });
         }
 
+        public IActionResult EmployeeList(string roletype)
+        {
+            TempData["roletype"] = roletype;
+            TempData.Keep("roletype");
+            return View();
+        }
+
+        public IActionResult ManagerList(string roletype)
+        {
+            TempData["roletype"] = roletype;
+            TempData.Keep("roletype");
+            return View();
+        }
+
+
+        [HttpGet]
+        public IActionResult GetUserDetails()
+        {
+            var obj = new DynamicParameters();
+            if (TempData["roletype"] !=null)
+            {
+                if (TempData["roletype"].ToString()== "Employee")
+                {
+                    obj.Add("@role", "Employee");
+                }
+                else if (TempData["roletype"].ToString() == "Manager")
+                {
+                    obj.Add("@role", "Manager");
+                }
+                else
+                {
+                    obj.Add("@role", "");
+                }
+            }
+            
+            
+            var storeDetails = _sP_Call.List<GetUserDetailsViewModel>("getUserList", obj);
+            return Json(new { data = storeDetails });
+        }
 
         #endregion
 
@@ -261,6 +303,8 @@ namespace appFoodDelivery.Controllers
         [Authorize(Roles = SD.Role_Admin)]
         public async Task<IActionResult> EditListUsers(string id)
         {
+           
+
             var users = await usermanager.FindByIdAsync(id);
             if (users == null)
             {
@@ -311,8 +355,27 @@ namespace appFoodDelivery.Controllers
                 var res = await usermanager.UpdateAsync(users);
                 if (res.Succeeded)
                 {
+                    return RedirectToAction("Index", "Home");
                     //return RedirectToAction("ListUsers");
-                    return RedirectToAction(nameof(StoreListDetails));
+
+                    // TempData["roletype"]
+
+                    //if (TempData["roletype"]!=null)
+                    //{
+                    //    if (TempData["roletype"].ToString()== "Store")
+                    //    {
+                    //        return RedirectToAction(nameof(StoreListDetails));
+                    //    }
+                    //    else if (TempData["roletype"].ToString() == "Employee")
+                    //    {
+                    //        return RedirectToAction(nameof(EmployeeList));
+                    //    }
+                    //    else if (TempData["roletype"].ToString() == "Manager")
+                    //    {
+                    //        return RedirectToAction(nameof(ManagerList));
+                    //    }
+                    //}
+
                 }
                 foreach (var error in res.Errors)
                 {

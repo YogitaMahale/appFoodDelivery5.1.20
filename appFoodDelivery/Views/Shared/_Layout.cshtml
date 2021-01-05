@@ -67,6 +67,36 @@
                             </div>
                         </li>
                     }
+                    @if (User.IsInRole(SD.Role_Manager))
+                    {
+                         
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#Deliveryboy" aria-expanded="false" aria-controls="ui-basic">
+                                <i class="fas fa-users fa-lg text-primary" style="margin-right:0.7em"></i>
+                                <span class="menu-title">Deliveryboy</span>
+                                <i class="menu-arrow text-primary"></i>
+                            </a>
+                            <div class="collapse" id="Deliveryboy">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"><a class="nav-link" asp-controller="AssignDeliveryboyToManager" asp-action="Index">Add </a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#Collection" aria-expanded="false" aria-controls="ui-basic">
+                                <i class="fas fa-users fa-lg text-primary" style="margin-right:0.7em"></i>
+                                <span class="menu-title">Collection</span>
+                                <i class="menu-arrow text-primary"></i>
+                            </a>
+                            <div class="collapse" id="Collection">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"><a class="nav-link" asp-controller="collection" asp-action="Index">Deliveryboy</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+                    }
 
 
                     @if (User.IsInRole(SD.Role_Admin))
@@ -103,6 +133,19 @@
                             </div>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#Users" aria-expanded="false" aria-controls="ui-basic">
+                                <i class="fas fa-users fa-lg text-primary" style="margin-right:0.7em"></i>
+                                <span class="menu-title">Users  </span>
+                                <i class="menu-arrow text-primary"></i>
+                            </a>
+                            <div class="collapse" id="Users">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="EmployeeList" asp-route-roletype="Employee"> Employee</a></li>
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="ManagerList" asp-route-roletype="Manager"> Manager</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#Customer" aria-expanded="false" aria-controls="ui-basic">
                                 <i class="fas fa-users fa-lg text-primary" style="margin-right:0.7em"></i>
                                 <span class="menu-title">Restaurants  </span>
@@ -132,12 +175,12 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#Customer" aria-expanded="false" aria-controls="ui-basic">
+                            <a class="nav-link" data-toggle="collapse" href="#Customer1" aria-expanded="false" aria-controls="ui-basic">
                                 <i class="fas fa-users fa-lg text-primary" style="margin-right:0.7em"></i>
                                 <span class="menu-title">Customer  </span>
                                 <i class="menu-arrow text-primary"></i>
                             </a>
-                            <div class="collapse" id="Customer">
+                            <div class="collapse" id="Customer1">
                                 <ul class="nav flex-column sub-menu">
                                     <li class="nav-item"><a class="nav-link" asp-controller="CustomerRegistration" asp-action="Create"> New Registration</a></li>
                                     <li class="nav-item"><a class="nav-link" asp-controller="CustomerRegistration" asp-action="Index"> All Details</a></li>
@@ -167,7 +210,6 @@
                             <div class="collapse" id="Collection">
                                 <ul class="nav flex-column sub-menu">
                                     @*<li class="nav-item"><a class="nav-link" asp-controller="order" asp-action="index"> orders details</a></li>*@
-                                    <li class="nav-item"><a class="nav-link" asp-controller="collection" asp-action="Index">Deliveryboy</a></li>
 
                                 </ul>
                             </div>
