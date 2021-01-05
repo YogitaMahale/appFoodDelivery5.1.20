@@ -1,0 +1,292 @@
+﻿@model DriverCreateViewModel;
+@{
+    ViewBag.Title = "New Registration";
+}
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Driver Registration List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">New Driver Registration</li>
+                </ol>
+            </nav><br /><br />
+
+            @*id, , , , , , , latitude, longitude, deviceid, , biketype
+            , manufacturename, modelname, modelyear, vehicleplateno, drivinglicphoto, vehicleinsurancephoto
+            , isdeleted, isactive*@
+        <form method="post" enctype="multipart/form-data" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-row">
+
+
+                <div class="form-group col-md-2">
+                    <label asp-for="name"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input asp-for="name" class="form-control" placeholder="Enter Name.." />
+                    <span asp-validation-for="name" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="gender"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    @*<select asp-for="gender" class="form-control" asp-items="Html.GetEnumSelectList<plathora.Entity.Gender>()">*@
+                    <select asp-for="gender" class="form-control">
+
+                        <option value="Select" selected>-- Select --</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <span asp-validation-for="gender" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="profilephoto"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <div class="btn btn-primary btn-icon-text">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <input asp-for="profilephoto" type="file" value="Upload" />
+                        <span asp-validation-for="profilephoto" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="mobileno"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input asp-for="mobileno" id="mobileno" class="form-control" placeholder="Enter Mobile No.." />
+                    <span asp-validation-for="mobileno" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="password"></label>
+                </div>
+                <div class="form-check col-md-3">
+                    <input asp-for="password" id="password" class="form-control" placeholder="Enter password.." />
+                    <span asp-validation-for="password" class="text-danger"></span>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="emailid"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input asp-for="emailid" class="form-control" placeholder="Enter Email Id.." />
+                    <span asp-validation-for="emailid" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="manufacturename"></label>
+                </div>
+                <div class="form-check col-md-3">
+                    <input asp-for="manufacturename" id="manufacturename" class="form-control" placeholder="Enter Manafacture Name.." />
+                    <span asp-validation-for="manufacturename" class="text-danger"></span>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="modelname"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input asp-for="modelname" class="form-control" placeholder="Enter Model Name.." />
+                    <span asp-validation-for="modelname" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="modelyear"></label>
+                </div>
+                <div class="form-check col-md-3">
+                    <input asp-for="modelyear" id="manufacturename" class="form-control" placeholder="Enter Model Year.." />
+                    <span asp-validation-for="modelyear" class="text-danger"></span>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="vehicleplateno"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input asp-for="vehicleplateno" class="form-control" placeholder="Enter Vehicle Plate No.." />
+                    <span asp-validation-for="vehicleplateno" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="biketype"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input asp-for="biketype" class="form-control" placeholder="Enter Bike Type.." />
+                    <span asp-validation-for="biketype" class="text-danger"></span>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="drivinglicphoto"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <div class="btn btn-primary btn-icon-text">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <input asp-for="drivinglicphoto" type="file" value="Upload" />
+                        <span asp-validation-for="drivinglicphoto" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="accountno"></label>
+                </div>
+                <div class="form-check col-md-3">
+                    <input asp-for="accountno" id="accountno" class="form-control" placeholder="Enter Account No.." />
+                    <span asp-validation-for="accountno" class="text-danger"></span>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="banklocation"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input asp-for="banklocation" class="form-control" placeholder="Enter Bank Location.." />
+                    <span asp-validation-for="banklocation" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="bankname"></label>
+                </div>
+                <div class="form-check col-md-3">
+                    <input asp-for="bankname" id="bankname" class="form-control" placeholder="Enter Bank Name.." />
+                    <span asp-validation-for="bankname" class="text-danger"></span>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="ifsccode"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input asp-for="ifsccode" class="form-control" placeholder="Enter IFSC Code.." />
+                    <span asp-validation-for="ifsccode" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group col-md-2">
+                    <label asp-for="vehicleinsurancephoto"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <div class="btn btn-primary btn-icon-text">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <input asp-for="vehicleinsurancephoto" type="file" value="Upload" />
+                        <span asp-validation-for="vehicleinsurancephoto" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="status"></label>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <select asp-for="status" class="form-control">
+
+                        <option value="Select" selected>-- Select --</option>
+                        <option value="available">Available</option>
+                        <option value="unavailable">Unavailable</option>
+
+                    </select>
+                    <span asp-validation-for="status" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+
+                
+                <div class="form-group col-md-2">
+                    <label asp-for="bloodgroup"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    @*<select asp-for="gender" class="form-control" asp-items="Html.GetEnumSelectList<plathora.Entity.Gender>()">*@
+                    <select asp-for="bloodgroup" class="form-control">
+
+                        <option value="Select" selected>-- Select --</option>
+                        <option value="O-"> O-</option>
+                        <option value="O+">O+ </option>
+                        <option value="A-"> A-</option>
+                        <option value="A+"> A+</option>
+                        <option value="B-">B- </option>
+                        <option value="B+">B+ </option>
+                        <option value="AB-"> AB-</option>
+                        <option value="AB+"> AB+</option>
+                    </select>
+                    <span asp-validation-for="bloodgroup" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+
+                <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Save</button>
+
+
+                <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>
+                <label id="divMessage"></label>
+                <br />
+                <br />
+                <br />
+
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+
+    $("#mobileno").change(function () {
+        var email = $("#mobileno").val();
+        $("#btnValidate").val("Please wait....");
+        $.ajax({
+            method: "POST",
+            url: "/driverRegistration/ValidateMobileNo/",
+            data: { mobileno: email }
+        })
+            .done(function (msg) {
+                if (msg == 1) {
+                    // $("#divMessage").html("Error : Duplicate Email Id Found.");
+                    alert("Duplicate Mobile No");
+                    $("#mobileno").val("");
+                } else {
+                  //  $("#divMessage").html("No Duplicate Email Id Found.");
+                   // alert( " not duplicate");
+                }
+                //$("#btnValidate").val("Validate");
+            });
+
+    });
+</script>

@@ -1,0 +1,124 @@
+﻿@model StoreShowDetailsViewModel
+
+<div class="col-md-12 grid-margin grid-margin-md-0">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Hotel List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Hotel Details</li>
+                </ol>
+            </nav><br /><br />
+
+            <div class="wrap d-flex justify-content-start justify-content-sm-center flex-wrap">
+                <div class="wrap align-items-center ml-5">
+                    <p class="font-weight-bold" style="color:white;text-align:center;">Profile Photo</p>
+                    <img class="rounded-circle shadow-lg" style="width:300px; height:250px" src="@Url.Content(Model.profilephoto)" alt="" />
+                    <br />
+                    <br /> <hr style="background-color:crimson" />
+                    <br />
+                    <p class="font-weight-bold " style="color:white;text-align:center;">Banner Photo</p>
+                    <img class="rounded-circle shadow-lg" style="width:300px; height:250px" src="@Url.Content(Model.storeBannerPhoto)" alt="" />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                </div>
+
+                <div class="wrap align-items-center ml-5">
+                    <hr style="background-color:crimson" />
+                    <p class="font-weight-bold" style="color:white;text-align:center;">Owner Details</p>
+
+                    <p class="font-weight-bold text-success" style="font-size:20px">@Model.storeownerName</p>
+                    <p class="font-weight-normal"> Mobile No: @Model.mobileno  </p>
+                    <p class="font-weight-normal"> Email: @Model.Email</p>
+                    <hr />
+                    <hr style="background-color:crimson" />
+                    <p class="font-weight-bold" style="color:white;text-align:center;">Hotel Contact Person Details</p>
+
+                    <p class="font-weight-normal">Contact Person Name: @Model.contactpersonname</p>
+                    <p class="font-weight-normal">Email : @Model.emailaddress  </p>
+                    <p class="font-weight-normal">Mobile No: @Model.contactno  </p>
+                    <p class="font-weight-normal">Gender: <a href="#">@Model.gender  </a></p>
+                    <hr style="background-color:crimson" />
+                    <p class="font-weight-bold" style="color:white;text-align:center;">Hotel Serivices</p>
+
+                    <p class="font-weight-normal">@Model.fooddelivery</p>
+                    <hr style="background-color:crimson" />
+                    <p class="font-weight-bold" style="color:white;text-align:center;"> Hotel Details</p>
+                    <hr style="background-color:crimson" />
+                    <p class="font-weight-normal"> Hotel Name: @Model.storename</p>
+                    <p class="font-weight-normal"> Delivery Radius: @Model.radiusid  </p>
+                    <p class="font-weight-normal"> Estimated Delivery Time: @Model.deliverytimeid</p>
+
+                    <p class="font-weight-normal">
+                        Order Minimum Amount: @Model.storename
+                    </p>
+                    <p class="font-weight-normal"> Packaging Charges: @Model.radiusid  </p>
+                    <p class="font-weight-normal">
+                        Address: @Model.deliverytimeid
+                    </p>
+                    <p class="font-weight-normal"> Hotel Name: @Model.storename</p>
+                    <p class="font-weight-normal"> Delivery Radius: @Model.radiusid  </p>
+                    <p class="font-weight-normal"> Estimated Delivery Time: @Model.deliverytimeid</p>
+                    <p class="font-weight-normal">
+                        Store Time: @Model.storename
+                    </p>
+                    <p class="font-weight-normal"> Country :@Model.country  </p>
+                    <p class="font-weight-normal">State : @Model.state  </p>
+                    <p class="font-weight-normal">City : @Model.cityid  </p>
+
+                    @*// <p class="font-weight-normal"><i class="fas fa-envelope" style="margin-right:0.6em; color:cornflowerblue"></i> <a href="mailto:@Model.Email?subject=Payslip&body=Attached within is your paylip.">Send Payslip</a></p>
+                <br /><br />
+
+                <p class="font-weight-bold"> Address</p>
+                <hr style="background-color:crimson" />
+                    *@
+                    <br />
+                    <br />
+                    @*storeid
+                storeownerName
+                mobileno
+                ownergender
+                profilephoto
+                Email
+                contactpersonname
+                emailaddress
+                contactno
+                gender
+                fooddelivery
+                storename
+                radiusid
+                deliverytimeid
+                orderMinAmount
+                packagingCharges
+                storeBannerPhoto
+                address
+                description
+                storetime
+                licPhoto
+                latitude
+                longitude
+                country
+                state
+                cityid*@
+                </div>
+            </div>
+            <div class="wrap d-flex justify-content-start justify-content-sm-center flex-wrap">
+                <a class="btn btn-rounded btn-success float-right" asp-action="ProductList" asp-controller="Account" asp-route-id="@Model.storeid">
+                    <i class="fas fa-edit"></i> Menu List
+                </a>
+
+                 
+                <a asp-action="StoreListDetails" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>
+                <br />
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+        </div>
+</div>

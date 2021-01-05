@@ -1,0 +1,98 @@
+﻿@*id, name, profilephoto, mobileno, emailid, password, gender, latitude, longitude, deviceid, createddate, biketype
+    , manufacturename, modelname, modelyear, vehicleplateno, drivinglicphoto, vehicleinsurancephoto, isdeleted, isactive*@
+@model appFoodDelivery.pagination.DriverPagination<DriverIndexViewModel>
+@{
+    ViewBag.Title = "Driver Details";
+}
+
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Driver List</li>
+                    </ol>
+                </nav><br /><br />
+                <div class="row">
+                    <div class="col-md-12 table-responsive-md">
+                        <a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> New Driver</a>
+
+                        <table class="table table-striped tblShow">
+                            <thead>
+                                <tr>
+                                    <th style="display:none;">id</th>
+                                    <th>Name</th>
+                                    <th>Photo</th>
+                                    <th>Mobile No</th>
+                                    @*<th>Date of Birth</th>
+                                        <th>Registration Date</th>
+                                        <th>Active</th>*@
+                                    <th class="text-warning">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td style="display:none;">
+
+                                            <a asp-action="Detail" asp-route-id="@item.id" id="lblid">
+                                                @item.id
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a asp-action="Detail" asp-route-id="@item.id">
+                                                @item.name
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <img alt="image" src="@Url.Content(item.profilephoto)" />
+                                        </td>
+                                        <td>@item.mobileno</td>
+
+                                        @*<td>@item.DOB.ToString("dd/MM/yyyy")</td>
+
+                                            <td>@item.createddate.ToString("dd/MM/yyyy")</td>
+                                            <td>
+                                                <input type="checkbox" id="@item.id" asp-for="@item.isactive" value="@item.isactive" checked="@item.isactive" />
+                                            </td>*@
+                                        <td>
+                                            <a class="text-success" asp-action="Edit" asp-route-id="@item.id">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </a>
+
+                                            <a class="text-danger" asp-action="Delete" asp-route-id="@item.id">
+                                                <i class="far fa-trash-alt"></i> Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table><br />
+                        @{
+                            var disablePrevious = !Model.IsPreviousAvailable ? "disabled" : "";
+                            var disableNext = !Model.IsNextAvailable ? "disabled" : "";
+                        }
+
+                        <a asp-action="Index"
+                           asp-route-pageNumber="@(Model.PageIndex - 1)"
+                           class="btn btn-primary @disablePrevious">
+                            Previous
+                        </a>
+                        <a asp-action="Index"
+                           asp-route-pageNumber="@(Model.PageIndex + 1)"
+                           class="btn btn-primary @disableNext">
+                            Next
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>

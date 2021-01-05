@@ -1,0 +1,103 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-appFoodDelivery-106FEFE3-46F1-4160-AF49-41BAA5405D6A</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\**" />
+    <Content Remove="Areas\**" />
+    <EmbeddedResource Remove="Areas\**" />
+    <None Remove="Areas\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\promocodeController.cs" />
+    <Compile Remove="Controllers\StoreOwnerController.cs" />
+    <Compile Remove="Models\ApplicationUser.cs" />
+    <Compile Remove="Models\orderassigndeliveryboy.cs" />
+    <Compile Remove="Models\StoreOwnerCreateViewModel.cs" />
+    <Compile Remove="Models\StoreOwnerEditViewModel.cs" />
+    <Compile Remove="Models\StoreOwnerIndexViewModel.cs" />
+    <Compile Remove="Notification\fcmNotification - Copy.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Order\assigndeliveryboy.cshtml" />
+    <Content Remove="Views\StoreOwner\Create.cshtml" />
+    <Content Remove="Views\StoreOwner\Edit.cshtml" />
+    <Content Remove="Views\StoreOwner\Index.cshtml" />
+    <Content Remove="wwwroot\pages\AboutUs.html" />
+    <Content Remove="wwwroot\pages\Privacypolicy.html" />
+    <Content Remove="wwwroot\pages\RefundandCancellation.html" />
+    <Content Remove="wwwroot\pages\TermsandConditions.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Nancy" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Views\StoreOwner\" />
+    <Folder Include="wwwroot\uploads\driver\drivingLicence\" />
+    <Folder Include="wwwroot\uploads\driver\profilephoto\" />
+    <Folder Include="wwwroot\uploads\driver\vehicleinsurancephoto\" />
+    <Folder Include="wwwroot\uploads\licPhoto\" />
+    <Folder Include="wwwroot\uploads\customer\" />
+    <Folder Include="wwwroot\uploads\cuisine\" />
+    <Folder Include="wwwroot\uploads\slider\" />
+    <Folder Include="wwwroot\uploads\product\" />
+    <Folder Include="wwwroot\uploads\storeBannerPhoto\" />
+    <Folder Include="wwwroot\uploads\storeowner\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\CityRegistration\Create.cshtml" />
+    <None Include="Views\CityRegistration\Create2.cshtml" />
+    <None Include="Views\CityRegistration\Edit - Copy.cshtml" />
+    <None Include="Views\CityRegistration\Edit new.cshtml" />
+    <None Include="Views\CityRegistration\Edit.cshtml" />
+    <None Include="Views\CityRegistration\Index.cshtml" />
+    <None Include="Views\CityRegistration\test.cshtml" />
+    <None Include="Views\CountryRegistration\Create.cshtml" />
+    <None Include="Views\CountryRegistration\Edit.cshtml" />
+    <None Include="Views\CountryRegistration\Index.cshtml" />
+    <None Include="Views\CustomerRegistration\Create.cshtml" />
+    <None Include="Views\CustomerRegistration\Edit.cshtml" />
+    <None Include="Views\CustomerRegistration\Index.cshtml" />
+    <None Include="Views\StateRegistration\Create.cshtml" />
+    <None Include="Views\StateRegistration\Edit.cshtml" />
+    <None Include="Views\StateRegistration\Index.cshtml" />
+    <None Include="wwwroot\pages\AboutUs.html" />
+    <None Include="wwwroot\pages\RefundandCancellation.html" />
+    <None Include="wwwroot\pages\Privacypolicy.html" />
+    <None Include="wwwroot\pages\TermsandConditions.html" />
+    <None Include="wwwroot\timepicker\bootstrap-timepicker.js" />
+    <None Include="wwwroot\timepicker\bootstrap-timepicker.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\appFoodDelivery.Entity\appFoodDelivery.Entity.csproj" />
+    <ProjectReference Include="..\appFoodDelivery.Persistence\appFoodDelivery.Persistence.csproj" />
+    <ProjectReference Include="..\appFoodDelivery.Services\appFoodDelivery.Services.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://json.schemastore.org/backportrc" /></VisualStudio></ProjectExtensions>
+
+</Project>

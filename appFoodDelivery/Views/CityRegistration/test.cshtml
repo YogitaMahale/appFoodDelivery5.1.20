@@ -1,0 +1,119 @@
+﻿@model CityCreateViewModel;
+@{
+    ViewBag.Title = "New Registration";
+}
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">City List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">New City Registration</li>
+                </ol>
+            </nav><br /><br />
+
+            @*id, name, profilephoto, mobileno1, mobileno2, emailid1, emailid2, adharcardno, adharcardphoto
+                , pancardno, pancardphoto, password, gender, DOB, createddate*@
+
+            <form name="form1" method="post" enctype="multipart/form-data" asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label asp-for="countryid"></label>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select name="countryid" id="countryid" asp-for="countryid" class="form-control"
+                                 asp-items="@(new SelectList(ViewBag.Countrieslist,"id","countryname"))">
+                               
+                               
+                            <option>--- Select  ---</option>
+                        </select>
+                        <span asp-validation-for="countryid" class="text-danger"></span>
+
+                    </div>
+
+
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label asp-for="stateid"></label>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select name="stateid" id="stateid" asp-for="stateid" class="form-control"
+                                asp-items="@(new SelectList(String.Empty,"id","StateName"))">
+
+
+                            <option>--- Select  ---</option>
+                        </select>
+                        @*<select name="stateid" id="stateid" asp-for="stateid" class="form-control"
+                                asp-items="@ViewBag.States"
+                                disabled="@(ViewBag.StateEnabled == false ? "disabled" : null)">
+                            <option>--- Select  ---</option>
+                        </select>*@
+
+
+                        <span asp-validation-for="stateid" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label asp-for="cityName"></label>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input asp-for="cityName" class="form-control" placeholder="Enter City Name.." />
+                        <span asp-validation-for="cityName" class="text-danger"></span>
+
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Save</button>
+                    <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>
+                    <br />
+                    <br />
+                    <br />
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@*@section Scripts{
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $("#countryid").change(function () {
+            var url = '@Url.Content("~/")' + 'CityRegistration/getstatebyid';
+            var ddlsource = "#countryid";
+            $.getJSON(url,
+                { id: $(ddlsource).val() },
+                function (data) {
+                    var item = '';
+                    $("#stateid").empty();
+                    $.each(data, function (i, row) {
+                        item += "<option value='" + row.val + "'>" + row.text + "  </option > ";
+                    });
+                    $("#stateid").html(item);
+                }
+            )
+        });
+    });
+    //function DoPostBack() {
+    //   // alert('df');
+    //    var select = document.getElementById("countryid");
+    //    var option = select.options[select.selectedIndex];
+    //    if (option.value != "Please select") {
+    //        document.form1.action = "/CityRegistration/GetStates";
+    //        document.form1.submit();
+    //    }
+    //}
+</script>

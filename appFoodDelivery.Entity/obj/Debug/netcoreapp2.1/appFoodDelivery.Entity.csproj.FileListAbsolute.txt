@@ -1,0 +1,103 @@
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csprojAssemblyReference.cache
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+E:\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+E:\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+E:\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+E:\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csprojAssemblyReference.cache
+E:\mvvc eg\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+E:\mvvc eg\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\mvvc eg\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\mvvc eg\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+E:\mvvc eg\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+E:\mvvc eg\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+E:\mvvc eg\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\mvvc eg\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\obj\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb

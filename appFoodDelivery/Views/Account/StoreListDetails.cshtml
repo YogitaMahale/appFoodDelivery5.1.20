@@ -1,0 +1,65 @@
+﻿
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-primary">Menu List </h2>
+    </div>
+
+
+    <div class="col-6 text-right">
+
+         
+        <a class="btn btn-primary" asp-action="Register"><i class="fas fa-plus"></i> &nbsp; New Registration</a>
+    </div>
+</div>
+
+<div class="p-4 border rounded bg-white">
+    <table id="tblData" class="table  table-bordered" style="width:100%">
+        <thead class="thead-dark">
+            <tr class="table-info">
+                 
+                @*<th style="display:none;">id</th>*@
+                <th>Store Banner</th>
+                <th>Owner Name</th>
+                <th>Store Name</th>
+                <th>Status</th>
+                <th>Tax Type</th>
+                <th>Tax( % )</th>
+                <th class="text-warning">Actions</th>
+            </tr>
+        </thead>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+
+@section Scripts{
+    <script src="~/js/StoreListDetails.js"></script>
+    @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
+    @*<script type="text/javascript">
+        $(function() {
+            $("#cusineid").change(function () {
+
+                //var url = '@Url.Content("~/")' + 'CityRegistration/getstatebyid';
+                var ddlsource = "#cusineid";
+               // alert($(ddlsource).val());
+                loadtable();
+                //$.getJSON(url,
+
+            });
+        });
+
+
+        </script>*@
+
+}

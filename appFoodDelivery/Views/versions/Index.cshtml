@@ -1,0 +1,89 @@
+﻿@model VersionEditViewModel;
+@{
+    ViewBag.Title = "Version";
+}
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Version</a></li>
+                    @*<li class="breadcrumb-item active" aria-current="page">Edit City Registration</li>*@
+                </ol>
+            </nav><br /><br />
+
+
+
+                        <form name="form1" method="post" enctype="multipart/form-data" asp-action="Index">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                           
+                            <input type="hidden" asp-for="id" />
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="storeVersion"></label>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input asp-for="storeVersion" class="form-control" placeholder="Enter Store Version.." />
+                                    <span asp-validation-for="storeVersion" class="text-danger"></span>
+
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="customerVersion"></label>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input asp-for="customerVersion" class="form-control" placeholder="Enter Cusstomer Version.." />
+                                    <span asp-validation-for="customerVersion" class="text-danger"></span>
+
+                                </div>
+                            </div>
+
+                           
+
+                            
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="deliveryboyVersion"></label>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input asp-for="deliveryboyVersion" class="form-control" placeholder="Enter Deliveryboy Version.." />
+                                    <span asp-validation-for="deliveryboyVersion" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                           
+
+                            <div class="form-group">
+
+                                <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Update</button>
+                                @*<a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>*@
+                                <br />
+                                <br />
+                                <br />
+
+                            </div>
+                        </form>
+        </div>
+    </div>
+</div>
+
+@*@section Scripts{
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
+<script src="~/lib/jquery/dist/jquery.js"></script>
+@*<script type="text/javascript">
+        function DoPostBack() {
+           // alert('df');
+            var select = document.getElementById("countryid");
+            var option = select.options[select.selectedIndex];
+            if (option.value != "Please select") {
+                document.form1.action = "/CityRegistration/EditGetStates";
+                document.form1.submit();
+            }
+        }
+    </script>*@
+
+  

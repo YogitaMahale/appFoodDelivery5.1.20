@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CityIndexViewModel>;
+@{
+    ViewBag.Title = "City Details";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">City List</li>
+                    </ol>
+                </nav><br /><br />
+                <div class="row">
+                    <div class="col-md-12 table-responsive-md">
+                        <a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> Add New City</a>
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Country Name</th>
+                                    <th>state Name</th>
+                                    <th>City Name</th>
+                                    <th class="text-warning">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                <tr>
+                                    <td>
+                                        @item.CountryRegistration.countryname
+                                    </td>
+                                    <td>
+                                        @item.StateRegistration.StateName
+                                    </td>
+                                    <td>
+                                        @item.cityName
+                                    </td>
+                                    <td>
+                                        <a class="text-success" asp-action="Edit" asp-route-id="@item.id">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </a>
+
+                                        <a class="text-danger" asp-action="Delete" asp-route-id="@item.id">
+                                            <i class="far fa-trash-alt"></i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table><br />
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+﻿@model MenumasterCreateViewModel;
+@{
+    ViewBag.Title = "New Registration";
+}
+
+
+
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">  Registration List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">New   Registration</li>
+                </ol>
+            </nav><br /><br />
+
+
+            <form method="post" enctype="multipart/form-data" asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-row">
+
+                    <div class="form-group col-md-2">
+                        <label asp-for="productcuisineid" style="text-align:right;"></label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select name="productcuisineid" id="productcuisineid" asp-for="productcuisineid" class="form-control"
+                                asp-items="@(new SelectList(ViewBag.productcuisine,"id","name"))">
+
+
+                            <option>--- Select  ---</option>
+                        </select>
+                        <span asp-validation-for="productcuisineid" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group col-md-2">
+                        <label asp-for="name"></label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input asp-for="name" class="form-control" placeholder="Enter Menu.." />
+                        <span asp-validation-for="name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="img"></label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <div class="btn btn-primary btn-icon-text">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <input asp-for="img" type="file" value="Upload" />
+                            <span asp-validation-for="img" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Save</button>
+
+
+                    <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>
+                    <label id="divMessage"></label>
+                    <br />
+                    <br />
+                    <br />
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+
+
+</script>

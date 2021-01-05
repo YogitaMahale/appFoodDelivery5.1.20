@@ -1,0 +1,154 @@
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.deps.json
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csprojAssemblyReference.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfoInputs.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfo.cs
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CopyComplete
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.deps.json
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csprojAssemblyReference.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfoInputs.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfo.cs
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CoreCompileInputs.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CopyComplete
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.deps.json
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CopyComplete
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.deps.json
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CopyComplete
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\updated 18.6.20\food delivery\6.7.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.deps.json
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csprojAssemblyReference.cache
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfoInputs.cache
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfo.cs
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CoreCompileInputs.cache
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CopyComplete
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita\food delivery 27.8.20\26.6.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.deps.json
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CopyComplete
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.deps.json
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csprojAssemblyReference.cache
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CoreCompileInputs.cache
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfoInputs.cache
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfo.cs
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CopyComplete
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\desk\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.deps.json
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CopyComplete
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.deps.json
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CopyComplete
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.deps.json
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CopyComplete
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.deps.json
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csprojAssemblyReference.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.AssemblyInfo.cs
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.csproj.CopyComplete
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Services\obj\Release\netcoreapp2.1\appFoodDelivery.Services.pdb

@@ -1,0 +1,68 @@
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.deps.json
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csprojAssemblyReference.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.AssemblyInfoInputs.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.AssemblyInfo.cs
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csproj.CoreCompileInputs.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csproj.CopyComplete
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.deps.json
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Persistence.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Services.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Services.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csprojAssemblyReference.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.AssemblyInfoInputs.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.AssemblyInfo.cs
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csproj.CopyComplete
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.pdb
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csprojAssemblyReference.cache
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.AssemblyInfoInputs.cache
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.AssemblyInfo.cs
+E:\yogita\updated platho\test food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.deps.json
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Persistence.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Services.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Services.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csprojAssemblyReference.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.AssemblyInfoInputs.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.AssemblyInfo.cs
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csproj.CopyComplete
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.dll
+C:\Users\dell\Desktop\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.deps.json
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.API.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Services.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Services.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\bin\Debug\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csprojAssemblyReference.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.AssemblyInfoInputs.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.AssemblyInfo.cs
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csproj.CoreCompileInputs.cache
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.csproj.CopyComplete
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.dll
+E:\yogita\updated platho\food\appFoodDelivery\appFoodDelivery\appFoodDelivery.API\obj\Debug\netcoreapp2.1\appFoodDelivery.API.pdb

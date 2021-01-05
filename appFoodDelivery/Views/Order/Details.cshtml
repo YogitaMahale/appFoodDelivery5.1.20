@@ -1,0 +1,169 @@
+﻿@model appFoodDelivery.Models.orderinvoice
+
+<div class="col-md-12 grid-margin grid-margin-md-0">
+    <div class="card">
+        <div class="card-body">
+            @*<nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Hotel List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Hotel Details</li>
+                </ol>
+            </nav><br /><br />*@
+            
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    <h2>Invoice Order No -  @Model.orderheader.id</h2>
+                        <hr />
+                        <div class="form-row">
+                            
+                            <div class="form-group col-md-6">
+                                <p class="font-weight-bold" style="color:white;"><h4>From</h4></p>
+                                <p class="font-weight-normal ">  @Model.orderheader.storename  </p>
+                                <p class="font-weight-normal">@Model.orderheader.storeaddress  </p>
+
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <p class="font-weight-bold" style="color:white"><h4>To</h4></p>
+                                <p class="font-weight-bold">  @Model.orderheader.customerName  </p>
+                                <p class="font-weight-normal">Mobile No. :  @Model.orderheader.mobileno  </p>
+                                <p class="font-weight-normal">Delivery Address :  @Model.orderheader.deliveryaddress  </p>
+                            </div>
+
+                        </div>
+                         
+                    </div>
+                </div>
+                         
+                        <div class="row">
+                            <div class="col-md-12 table-responsive-md">
+
+                                <table class="table table-striped tblShow" style="border: 1px solid black;">
+                                    <thead>
+                                        <tr>
+                                            <th style="display:none;">id</th>
+                                            <th>ProductName</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Total</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.orderdetails)
+                                        {
+
+                                            <tr>
+                                                <td style="display:none;">
+
+                                                    <a asp-action="Detail" asp-route-id="@item.id" id="lblid">
+                                                        @item.id
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    @item.productname
+                                                </td>
+                                                <td>
+                                                    @item.price
+                                                </td>
+                                                <td>
+                                                    @item.qty
+                                                </td>
+                                                <td>
+
+                                                    @item.total
+
+                                                </td>
+
+
+                                            </tr>
+                                        }
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Sub Total :</th>
+                                            <th>@Model.orderheader.productCost</th>
+
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Delivery Charges :</th>
+                                            <th>@Model.orderheader.deliverycharges</th>
+
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Total :</th>
+                                            <th>@Model.orderheader.amount</th>
+
+                                        </tr>
+                                    </tfoot>
+                                </table><br />
+
+
+                            </div>
+                        </div>
+                        <div class="wrap d-flex justify-content-start justify-content-sm-center flex-wrap">
+                            @*<a class="btn btn-rounded btn-success float-right" asp-action="ProductList" asp-controller="Account" asp-route-id="@Model.storeid">
+            <i class="fas fa-edit"></i> Menu List
+        </a>*@
+
+                            @*//pending
+        //approved
+        //processorders
+        //ongoingorders
+        //completedorders
+        //cancelledorders*@
+                            @*@if (Model.orderheader.orderstatus.ToLower().Trim() == "Placed".ToString().ToLower().Trim())
+        {
+            <a class="btn btn-rounded btn-success float-right" asp-action="approved" asp-controller="Order" asp-route-id="@Model.orderheader.id">
+                <i class="fas fa-edit"></i> Approved
+            </a>
+            <a class="btn btn-rounded btn-success float-right" asp-action="approved" asp-controller="Order" asp-route-id="@Model.orderheader.id">
+                <i class="fas fa-edit"></i> Cancel Order
+            </a>
+        }
+        else if (Model.orderheader.orderstatus.ToLower().Trim() == "approved".ToString().ToLower().Trim())
+        {
+            <a class="btn btn-rounded btn-success float-right" asp-action="processorders" asp-controller="Order" asp-route-id="@Model.orderheader.id">
+                <i class="fas fa-edit"></i> Process
+            </a>
+            <a class="btn btn-rounded btn-success float-right" asp-action="approved" asp-controller="Order" asp-route-id="@Model.orderheader.id">
+                <i class="fas fa-edit"></i> Cancel Order
+            </a>
+        }
+        else if (Model.orderheader.orderstatus.ToLower().Trim() == "processorders".ToString().ToLower().Trim())
+        {
+            <a class="btn btn-rounded btn-success float-right" asp-action="Shipped" asp-controller="Order" asp-route-id="@Model.orderheader.id">
+                <i class="fas fa-edit"></i> Shipped
+            </a>
+
+        }
+        else if (Model.orderheader.orderstatus.ToLower().Trim() == "ongoingorders".ToString().ToLower().Trim())
+        {
+
+        }
+        else if (Model.orderheader.orderstatus.ToLower().Trim() == "completedorders".ToString().ToLower().Trim())
+        {
+
+        }
+        else if (Model.orderheader.orderstatus.ToLower().Trim() == "cancelledorders".ToString().ToLower().Trim())
+        {
+
+        }*@
+                            <a asp-action="test" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back to Orders</a>
+                            <br />
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                </div>
+            </div>
+        </div>

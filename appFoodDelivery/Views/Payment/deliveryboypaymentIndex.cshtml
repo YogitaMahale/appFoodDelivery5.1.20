@@ -1,0 +1,132 @@
+﻿@model appFoodDelivery.pagination.OrderPagination<driverPaymentViewModel>
+@*@model IEnumerable<orderHistoryReportViewModel>*@
+@{
+    ViewBag.Title = "Deliveryboy Payment";
+}
+
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+
+
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Deliveryboy Payment</li>
+                    </ol>
+                </nav><br />
+       
+
+                        <div class="row">
+                            <div class="col-md-12 table-responsive-md">
+                                @*<a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> New Driver</a>*@
+                                <b>  <h4>@ViewBag.message</h4> </b>
+                                <table class="table table-bordered tblShow">
+                                    <thead>
+                                        <tr>
+                                            @*id, customerid, amount, placedate, deliveryboyid, paymentstatus, orderstatus,
+                            isdeleted, discount, storeid, deliveryaddress, paymenttype, promocode, transactionid*@
+
+                                            <th>Name</th>
+                                            <th>Photo</th>
+                                            <th>Mobile No</th>
+                                            <th>Payamount</th>
+                                             
+                                            <th class="text-warning">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+
+                                            <tr>
+                                                <td> @item.name       </td>
+                                                <td>
+
+                                                   
+                                                    <img alt="image" src="@Url.Content(item.profilephoto)" />
+                                                </td>
+                                                <td>
+                                                    @item.mobileno  
+                                                </td>
+                                                <td>
+                                                   
+                                                        @item.payamount  
+                                                   
+
+
+                                                </td>
+                                                
+                                                <td>
+                                    <a class="text-success" asp-action="deliveryboypayment" asp-route-id="@item.id" asp-route-name="@item.name"  asp-route-amount="@item.payamount" >
+                                        <i class="fas fa-edit"></i> Pay Amount
+                                    </a>
+
+                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table><br />
+                                @{
+                                    var disablePrevious = !Model.IsPreviousAvailable ? "disabled" : "";
+                                    var disableNext = !Model.IsNextAvailable ? "disabled" : "";
+                                }
+
+                                <a asp-action="deliveryboypaymentIndex"
+                                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                                 
+                                  
+                                   class="btn btn-primary @disablePrevious">
+                                    Previous
+                                </a>
+                                <a asp-action="deliveryboypaymentIndex"
+                                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                                  
+                                    
+                                   class="btn btn-primary @disableNext">
+                                    Next
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+@*<script>
+        //$('.abc').datepicker({
+        //    autoclose: true,
+        //    format: 'dd/mm/yyyy'
+        //});
+        $('#datepicker2').datepicker({
+            autoclose: true,
+            format: 'dd/mm/yyyy'
+        });
+
+
+    </script>*@
+
+@*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+<script>
+    $(function () {
+        //$("#datepicker1").datepicker({
+        //    autoclose: true,
+        //        format: 'dd/mm/yyyy'
+        //});
+        //$("#datepicker2").datepicker({
+        //    autoclose: true,
+        //    format: 'dd/mm/yyyy'
+        //});
+        $(".datepicker").datepicker({
+            autoclose: true,
+            dateFormat: 'dd/mm/yy'
+        });
+    });
+</script>

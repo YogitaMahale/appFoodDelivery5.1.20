@@ -1,0 +1,68 @@
+﻿@model IEnumerable<DeliveryTimeIndexViewModel>
+@{
+    ViewBag.Title = "Delivery Time Details";
+}
+
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Delivery Time List</li>
+                    </ol>
+                </nav><br /><br />
+                <div class="row">
+                    <div class="col-md-12 table-responsive-md">
+                        <a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> New Delivery Time</a>
+
+                        <table class="table table-striped tblShow">
+                            <thead>
+                                <tr>
+                                    <th style="display:none;">id</th>
+                                    <th>Estimated Delivery Time</th>
+
+                                    <th class="text-warning">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td style="display:none;">
+
+                                            <a asp-action="Detail" asp-route-id="@item.id" id="lblid">
+                                                @item.id
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a asp-action="Detail" asp-route-id="@item.id">
+                                                @item.name
+                                            </a>
+                                        </td>
+
+                                        <td>
+                                            <a class="text-success" asp-action="Edit" asp-route-id="@item.id">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </a>
+
+                                            <a class="text-danger" asp-action="Delete" asp-route-id="@item.id">
+                                                <i class="far fa-trash-alt"></i> Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table><br />
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>

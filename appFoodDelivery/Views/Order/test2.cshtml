@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "test2";
+}
+
+<h1>test2</h1>
+
+@if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+                window.onload = function () {
+                    alert("@ViewBag.Message");
+                };
+        </script>
+    }

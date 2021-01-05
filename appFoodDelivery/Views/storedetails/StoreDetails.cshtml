@@ -1,0 +1,406 @@
+﻿@model StoreDetailsViewModel;
+@{
+    ViewBag.Title = "Store Details";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Store Details List</a></li>
+                    @*<li class="breadcrumb-item active" aria-current="page">New Business Registration</li>*@
+                </ol>
+            </nav><br /><br />
+
+
+
+            <form method="post" enctype="multipart/form-data" asp-action="StoreDetails">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-row">
+
+
+                    <div class="form-group col-md-2">
+                        <label asp-for="storename"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="storename" class="form-control" placeholder="Enter Store Name.." />
+                        <span asp-validation-for="storename" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="radiusid" style="text-align:right;"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select name="radiusid" id="radiusid" asp-for="radiusid" class="form-control"
+                                asp-items="@(new SelectList(ViewBag.radiusList,"id","name"))">
+
+
+                            <option>--- Select  ---</option>
+                        </select>
+                        <span asp-validation-for="radiusid" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="deliverytimeid"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+
+                        <select name="deliverytimeid" id="deliverytimeid" asp-for="deliverytimeid" class="form-control"
+                                asp-items="@(new SelectList(ViewBag.deliveryList,"id","name"))">
+
+
+                            <option>--- Select  ---</option>
+                        </select>
+                        <span asp-validation-for="deliverytimeid" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="orderMinAmount"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="orderMinAmount" class="form-control" placeholder="Enter Order Minimum Amount.." />
+                        <span asp-validation-for="orderMinAmount" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="packagingCharges"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+
+                        <input asp-for="packagingCharges" class="form-control" placeholder="Enter Packing Charges.." />
+                        <span asp-validation-for="packagingCharges" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="address"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="address" class="form-control" placeholder="Enter Address.." />
+                        <span asp-validation-for="address" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="description"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+
+                        <input asp-for="description" class="form-control" placeholder="Enter Description.." />
+                        <span asp-validation-for="description" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label asp-for="storetime"></label>
+                    </div>
+                    <div class="form-group col-md-2"> From :
+                        <input  asp-for="FromTime" class="form-control timepicker" placeholder="" />
+
+                    </div>
+                    <div class="form-group col-md-2"> To :
+                        <input  asp-for="ToTime" class="form-control timepicker" placeholder="Enter Store  Time.." />
+
+
+
+
+                        <span asp-validation-for="storetime" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="latitude"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+
+                        <input asp-for="latitude" class="form-control" placeholder="Enter Latitude.." />
+                        <span asp-validation-for="latitude" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="longitude"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="longitude" class="form-control" placeholder="Enter Longitude." />
+                        <span asp-validation-for="longitude" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="storeBannerPhoto"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <div class="btn btn-primary btn-icon-text">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <input asp-for="storeBannerPhoto" type="file" value="Upload" />
+                            <span asp-validation-for="storeBannerPhoto" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="countryid"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        @*<select name="countryid" id="countryid" asp-for="countryid" class="form-control"
+                                    asp-items="@ViewBag.Countries"
+                                    onchange="DoPostBack();">
+                                <option>--- Select  ---</option>
+                            </select>*@
+                        <select name="countryid" id="countryid" asp-for="countryid" class="form-control"
+                                asp-items="@(new SelectList(ViewBag.Countries,"id","countryname"))">
+
+
+                            <option>--- Select  ---</option>
+                        </select>
+                        <span asp-validation-for="countryid" class="text-danger"></span>
+
+                    </div>
+
+                </div>
+                <div class="form-row">
+
+
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="stateid"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select name="stateid" id="stateid" asp-for="stateid" class="form-control"
+                                asp-items="@ViewBag.States">
+                            @*disabled="@(ViewBag.StateEnabled == false ? "disabled" : null)"*@
+                            <option>--- Select  ---</option>
+                        </select>
+
+
+                        <span asp-validation-for="stateid" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="cityid"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select name="cityid" id="cityid" asp-for="cityid" class="form-control"
+                                asp-items="@ViewBag.Cities">
+
+
+                            <option>--- Select  ---</option>
+                        </select>
+
+
+                        <span asp-validation-for="cityid" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="promocode"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+
+                        <input asp-for="promocode" class="form-control" placeholder="Enter Promo Code.." />
+                        <span asp-validation-for="promocode" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="discount"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="discount" class="form-control" placeholder="Enter Discount.." />
+                        <span asp-validation-for="discount" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="accountno"></label>
+                    </div>
+                    <div class="form-check col-md-3">
+                        <input asp-for="accountno" id="accountno" class="form-control" placeholder="Enter Account No.." />
+                        <span asp-validation-for="accountno" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="banklocation"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="banklocation" class="form-control" placeholder="Enter Bank Location.." />
+                        <span asp-validation-for="banklocation" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="bankname"></label>
+                    </div>
+                    <div class="form-check col-md-3">
+                        <input asp-for="bankname" id="bankname" class="form-control" placeholder="Enter Bank Name.." />
+                        <span asp-validation-for="bankname" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="ifsccode"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="ifsccode" class="form-control" placeholder="Enter IFSC Code.." />
+                        <span asp-validation-for="ifsccode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+
+                    <div class="form-group col-md-2">
+                        <label asp-for="status"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select asp-for="status" class="form-control">
+
+                            <option value="Select" selected>-- Select --</option>
+                            <option value="available">Available</option>
+                            <option value="unavailable">Unavailable</option>
+
+                        </select>
+                        <span asp-validation-for="status" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="adminCommissionPer"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="adminCommissionPer" class="form-control" placeholder="Enter Commission.." />
+                        <span asp-validation-for="adminCommissionPer" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+
+                    <div class="form-group col-md-2">
+                        <label asp-for="taxstatus"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select asp-for="taxstatus" class="form-control">
+
+                            <option value="Select" selected>-- Select --</option>
+                            <option value="tax">Tax</option>
+                            <option value="notax">No Tax</option>
+
+                        </select>
+                        <span asp-validation-for="taxstatus" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="taxstatusPer"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="taxstatusPer" class="form-control" placeholder="Enter Tax Percentage .." />
+                        <span asp-validation-for="taxstatusPer" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Save</button>
+                    @*<a asp-action="index" asp-controller="Home" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>*@
+                    <br />
+                    <br />
+                    <br />
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+ 
+
+<link href="~/timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />
+<script src="~/timepicker/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript">
+
+    $('.timepicker').timepicker({
+        showInputs: false
+    })
+
+
+    $(function() {
+        $("#countryid").change(function () {
+
+            var url = '@Url.Content("~/")' + 'CityRegistration/getstatebyid';
+            var ddlsource = "#countryid";
+            $.getJSON(url,
+                { id: $(ddlsource).val() },
+                function (data) {
+                //   console.log(data);
+                    var item = '';
+                    $("#stateid").empty();
+                    $("#cityid").empty();
+                    $.each(data, function (i, row) {
+
+                        item += "<option value='" + row.value + "'>" + row.text + "  </option > ";
+                       // alert(row);
+                    });
+                    $("#stateid").html(item);
+                }
+            )
+        });
+
+        $("#stateid").change(function () {
+
+            var url = '@Url.Content("~/")' + 'storedetails/getCitybyStateid';
+            var ddlsource1 = "#stateid";
+            $.getJSON(url,
+                { stateid: $(ddlsource1).val() },
+                function (data) {
+                //   console.log(data);
+                    var item = '';
+                    $("#cityid").empty();
+                    $.each(data, function (i, row) {
+
+                        item += "<option value='" + row.value + "'>" + row.text + "  </option > ";
+                       // alert(row);
+                    });
+                    $("#cityid").html(item);
+                }
+            )
+        });
+    });
+   ///fromtime
+
+</script>

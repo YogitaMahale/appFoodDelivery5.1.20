@@ -1,0 +1,200 @@
+﻿@model appFoodDelivery.pagination.OrderPagination<orderHistoryReportViewModel>
+@*@model IEnumerable<orderHistoryReportViewModel>*@
+@{
+    ViewBag.Title = "Orders History Details";
+}
+
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+
+
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Order History Details</li>
+                    </ol>
+                </nav><br />
+                @using (Html.BeginForm("orderHistoryReport1", "Reportdetails", FormMethod.Post))
+                {
+                    <div class="row">
+                        <div class="form-group col-md-1">
+                            <label>Delivery boy</label>
+                        </div>
+                        <div class="form-group col-md-2">
+
+                            @Html.DropDownList("deliveryboyid", (IEnumerable
+        <SelectListItem>)ViewData["MySkills"])
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-1">
+                            <label>From Date</label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="input-group date" data-provide="datepicker">
+                                @*<input type="text" class="" name="from">*@
+                                <input type="text" id="datepicker1" autocomplete="off" class="form-control datepicker" value="@ViewBag.from1" name="from1">
+
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                            @*<input type="text" id="datepicker1" class="datepicker" value="@ViewBag.from1"  name="from1">*@
+
+                            @*<input type="date" value="@DateTime.Now" name="from" />*@
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label>To Date</label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            @*<div class="input-group date" data-provide="datepicker">
+                                    <input type="text" class="form-control" name="to">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>*@
+                            <input type="text" id="datepicker2" autocomplete="off" class="datepicker" value="@ViewBag.to1" name="to1">
+                            @*<input type="date" value="@DateTime.Now" name="to" />*@
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label>Status</label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <select name="status" class="form-control">
+
+                                <option value="All" selected>-- All --</option>
+                                <option value="Placed">Pending</option>
+                                <option value="approved">Approved</option>
+                                <option value="processorders">Process </option>
+                                <option value="ongoingorders">On Going </option>
+                                <option value="completedorders">Completed </option>
+                                <option value="cancelledorders">Cancelled </option>
+
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <input type="submit" name="search" value="Search" class="btn btn-primary" />
+                            <input type="submit" name="ExcelFileDownload" value="Excel Download" class="btn btn-primary" />
+                        </div>
+                    </div>
+                }
+
+                <div class="row">
+                    <div class="col-md-12 table-responsive-md">
+                        @*<a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> New Driver</a>*@
+                        <b>  <h4>@ViewBag.message</h4> </b>
+                        <table class="table table-bordered tblShow">
+                            <thead>
+                                <tr>
+                                    @*id, customerid, amount, placedate, deliveryboyid, paymentstatus, orderstatus,
+                                        isdeleted, discount, storeid, deliveryaddress, paymenttype, promocode, transactionid*@
+
+                                    <th>Order Id</th>
+                                    <th>Date</th>
+                                    <th>Store</th>
+                                    <th>Customer Name</th>
+                                    <th>Amount</th>
+                                    <th>Hotel Amount</th>
+                                    <th>Customer Delivery Charges</th>
+                                    <th>Deliveryboy Earning</th>
+                                    <th>Status</th>
+                                    <th>Deliveryboy</th>
+                                    @*<th class="text-warning">Actions</th>*@
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td> @item.id     </td>
+                                        <td>@item.placedate</td>
+                                        <td>
+                                            @item.storename
+                                        </td>
+                                        <td>
+                                            @item.customerName
+                                        </td>
+                                        <td>@item.finalamt    </td>
+                                        <td>@item.customeramt    </td>
+                                        <td>@item.customerdeliverycharges    </td>
+                                        <td>@item.deliveryboycharges    </td>
+                                        <td>@item.orderstatus  </td>
+                                        <td>@item.deliveryboyName    </td>
+                                        @*<td>
+                                                <a class="text-success" asp-action="Edit" asp-route-id="@item.id">
+                                                    <i class="fas fa-edit"></i> Details
+                                                </a>
+
+                                            </td>*@
+                                    </tr>
+                                }
+                            </tbody>
+                        </table><br />
+                        @{
+                            var disablePrevious = !Model.IsPreviousAvailable ? "disabled" : "";
+                            var disableNext = !Model.IsNextAvailable ? "disabled" : "";
+                        }
+
+                        <a asp-action="orderHistoryReport1"
+                           asp-route-pageNumber="@(Model.PageIndex - 1)"
+                           asp-route-from1="@ViewBag.from1"
+                           asp-route-to1="@ViewBag.to1"
+                           asp-route-status="@ViewBag.status1"
+                           class="btn btn-primary @disablePrevious">
+                            Previous
+                        </a>
+                        <a asp-action="orderHistoryReport1"
+                           asp-route-pageNumber="@(Model.PageIndex + 1)"
+                           asp-route-from1="@ViewBag.from1"
+                           asp-route-to1="@ViewBag.to1"
+                           asp-route-status="@ViewBag.status1"
+                           class="btn btn-primary @disableNext">
+                            Next
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+@*<script>
+        //$('.abc').datepicker({
+        //    autoclose: true,
+        //    format: 'dd/mm/yyyy'
+        //});
+        $('#datepicker2').datepicker({
+            autoclose: true,
+            format: 'dd/mm/yyyy'
+        });
+
+
+    </script>*@
+
+@*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+<script>
+    $(function () {
+        //$("#datepicker1").datepicker({
+        //    autoclose: true,
+        //        format: 'dd/mm/yyyy'
+        //});
+        //$("#datepicker2").datepicker({
+        //    autoclose: true,
+        //    format: 'dd/mm/yyyy'
+        //});
+        $(".datepicker").datepicker({
+            autoclose: true,
+            dateFormat: 'dd/mm/yy'
+        });
+    });
+</script>

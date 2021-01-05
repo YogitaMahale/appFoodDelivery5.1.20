@@ -1,0 +1,59 @@
+﻿@model StateCreateViewModel;
+@{
+    ViewBag.Title = "New Registration";
+}
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">State List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">New State Registration</li>
+                </ol>
+            </nav><br /><br />
+
+            @*id, name, profilephoto, mobileno1, mobileno2, emailid1, emailid2, adharcardno, adharcardphoto
+                , pancardno, pancardphoto, password, gender, DOB, createddate*@
+
+            <form method="post" enctype="multipart/form-data" asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="countryid"></label>
+                    <select asp-for="countryid" class="form-control" asp-items="ViewBag.Allcountry"  onchange="DoPostBack();">
+                        <option selected>--- Select Country ---</option>
+                    </select>
+                    <span asp-validation-for="countryid" class="text-danger"></span>
+                </div><br /><br /><br />
+                <div class="form-row">
+                    <label asp-for="StateName"></label>
+                    <input asp-for="StateName" class="form-control" placeholder="Enter State Name.." />
+                    <span asp-validation-for="StateName" class="text-danger"></span>
+
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Save</button>
+                    <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>
+                    <br />
+                    <br />
+                    <br />
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        alert('ready');
+    });
+</script>
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

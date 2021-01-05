@@ -1,0 +1,108 @@
+﻿@model promocodeCreateViewModel;
+@{
+    ViewBag.Title = "New Registration";
+}
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Registration List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">New Promocode </li>
+                </ol>
+            </nav><br /><br />
+
+            @*id, , promocodeusagelimit, discount, discounttype,  , createddate, isdeleted, isactive*@
+            <form method="post" enctype="multipart/form-data" asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-row">
+
+
+                    <div class="form-group col-md-2">
+                        <label asp-for="promocode"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="promocode" class="form-control" placeholder="Enter Promocode.." />
+                        <span asp-validation-for="promocode" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="expirydate"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="expirydate" class="form-control" />
+                        <span asp-validation-for="expirydate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="promocodeusagelimit"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="promocodeusagelimit" class="form-control" placeholder="Enter Promocode Usuage Limit.." />
+                        <span asp-validation-for="promocodeusagelimit" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="discount"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="discount" class="form-control" placeholder="Enter Discount.." />
+                        <span asp-validation-for="discount" class="text-danger"></span>
+                    </div>
+
+
+                </div>
+           
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="discounttype"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        @*<select asp-for="gender" class="form-control" asp-items="Html.GetEnumSelectList<plathora.Entity.Gender>()">*@
+                        <select asp-for="discounttype" class="form-control">
+
+                            <option value="Select" selected>-- Select --</option>
+                            <option value="Percentage">Percentage</option>
+                            <option value="Money">Money</option>
+                        </select>
+                        <span asp-validation-for="discounttype" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2"></div>
+                   
+                </div>
+
+
+
+
+                <div class="form-group">
+
+                    <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Save</button>
+
+
+                    <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>
+                    <label id="divMessage"></label>
+                    <br />
+                    <br />
+                    <br />
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+   
+   
+</script>

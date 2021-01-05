@@ -1,0 +1,76 @@
+﻿
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-primary">Menu List </h2>
+    </div>
+
+
+    <div class="col-6 text-right">
+        
+
+        <a class="btn btn-primary" asp-action="Create"><i class="fas fa-plus"></i> &nbsp; New Menu</a>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-2">
+        <label>Select Cusine </label>
+    </div>
+    <div class="form-group col-md-4">
+
+        <select name="cusineid" id="cusineid" class="form-control"
+                asp-items="@(new SelectList(ViewBag.cusineList,"id","name"))">
+
+
+            <option>--- Select  ---</option>
+        </select>
+        @*<span asp-validation-for="countryid" class="text-danger"></span>*@
+
+    </div>
+</div>
+<br />
+<div class="p-4 border rounded bg-white">
+    <table id="tblData" class="table  table-bordered" style="width:100%">
+        <thead class="thead-dark">
+            <tr class="table-info">
+                @*<th>Cusine Name</th>*@
+                <th>Menu Name</th>
+                <th>Image</th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+
+@section Scripts{
+    <script src="~/js/menumaster.js"></script>
+    @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
+    @*<script type="text/javascript">
+    $(function() {
+        $("#cusineid").change(function () {
+
+            //var url = '@Url.Content("~/")' + 'CityRegistration/getstatebyid';
+            var ddlsource = "#cusineid";
+           // alert($(ddlsource).val());
+            loadtable();
+            //$.getJSON(url,
+           
+        });
+    });
+
+       
+    </script>*@
+
+}

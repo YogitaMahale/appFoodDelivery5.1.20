@@ -1,0 +1,101 @@
+﻿@*@model IEnumerable<appFoodDelivery.Entity.ApplicationUser>*@
+@model IEnumerable<appFoodDelivery.Models.dtos.storedetailsList>
+@{
+    ViewBag.Title = "All Users";
+}
+
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">User List</li>
+                    </ol>
+                </nav><br /><br />
+                <div class="row">
+                    <div class="col-md-12 table-responsive-md">
+                        <a class="btn btn-xs btn-outline-success float-md-right" asp-action="Register"> New Store Registration</a>
+
+                        <table class="table table-striped tblShow">
+                            <thead>
+                                <tr>
+                                    <th style="display:none;">id</th>
+                                    <th>Store Banner</th>
+                                    <th>Owner Name</th>
+                                    <th>Store Name</th>
+                                    <th>Status</th>
+                                    <th>Tax Type</th>
+                                    <th>Tax( % )</th>
+                                    <th class="text-warning">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                <tr>
+                                    <td style="display:none;">
+
+                                        <a asp-action="Detail" asp-route-id="@item.Id" id="lblid">
+                                            @item.Id
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <img alt="image" src="@Url.Content(item.storeBannerPhoto)" />
+                                    </td>
+                                    <td>
+
+                                        @item.ownername
+
+                                    </td>
+                                    <td>
+
+                                        @item.storeName
+
+                                    </td>
+                                    <td>
+
+                                        @item.storestatus
+
+                                    </td>
+                                    <td>
+
+                                        @item.taxstatus
+
+                                    </td>
+                                    <td>
+
+                                        @item.taxstatusPer
+
+                                    </td>
+                                    <td>
+                                        <a class="text-success" asp-action="EditListUsers" asp-route-id="@item.Id">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </a>
+
+                                        <a class="text-danger" asp-action="deleteListUsers" asp-route-id="@item.Id">
+                                            <i class="far fa-trash-alt"></i> Delete
+                                        </a>
+                                        <a class="text-success" asp-action="storeDetails" asp-route-id="@item.Id">
+                                            <i class="fas fa-edit"></i> Details
+                                        </a>
+                                        @*<a class="text-success" asp-action="ProductList" asp-route-id="@item.Id">
+                <i class="fas fa-edit"></i> Menu
+            </a>*@
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table><br />
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>

@@ -1,0 +1,115 @@
+﻿@model IEnumerable<MenumasterIndexViewModel>
+@{
+    ViewBag.Title = "Menu Master";
+}
+
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Menu Master List</li>
+                    </ol>
+                </nav><br /><br />
+                <div class="row">
+
+
+                    <div class="col-md-12 table-responsive-md">
+                        <a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> Add New Menu</a>
+
+                        <table class="table table-striped tblShow">
+                            <thead>
+                                <tr>
+                                    <th style="display:none;">id</th>
+                                    <th>Cusine Nane</th>
+                                    <th>Menu Nane</th>
+                                    <th>Image</th>
+                                    <th class="text-warning">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                <tr>
+                                    <td style="display:none;">
+
+                                        <a asp-action="Detail" asp-route-id="@item.id" id="lblid">
+                                            @item.id
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="Detail" asp-route-id="@item.id">
+                                            @item.cusinename
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="Detail" asp-route-id="@item.id">
+                                            @item.name
+                                        </a>
+                                    </td>
+                                    <td>
+                                        @if (item.img == null || item.img.Trim() == "")
+                                        {
+                                            // <img alt="image" src="~/images/not-found.png" />
+                                        }
+                                        else
+                                        {<img alt="image" src="@Url.Content(item.img)" />
+
+
+                                        }
+
+                                    </td>
+                                    <td>
+                                        <a class="text-success" asp-action="Edit" asp-route-id="@item.id">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </a>
+
+                                        <a class="text-danger" asp-action="Delete" asp-route-id="@item.id">
+                                            <i class="far fa-trash-alt"></i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table><br />
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+@*<script>
+     
+    function Delete(id) {
+        swal({
+            title: "Are you sure",
+            text: "Once deleted",
+            icon: "warning",
+            dangerMode: true
+        }).then((willDelete) => {
+            if (willDelete) {
+                $.ajax({
+                    type: "Delete",
+                    url="~/menumaster/Delete?id=" + id,
+                    success: function (data) {
+                        if (data.success) {
+                            toastr.success(message);
+                            dataTable.ajax.reload();
+                        }
+                        else {
+                            toastr.error(message);
+                        }
+                    }
+                });
+            }
+        });
+    }
+</script>*@

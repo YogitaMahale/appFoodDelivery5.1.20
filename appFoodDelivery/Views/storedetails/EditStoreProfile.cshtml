@@ -1,0 +1,121 @@
+﻿@model EditRegisterViewModel;
+@{
+    ViewBag.Title = "Edit Registration";
+}
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Customer Registration List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit Customer Registration</li>
+                </ol>
+            </nav><br /><br />
+
+            @*id, , , , emailid, password, gender, latitude, longitude, deviceid
+                , , isdeleted, isactive*@
+            <form method="post" enctype="multipart/form-data" asp-action="EditStoreProfile">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-row">
+
+
+                    <div class="form-group col-md-2">
+                        <label asp-for="name"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="name" class="form-control" placeholder="Enter Name.." />
+                        <span asp-validation-for="name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="gender"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        @*<select asp-for="gender" class="form-control" asp-items="Html.GetEnumSelectList<plathora.Entity.Gender>()">*@
+                        <select asp-for="gender" class="form-control">
+
+                            <option value="Select" selected>-- Select --</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <span asp-validation-for="gender" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2" style="display:none;">
+                        <label asp-for="Id"></label>
+                    </div>
+                    <div class="form-group col-md-3" style="display:none;">
+                        <input asp-for="Id" class="form-control" style="background-color:aliceblue;color:black;" disabled />
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="profilephoto"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <div class="btn btn-primary btn-icon-text">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <input asp-for="profilephoto" type="file" value="Upload" />
+                            <span asp-validation-for="profilephoto" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="mobileno"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="mobileno" class="form-control" placeholder="Enter Mobile No.." />
+                        <span asp-validation-for="mobileno" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="Email"></label>
+                    </div>
+                    <div class="form-check col-md-3">
+                        <input asp-for="Email" id="password" class="form-control" placeholder="Enter Email.." />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="UserName"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="UserName" class="form-control" placeholder="Enter UserName.." />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+ 
+
+
+
+
+                <div class="form-group">
+
+                    <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Update</button>
+
+
+                    @*<a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>*@
+                    <label id="divMessage"></label>
+                    <br />
+                    <br />
+                    <br />
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

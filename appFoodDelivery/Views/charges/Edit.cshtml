@@ -1,0 +1,133 @@
+﻿@model chargesEditViewModel;
+@{
+    ViewBag.Title = "Charges";
+}
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Charges</a></li>
+                    @*<li class="breadcrumb-item active" aria-current="page">Edit City Registration</li>*@
+                </ol>
+            </nav><br /><br />
+
+
+
+                        <form name="form1" method="post" enctype="multipart/form-data" asp-action="Edit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div style="text-align:center"><h3>Customer Charges</h3></div>
+
+                            <input type="hidden" asp-for="id" />
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="customer1Km"></label>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input asp-for="customer1Km" class="form-control" placeholder="Enter Amount.." />
+                                    <span asp-validation-for="customer1Km" class="text-danger"></span>
+
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="customer2K"></label>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input asp-for="customer2K" class="form-control" placeholder="Enter Amount.." />
+                                    <span asp-validation-for="customer2K" class="text-danger"></span>
+
+                                </div>
+                            </div>
+
+                            <br />
+
+                            <hr style="width:50%;text-align:left;margin-left:0;color:white;">
+                            <div style="text-align:center"><h3>Customer Charges</h3></div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="deliveryboy1Km"></label>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input asp-for="deliveryboy1Km" class="form-control" placeholder="Enter Amount.." />
+                                    <span asp-validation-for="deliveryboy1Km" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="deliveryboy2Km"></label>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input asp-for="deliveryboy2Km" class="form-control" placeholder="Enter Amount.." />
+                                    <span asp-validation-for="deliveryboy2Km" class="text-danger"></span>
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Update</button>
+                                @*<a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>*@
+                                <br />
+                                <br />
+                                <br />
+
+                            </div>
+                        </form>
+        </div>
+    </div>
+</div>
+
+@*@section Scripts{
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
+<script src="~/lib/jquery/dist/jquery.js"></script>
+@*<script type="text/javascript">
+        function DoPostBack() {
+           // alert('df');
+            var select = document.getElementById("countryid");
+            var option = select.options[select.selectedIndex];
+            if (option.value != "Please select") {
+                document.form1.action = "/CityRegistration/EditGetStates";
+                document.form1.submit();
+            }
+        }
+    </script>*@
+
+ 
+<script type="text/javascript">
+    $(function() {
+        $("#countryid").change(function () {
+
+            var url = '@Url.Content("~/")' + 'CityRegistration/getstatebyid';
+            var ddlsource = "#countryid";
+            $.getJSON(url,
+                { id: $(ddlsource).val() },
+                function (data) {
+                //   console.log(data);
+                    var item = '';
+                    $("#stateid").empty();
+                    $.each(data, function (i, row) {
+
+                        item += "<option value='" + row.value + "'>" + row.text + "  </option > ";
+                       // alert(row);
+                    });
+                    $("#stateid").html(item);
+                }
+            )
+        });
+    });
+    //function DoPostBack() {
+    //   // alert('df');
+    //    var select = document.getElementById("countryid");
+    //    var option = select.options[select.selectedIndex];
+    //    if (option.value != "Please select") {
+    //        document.form1.action = "/CityRegistration/GetStates";
+    //        document.form1.submit();
+    //    }
+    //}
+</script>
