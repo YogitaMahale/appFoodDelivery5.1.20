@@ -332,7 +332,84 @@ namespace appFoodDelivery.Notification
 
         }
 
+        public void adminNotification(string deviceid, string message, string img, string title)
+        {
 
+            if (string.IsNullOrEmpty(deviceid))
+            {
+
+            }
+            else
+            {
+
+
+                try
+                {
+                    string sResponseFromServer = string.Empty, finalResult = string.Empty;
+                    WebRequest tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
+                    tRequest.Method = "post";
+                    //serverKey - Key from Firebase cloud messaging server   customer
+                    //tRequest.Headers.Add(string.Format("Authorization: key={0}", "AAAAxJW0hf8:APA91bG1ipIsec--9KYV5bv6kagmly4PfFHH-UCLsbsqVxuZsoBPvw-AuRy_DhBa0sT2raF5D0DJhbx8G59lKV2fg6WbUDMzvWsyqxlQLjz-Epk3p04lujWk1c-enH5o3CLq_ejPVqr4"));
+                    //store
+                    //tRequest.Headers.Add(string.Format("Authorization: key={0}", "AAAAxJW0hf8:APA91bG1ipIsec--9KYV5bv6kagmly4PfFHH-UCLsbsqVxuZsoBPvw-AuRy_DhBa0sT2raF5D0DJhbx8G59lKV2fg6WbUDMzvWsyqxlQLjz-Epk3p04lujWk1c-enH5o3CLq_ejPVqr4"));
+
+                    //tRequest.Headers.Add(string.Format("Sender: id={0}", "844325225983"));
+
+                    tRequest.Headers.Add(string.Format("Authorization: key={0}", "AAAA4lmKnwA:APA91bHnS9ND3VSqid8vKdUTQukqJrBJytbmQKZJADNrEbxs9ZDNxoI_Cq0rhuvqkw9954fvUSuC9McpOfTAc7K3OgTvovghBkazWnIgQ0qn0TPjz1nTCZAgbrbNCYWLRei-5vzlBlYj"));
+
+                    tRequest.Headers.Add(string.Format("Sender: id={0}", "972164865792"));
+                    tRequest.ContentType = "application/json";
+                    var payload = new
+                    {
+                        to = deviceid,
+                        priority = "high",
+                        content_available = true,
+                        notification = new
+                        {
+                            body = message,
+                            title = title,
+                            badge = 1
+                        },
+                        data = new
+                        {
+
+                            key1 = "value1",
+                            key2 = "value2"
+                        }
+
+                    };
+
+                    //string postbody = JsonConvert.SerializeObject(payload).ToString();
+
+                    var serializer = new JavaScriptSerializer();
+                    var postbody = serializer.Serialize(payload);
+                    Byte[] byteArray = Encoding.UTF8.GetBytes(postbody);
+                    tRequest.ContentLength = byteArray.Length;
+                    using (Stream dataStream = tRequest.GetRequestStream())
+                    {
+                        dataStream.Write(byteArray, 0, byteArray.Length);
+                        using (WebResponse tResponse = tRequest.GetResponse())
+                        {
+                            using (Stream dataStreamResponse = tResponse.GetResponseStream())
+                            {
+                                if (dataStreamResponse != null) using (StreamReader tReader = new StreamReader(dataStreamResponse))
+                                    {
+                                        sResponseFromServer = tReader.ReadToEnd();
+                                        //result.Response = sResponseFromServer;
+                                    }
+                            }
+                        }
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+        }
         public void BulkCustomerSendNotification(List<string> deviceRegIds, string message, string img, string title)
         {
             var skip = 0;

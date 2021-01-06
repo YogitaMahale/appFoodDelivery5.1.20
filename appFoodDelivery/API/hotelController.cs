@@ -2,6 +2,7 @@
 using appFoodDelivery.Models;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 using appFoodDelivery.Models.dtos;
+using appFoodDelivery.Notification;
 using appFoodDelivery.Persistence;
 //using appFoodDelivery.Models.Dtos;
 using appFoodDelivery.Services;
@@ -395,10 +396,11 @@ namespace appFoodDelivery.API
 
 
                             }
-
-
-
-
+                            //---sent notification to admin----------------
+                            var users1 = await _usermanager.FindByIdAsync("6852cc0f-f62e-42a4-8dc7-5fd0478ba197");
+                            string deviceid1 = users1.deviceid;
+                            fcmNotification obj = new fcmNotification();
+                            obj.adminNotification(deviceid1, "New Order Insert", "", "New Order");
                         }
                     }
                     if (OrderId == 0)

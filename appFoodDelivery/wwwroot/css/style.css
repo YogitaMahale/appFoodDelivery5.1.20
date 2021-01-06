@@ -10015,8 +10015,8 @@ pre code {
 .table, .jsgrid .jsgrid-table {
     width: 100%;
     margin-bottom: 1rem;
-    color:black;
-    /*#b1b1b5*/
+    color: #b1b1b5;
+    /**/
 }
 
 .table th, .jsgrid .jsgrid-table th,
