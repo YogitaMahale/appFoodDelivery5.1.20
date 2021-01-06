@@ -256,13 +256,14 @@ namespace appFoodDelivery.Controllers
             return Json(new { data = storeDetails });
         }
 
+        [HttpGet]
         public IActionResult EmployeeList(string roletype)
         {
             TempData["roletype"] = roletype;
             TempData.Keep("roletype");
             return View();
         }
-
+        [HttpGet]
         public IActionResult ManagerList(string roletype)
         {
             TempData["roletype"] = roletype;

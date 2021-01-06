@@ -3862,6 +3862,7 @@ E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\V
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\driverRegistration\Index.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\ManagerCollection\collect.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\menumaster\Create.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\menumaster\Edit.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\menumaster\Index.cshtml.g.cs

@@ -50,9 +50,9 @@ namespace appFoodDelivery.Persistence
         public DbSet<StoredPayamount> StoredPayamount { get; set; }
         public DbSet<DriverPayamount> DriverPayamount { get; set; }
 
-
+        
         public DbSet<AssignDeliveryboyToManager> AssignDeliveryboyToManager { get; set; }
 
-        
+        public DbSet<AdminCollection> AdminCollection { get; set; }
     }
 }

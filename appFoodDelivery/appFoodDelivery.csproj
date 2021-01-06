@@ -98,6 +98,13 @@
     <ProjectReference Include="..\appFoodDelivery.Services\appFoodDelivery.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\ManagerCollection\collect.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://json.schemastore.org/backportrc" /></VisualStudio></ProjectExtensions>
 
 </Project>

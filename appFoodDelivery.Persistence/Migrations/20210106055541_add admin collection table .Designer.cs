@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using appFoodDelivery.Persistence;
 
 namespace appFoodDelivery.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210106055541_add admin collection table ")]
+    partial class addadmincollectiontable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -165,9 +167,6 @@ namespace appFoodDelivery.Persistence.Migrations
 
                     b.Property<DateTime>("date1")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool>("isdeleted")
-                        .HasColumnType("bit");
 
                     b.HasKey("id");
 

@@ -30,11 +30,13 @@ namespace appFoodDelivery.Controllers
         private readonly IAssignDeliveryboyToManagerServices _assignDeliveryboyToManagerServices;
         private readonly IdriverRegistrationServices _driverRegistrationServices;
         private readonly UserManager<ApplicationUser> _usermanager;
-        public AssignDeliveryboyToManagerController(IAssignDeliveryboyToManagerServices assignDeliveryboyToManagerServices, IdriverRegistrationServices driverRegistrationServices, UserManager<ApplicationUser> usermanager)
+        private readonly ISP_Call _ispcall;
+        public AssignDeliveryboyToManagerController(IAssignDeliveryboyToManagerServices assignDeliveryboyToManagerServices, IdriverRegistrationServices driverRegistrationServices, UserManager<ApplicationUser> usermanager, ISP_Call ispcall)
         {
             _assignDeliveryboyToManagerServices = assignDeliveryboyToManagerServices;
             _driverRegistrationServices = driverRegistrationServices;
             _usermanager = usermanager;
+            _ispcall = ispcall;
 
         }
         public async Task<IActionResult> Index()
@@ -42,7 +44,7 @@ namespace appFoodDelivery.Controllers
             ApplicationUser usr = await GetCurrentUserAsync();
             var user = await _usermanager.FindByIdAsync(usr.Id);
  
-            var countrydetails = _assignDeliveryboyToManagerServices.GetAll().Select(x => new AssignDeliveryboyToManagerViewModel
+            var countrydetails = _assignDeliveryboyToManagerServices.GetAll().Where(x=>x.managerId==user.Id).Select(x => new AssignDeliveryboyToManagerViewModel
             {
                 Id = x.Id,
                 managerId = x.managerId,
@@ -58,7 +60,15 @@ namespace appFoodDelivery.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            ViewBag.deliveryboy = _driverRegistrationServices.GetAll().ToList();
+            var parameter = new DynamicParameters();
+            var listt = _ispcall.List<driverListModel>("getNotAssignDeliveryBoy", null);
+
+            //var deliveryboyidd = _assignDeliveryboyToManagerServices.GetAll().Select(x => x.deliveryboyid);
+
+
+            //var query = _driverRegistrationServices.GetAll().Select(x => new { x.id, x.name }).Except(deliveryboyidd);
+            ViewBag.deliveryboy = listt;
+            // ViewBag.deliveryboy = _driverRegistrationServices.GetAll().Select(x=>x.id).Except(deliveryboyidd);
             var model = new AssignDeliveryboyToManagerViewModel();
             return View(model);
         }

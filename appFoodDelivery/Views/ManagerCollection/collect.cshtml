@@ -1,0 +1,114 @@
+﻿@model adminCollectionViewModel;
+@{
+    ViewBag.Title = "Collect Amount ";
+}
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                @*<ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Collect Amount</a></li>
+                     
+                </ol>*@
+            </nav><br /><br />
+
+
+
+                        <form name="form1" method="post" enctype="multipart/form-data" asp-action="collect">
+                            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                      
+                            <input type="hidden" asp-for="managerid" />
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="managername"></label>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input asp-for="managername" class="form-control" style="color:black;" readonly />
+
+                                    <span asp-validation-for="managername" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="finalamt"></label>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input asp-for="finalamt" class="form-control" style="color:black;" readonly />
+                                    <span asp-validation-for="finalamt" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="amount"></label>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input asp-for="amount" value="0" class="form-control" placeholder="Enter" />
+                                    <span asp-validation-for="amount" class="text-danger"></span>
+
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="remaining"></label>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input asp-for="remaining" style="color:black;" readonly class="form-control" placeholder="" />
+                                    <span asp-validation-for="remaining" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <br />
+
+
+
+                            <div class="form-group">
+
+                                <button type="submit" id="btnupdate" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Save</button>
+                                @*<a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>*@
+                                <br />
+                                <br />
+                                <br />
+
+                            </div>
+                        </form>
+        </div>
+    </div>
+</div>
+
+@*@section Scripts{
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+ 
+@*<script type="text/javascript">
+    $(function() {
+        $("#amount").change(function () {
+
+            var finalamt = $("#finalamt").val()
+            var amount = $("#amount").val()
+            var remaining = 0;
+            if (finalamt < amount) {
+                 
+                //$("#btnupdate").hide();
+                $("#btnupdate").removeClass("amtshow").addClass("amtnotshow");
+                alert('Please Collect Proper Amount');
+            }
+            else {
+                $("#btnupdate").addClass("amtshow")
+                $("#btnupdate").show();
+
+            }
+
+          
+       
+        });
+    });
+ 
+</script>*@
+
