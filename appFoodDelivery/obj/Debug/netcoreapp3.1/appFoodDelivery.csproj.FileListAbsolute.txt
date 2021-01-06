@@ -3860,6 +3860,9 @@ E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\V
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\driverRegistration\Create.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\driverRegistration\Edit.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\driverRegistration\Index.cshtml.g.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Feedback\customerTodeliveryboyFeedback.cshtml.g.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Feedback\customerToStoreFeedback.cshtml.g.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Feedback\deliveryboyCustomerFeedback.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\ManagerCollection\collect.cshtml.g.cs

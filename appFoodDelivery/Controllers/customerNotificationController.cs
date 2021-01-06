@@ -36,24 +36,26 @@ namespace appFoodDelivery.Controllers
             {
                 try
                 {
-                    var storeobj = _customerRegistrationservices.GetAll().Where(x => x.isdeleted == false && x.deviceid != null).ToList();
-                    foreach (var item in storeobj)
-                    {
-                        if (item.deviceid.Trim() == "" || item.deviceid == null)
-                        { }
-                        else
-                        {
-                            string message = model.description;
-                            string title = model.title;
+                    string message = model.description;
+                    string title = model.title;
+                    var storeobj = _customerRegistrationservices.GetAll().Where(x => x.isdeleted == false && x.deviceid != null).Select(x=>x.deviceid).ToList();
+                    //foreach (var item in storeobj)
+                    //{
+                    //    if (item.deviceid.Trim() == "" || item.deviceid == null)
+                    //    { }
+                    //    else
+                    //    {
+                   
 
-                            objfcmNotification.customerNotification(item.deviceid, message, "", title);
+                    //        objfcmNotification.customerNotification(item.deviceid, message, "", title);
 
-                        }
+                    //    }
 
 
 
-                    }
-
+                    //}
+                     objfcmNotification.BulkCustomerSendNotification(storeobj,message,"",title);
+                    // objfcmNotification.BulkCustomerSendNotification(Enumerable.Repeat("test", 1010).ToList(), "tickerText", "contentTitle", "message");
                 }
                 catch { }
 

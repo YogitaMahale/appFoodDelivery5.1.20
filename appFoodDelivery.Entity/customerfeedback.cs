@@ -12,7 +12,7 @@ namespace appFoodDelivery.Entity
 
         public int fromcustomerid { get; set; }
         public int? toDeliveryboyid { get; set; }
-        public int? toStoredid { get; set; }
+        public string toStoredid { get; set; }
 
 
         public string comment { get; set; }

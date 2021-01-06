@@ -516,7 +516,7 @@ namespace appFoodDelivery.API
 
         [HttpPost]
         [Route("insertfeedbacktoStore")]
-        public async Task<IActionResult> insertfeedbacktoStore(int storeid, int customerid, string comment, string rating)
+        public async Task<IActionResult> insertfeedbacktoStore(string storeid, int customerid, string comment, string rating)
         {
             //var paramter = new DynamicParameters();
             //paramter.Add("@customerid", customerid);

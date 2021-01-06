@@ -1,4 +1,5 @@
 ﻿using Nancy.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -330,5 +331,148 @@ namespace appFoodDelivery.Notification
             }
 
         }
+
+
+        public void BulkCustomerSendNotification(List<string> deviceRegIds, string message, string img, string title)
+        {
+            var skip = 0;
+            const int batchSize = 1000;
+
+
+            while (skip < deviceRegIds.Count)
+            {
+
+                try
+               {
+                    string sResponseFromServer = string.Empty, finalResult = string.Empty;
+                    WebRequest tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
+                    tRequest.Method = "post";                   
+                    tRequest.Headers.Add(string.Format("Authorization: key={0}", "AAAA4lmKnwA:APA91bHnS9ND3VSqid8vKdUTQukqJrBJytbmQKZJADNrEbxs9ZDNxoI_Cq0rhuvqkw9954fvUSuC9McpOfTAc7K3OgTvovghBkazWnIgQ0qn0TPjz1nTCZAgbrbNCYWLRei-5vzlBlYj"));
+
+                    tRequest.Headers.Add(string.Format("Sender: id={0}", "972164865792"));
+                    tRequest.ContentType = "application/json";
+                    var regIds = deviceRegIds.Skip(skip).Take(batchSize);
+                    skip += batchSize;
+                    var payload = new
+                    {
+                        
+                    //to = deviceid,
+                    registration_ids = regIds,
+                        priority = "high",
+                        content_available = true,
+                        notification = new
+                        {
+                            body = message,
+                            title = title,
+                            badge = 1
+                        },
+                        data = new
+                        {
+
+                            key1 = "value1",
+                            key2 = "value2"
+                        }
+
+                    };
+
+                    //string postbody = JsonConvert.SerializeObject(payload).ToString();
+
+                    var serializer = new JavaScriptSerializer();
+                    var postbody = serializer.Serialize(payload);
+                    Byte[] byteArray = Encoding.UTF8.GetBytes(postbody);
+                    tRequest.ContentLength = byteArray.Length;
+                    using (Stream dataStream = tRequest.GetRequestStream())
+                    {
+                        dataStream.Write(byteArray, 0, byteArray.Length);
+                        using (WebResponse tResponse = tRequest.GetResponse())
+                        {
+                            using (Stream dataStreamResponse = tResponse.GetResponseStream())
+                            {
+                                if (dataStreamResponse != null) using (StreamReader tReader = new StreamReader(dataStreamResponse))
+                                    {
+                                        sResponseFromServer = tReader.ReadToEnd();
+                                        //result.Response = sResponseFromServer;
+                                    }
+                            }
+                        }
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+        }
+        //public void BulkCustomerSendNotification(List<string> deviceRegIds, string tickerText, string contentTitle, string message)
+        //{
+        //    var skip = 0;
+        //    const int batchSize = 1000;
+        //    while (skip < deviceRegIds.Count)
+        //    {
+        //        try
+        //        {
+        //            var regIds = deviceRegIds.Skip(skip).Take(batchSize);
+
+        //            skip += batchSize;
+
+        //            WebRequest wRequest;
+        //            wRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
+        //            wRequest.Method = "POST";
+        //            wRequest.ContentType = " application/json;charset=UTF-8";
+        //            wRequest.Headers.Add(string.Format("Authorization: key={0}", "AAAA4lmKnwA:APA91bHnS9ND3VSqid8vKdUTQukqJrBJytbmQKZJADNrEbxs9ZDNxoI_Cq0rhuvqkw9954fvUSuC9McpOfTAc7K3OgTvovghBkazWnIgQ0qn0TPjz1nTCZAgbrbNCYWLRei-5vzlBlYj"));
+        //            wRequest.Headers.Add(string.Format("Sender: id={0}", "972164865792"));
+
+
+        //            //tRequest.Headers.Add(string.Format("Authorization: key={0}", "AAAA4lmKnwA:APA91bHnS9ND3VSqid8vKdUTQukqJrBJytbmQKZJADNrEbxs9ZDNxoI_Cq0rhuvqkw9954fvUSuC9McpOfTAc7K3OgTvovghBkazWnIgQ0qn0TPjz1nTCZAgbrbNCYWLRei-5vzlBlYj"));
+
+        //            //tRequest.Headers.Add(string.Format("Sender: id={0}", "972164865792"));
+
+        //            var postData = JsonConvert.SerializeObject(new
+        //            {
+        //                collapse_key = "score_update",
+        //                time_to_live = 108,
+        //                delay_while_idle = true,
+        //                data = new
+        //                {
+        //                    tickerText,
+        //                    contentTitle,
+        //                    message
+        //                },
+        //                registration_ids = regIds
+        //            });
+
+        //            var bytes = Encoding.UTF8.GetBytes(postData);
+        //            wRequest.ContentLength = bytes.Length;
+
+        //            var stream = wRequest.GetRequestStream();
+        //            stream.Write(bytes, 0, bytes.Length);
+        //            stream.Close();
+
+        //            var wResponse = wRequest.GetResponse();
+
+        //            stream = wResponse.GetResponseStream();
+
+        //            var reader = new StreamReader(stream);
+
+        //            var response = reader.ReadToEnd();
+
+        //            var httpResponse = (HttpWebResponse)wResponse;
+        //            var status = httpResponse.StatusCode.ToString();
+
+        //            reader.Close();
+        //            stream.Close();
+        //            wResponse.Close();
+
+        //            //TODO check status
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Console.WriteLine(ex.Message);
+        //        }
+        //    }
+        //}
     }
 }

@@ -88,6 +88,8 @@
     <None Include="wwwroot\pages\RefundandCancellation.html" />
     <None Include="wwwroot\pages\Privacypolicy.html" />
     <None Include="wwwroot\pages\TermsandConditions.html" />
+    <None Include="wwwroot\rating\jquery.rating-stars.js" />
+    <None Include="wwwroot\rating\jquery.rating-stars.min.js" />
     <None Include="wwwroot\timepicker\bootstrap-timepicker.js" />
     <None Include="wwwroot\timepicker\bootstrap-timepicker.min.js" />
   </ItemGroup>
