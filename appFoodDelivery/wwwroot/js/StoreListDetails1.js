@@ -1,8 +1,9 @@
 ﻿
 
+
 var datatable;
-$(document).ready(function () {
-    loadtable();
+$(document).ready(function () {   
+        loadtable();    
 });
 
 function loadtable() {
@@ -34,23 +35,16 @@ function loadtable() {
             { "data": "storestatus", "width": "10%" },
             { "data": "taxstatus", "width": "10%" },
             { "data": "taxstatusPer", "width": "10%" },
-            //{ "data": "img", "width": "20% " },         
-
+            { "data": "img", "width": "20% " },     
+           
 
             {
                 "data": "id",
                 "render": function (data) {
                     return `
 <div class="text-center">
-    <a href="/Account/EditListUsers/${data}" class="btn btn-success text-white" style="cursor:pointer">
-        Edit
-    </a>
-    <a href="/Account/deleteListUsers/${data}" class="btn btn-danger text-white" style="cursor:pointer">
-        Delete
-    </a>
- <a href="/Account/storeDetails/${data}" class="btn btn-info text-white" style="cursor:pointer">
-        Details
-    </a>
+
+ 
 </div>`
                 }, "width": "30%"
 
@@ -59,9 +53,31 @@ function loadtable() {
         ]
     });
 }
+ 
 
 
+function Lockunlock(id) {
 
+    $.ajax({
+        type: "POST",
+        url: '/Account/Lockunlock',
+        data: JSON.stringify(id),
+        contentType: "application/json",
+
+        success: function (data) {
+            if (data.success) {
+                toastr.success(data.message);
+                //dataTable.ajax.reload();
+                $('#tblData').DataTable().ajax.reload();
+            }
+            else {
+                toastr.error(data.message);
+            }
+        }
+    });
+
+
+}
 //function Delete(url) {
 //    swal({
 //        title: "Are you sure you want to delete?",
@@ -91,3 +107,14 @@ function loadtable() {
 //    });
 
 //}
+
+
+ //   <a href="/Account/EditListUsers/${data}" class="btn btn-success text-white" style="cursor:pointer">
+ //       Edit
+ //   </a>
+ //   <a href="/Account/deleteListUsers/${data}" class="btn btn-danger text-white" style="cursor:pointer">
+ //       Delete
+ //   </a>
+ //<a href="/Account/storeDetails/${data}" class="btn btn-info text-white" style="cursor:pointer">
+ //       Details
+ //   </a>

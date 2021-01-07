@@ -3,7 +3,8 @@
 
 var datatable;
 $(document).ready(function () {   
-        loadtable();    
+    loadtable();    
+    //$('#input-3').rating({ displayOnly: true, step: 0.5 });
 });
 
 function loadtable() {
@@ -29,36 +30,20 @@ function loadtable() {
  //               "data": "id",
  //               "render": function (data, type, row, meta) {
  //                   return `
+ 
  //<div class="rating-stars d-flex mr-5">
- //                                           <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="2">
- //                                           <div class="rating-stars-container mr-2">
- //                                               <div class="rating-star sm">
- //                                                   <i class="fa fa-star"></i>
- //                                               </div>
- //                                               <div class="rating-star sm">
- //                                                   <i class="fa fa-star"></i>
- //                                               </div>
- //                                               <div class="rating-star sm">
- //                                                   <i class="fa fa-star"></i>
- //                                               </div>
- //                                               <div class="rating-star sm">
- //                                                   <i class="fa fa-star"></i>
- //                                               </div>
- //                                               <div class="rating-star sm">
- //                                                   <i class="fa fa-star"></i>
- //                                               </div>
- //                                           </div> 
+ //                                       <input id="input-3" name="input-3" value="4" class="rating-loading">      
  //                                       </div>`
  //               }, "width": "40%"
 
  //           }
            
-
+           
         ]
     });
 }
  
-
+ 
 
 //function Delete(url) {
 //    swal({
@@ -89,3 +74,6 @@ function loadtable() {
 //    });
 
 //}
+$(function () {
+    $('span.stars').stars();
+});

@@ -180,7 +180,7 @@ namespace appFoodDelivery.Controllers
 
                 //storedetailsListViewmodel
                 var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAll1", paramter);
-                orderheaderList1 = orderheaderList1.Where(x => x.placedate.ToString() == DateTime.Today.ToString("dd/MM/yyyy").Replace("-", "/"));
+               // orderheaderList1 = orderheaderList1.Where(x => x.placedate.ToString() == DateTime.Today.ToString("dd/MM/yyyy").Replace("-", "/"));
                 //return Json(new { data = orderheaderList });
                 return Json(new { data = orderheaderList1 });
             }
@@ -193,7 +193,7 @@ namespace appFoodDelivery.Controllers
 
                 //storedetailsListViewmodel
                 var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAll1", paramter);
-                orderheaderList1 = orderheaderList1.Where(x => x.placedate.ToString() == DateTime.Today.ToString("dd/MM/yyyy").Replace("-", "/"));
+             //   orderheaderList1 = orderheaderList1.Where(x => x.placedate.ToString() == DateTime.Today.ToString("dd/MM/yyyy").Replace("-", "/"));
                 return Json(new { data = orderheaderList1 });
             }
             //-------------------------------------------

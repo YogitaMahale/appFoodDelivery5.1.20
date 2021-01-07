@@ -87,8 +87,8 @@ namespace appFoodDelivery.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-             
-          
+
+
 
             if (ModelState.IsValid)
             {
@@ -140,7 +140,7 @@ namespace appFoodDelivery.Controllers
                     await signinmanager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }
-               
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
@@ -251,7 +251,7 @@ namespace appFoodDelivery.Controllers
         [HttpGet]
         public IActionResult GetStoreListDetails()
         {
-          
+
             var storeDetails = _sP_Call.List<storedetailsList>("selectallstoreDetails", null);
             return Json(new { data = storeDetails });
         }
@@ -276,9 +276,9 @@ namespace appFoodDelivery.Controllers
         public IActionResult GetUserDetails()
         {
             var obj = new DynamicParameters();
-            if (TempData["roletype"] !=null)
+            if (TempData["roletype"] != null)
             {
-                if (TempData["roletype"].ToString()== "Employee")
+                if (TempData["roletype"].ToString() == "Employee")
                 {
                     obj.Add("@role", "Employee");
                 }
@@ -291,8 +291,8 @@ namespace appFoodDelivery.Controllers
                     obj.Add("@role", "");
                 }
             }
-            
-            
+
+
             var storeDetails = _sP_Call.List<GetUserDetailsViewModel>("getUserList", obj);
             return Json(new { data = storeDetails });
         }
@@ -304,7 +304,7 @@ namespace appFoodDelivery.Controllers
         [Authorize(Roles = SD.Role_Admin)]
         public async Task<IActionResult> EditListUsers(string id)
         {
-           
+
 
             var users = await usermanager.FindByIdAsync(id);
             if (users == null)
@@ -788,7 +788,25 @@ namespace appFoodDelivery.Controllers
 
         }
 
-
+        [HttpPost]
+        public IActionResult Lockunlock([FromBody] string id)
+        {
+            //var objfromdb = _db.applicationUsers.FirstOrDefault(u => u.Id == id);
+            //if (objfromdb == null)
+            //{
+            //    return Json(new { success = false, message = "error while locking / unlocking" });
+            //}
+            //if (objfromdb.LockoutEnd != null && objfromdb.LockoutEnd > DateTime.Now)
+            //{
+            //    objfromdb.LockoutEnd = DateTime.Now;
+            //}
+            //else
+            //{
+            //    objfromdb.LockoutEnd = DateTime.Now.AddYears(1000);
+            //}
+            //_db.SaveChanges();
+            return Json(new { success = true, message = "Operation successful" });
+        }
 
     }
 }

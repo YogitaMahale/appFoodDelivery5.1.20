@@ -355,9 +355,9 @@ namespace appFoodDelivery.Notification
 
                     //tRequest.Headers.Add(string.Format("Sender: id={0}", "844325225983"));
 
-                    tRequest.Headers.Add(string.Format("Authorization: key={0}", "AAAA4lmKnwA:APA91bHnS9ND3VSqid8vKdUTQukqJrBJytbmQKZJADNrEbxs9ZDNxoI_Cq0rhuvqkw9954fvUSuC9McpOfTAc7K3OgTvovghBkazWnIgQ0qn0TPjz1nTCZAgbrbNCYWLRei-5vzlBlYj"));
+                    tRequest.Headers.Add(string.Format("Authorization: key={0}", "AAAAy59LHmI:APA91bHSycDTW4wkecEo0VYKz9La63n_df88zorphF797kU0SKUJ7eN2pgoXj8l36yjNadVfqdQP_lDwHt7N0f8Z46hXKu4-GT5VQwfL77Axc4R9DBSUfYo1nAN7hVvRBbwHndfEBtHr"));
 
-                    tRequest.Headers.Add(string.Format("Sender: id={0}", "972164865792"));
+                    tRequest.Headers.Add(string.Format("Sender: id={0}", "874550861410"));
                     tRequest.ContentType = "application/json";
                     var payload = new
                     {

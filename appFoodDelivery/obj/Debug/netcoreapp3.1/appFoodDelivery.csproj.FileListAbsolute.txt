@@ -3934,3 +3934,4 @@ E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\staticw
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.dll
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.pdb
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.genruntimeconfig.cache
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Account\StoreListDetails1.cshtml.g.cs

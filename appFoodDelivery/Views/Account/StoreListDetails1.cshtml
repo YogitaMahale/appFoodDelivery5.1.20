@@ -1,7 +1,7 @@
 ﻿
 
 @{
-    ViewData["Title"] = "Customer To Delivery Feedback";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,7 +9,17 @@
 <br />
 <div class="row">
     <div class="col-6">
-        <h2 class="text-primary">@ViewData["Title"] </h2>
+        <h2 class="text-primary">Store List </h2>
+        @*<i class="fas fa-lock"></i>
+            <i class="fas fa-plus"></i>*@
+    </div>
+    @*<i class="fas fa-toggle-on" aria-hidden="true"></i>
+        <i class="fas fa-power-off" aria-hidden="true"></i>*@
+
+    <div class="col-6 text-right">
+
+
+        <a class="btn btn-primary" asp-action="Register"><i class="fas fa-plus"></i> &nbsp; New Registration</a>
     </div>
 </div>
 
@@ -19,15 +29,14 @@
             <tr class="table-info">
 
                 @*<th style="display:none;">id</th>*@
-                <th>Customer</th>
-                <th>Deliveryboy</th>
-                <th>Comment</th>
-                <th>Rating</th> 
-                 
-
-                @*<th>Tax Type</th>
-                    <th>Tax( % )</th>
-                    <th class="text-warning">Actions</th>*@
+                <th>Store Banner</th>
+                <th>Owner Name</th>
+                <th>Store Name</th>
+                <th>Status</th>
+                <th>Tax Type</th>
+                <th>Tax( % )</th>
+                @*<th>Status</th>*@
+                <th class="text-warning">Actions</th>
             </tr>
         </thead>
     </table>
@@ -39,9 +48,9 @@
 
 
 @section Scripts{
-
-    <script src="~/js/customerTodeliveryboyFeedbackJS.js"></script>
     @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
+    <script src="~/js/StoreListDetails.js"></script>
+
     @*<script type="text/javascript">
         $(function() {
             $("#cusineid").change(function () {
@@ -59,3 +68,4 @@
         </script>*@
 
 }
+
