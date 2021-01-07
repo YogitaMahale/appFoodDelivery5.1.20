@@ -34,7 +34,35 @@ function loadtable() {
             { "data": "storestatus", "width": "10%" },
             { "data": "taxstatus", "width": "10%" },
             { "data": "taxstatusPer", "width": "10%" },
-            //{ "data": "img", "width": "20% " },         
+            {
+                "data": "storestatus",  
+                "render": function(data, type, row, meta) {
+                   
+                    if (data == "unavailable") {
+                        return `<div class="text-center">                           
+
+                                 <a href="/Account/Lockunlock/${row.id}"   style="cursor:pointer">
+                                          <i class="fas fa-power-off fa-2x text-danger" aria-hidden="true"></i>
+                                  </a>
+                           </div>`;
+                    }
+                    else if (data == "available"){
+                        return `<div class="text-center">                           
+
+                                  <a href="/Account/Lockunlock/${row.id}"  style="cursor:pointer">
+                                          <i class="fa fa-toggle-on fa-2x text-success" aria-hidden="true"></i>
+                                  </a>
+                            </div>`;
+                    }
+                    else if (data == "NA") {
+                        return `<div class="text-center">                           
+                                    NA
+                                   
+                            </div>`;
+                    }
+                }, "width": "10% "
+                                
+            },         
 
 
             {
@@ -55,6 +83,8 @@ function loadtable() {
                 }, "width": "30%"
 
             }
+
+
 
         ]
     });

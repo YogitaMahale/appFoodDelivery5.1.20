@@ -22,36 +22,31 @@ function loadtable() {
 
             { "data": "customername", "width": "20" },
             { "data": "storename", "width": "20%" },
-            { "data": "comment", "width": "50%" },
-            { "data": "rating", "width": "10%" }
+            { "data": "comment", "width": "35%" },
+            //{ "data": "rating", "width": "10%" },
              
- //             {
- //               "data": "id",
- //               "render": function (data, type, row, meta) {
- //                   return `
- //<div class="rating-stars d-flex mr-5">
- //                                           <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="2">
- //                                           <div class="rating-stars-container mr-2">
- //                                               <div class="rating-star sm">
- //                                                   <i class="fa fa-star"></i>
- //                                               </div>
- //                                               <div class="rating-star sm">
- //                                                   <i class="fa fa-star"></i>
- //                                               </div>
- //                                               <div class="rating-star sm">
- //                                                   <i class="fa fa-star"></i>
- //                                               </div>
- //                                               <div class="rating-star sm">
- //                                                   <i class="fa fa-star"></i>
- //                                               </div>
- //                                               <div class="rating-star sm">
- //                                                   <i class="fa fa-star"></i>
- //                                               </div>
- //                                           </div> 
- //                                       </div>`
- //               }, "width": "40%"
+            {
+                "data": "rating",
 
- //           }
+                "render": function (data, type, row, meta) {
+                    //alert(data);
+                    var i;
+                    var str = "<div>";
+                    for (i = 0; i < 5; i++) {
+                        if (i < data) {
+                            str += "<span class='fas fa-star checked text-info'></span>"
+                        }
+                        else {
+                            str += "<span class='fas fa-star'></span>"
+                        }
+                    }
+                    str += "</div>";
+                    return `${str}`
+
+                }, "width": "15%"
+
+            }
+
            
 
         ]

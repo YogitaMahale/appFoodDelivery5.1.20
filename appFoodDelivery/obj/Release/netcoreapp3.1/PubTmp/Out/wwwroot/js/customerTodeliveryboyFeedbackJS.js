@@ -23,20 +23,30 @@ function loadtable() {
 
             { "data": "customername", "width": "20" },
             { "data": "deliveryboyname", "width": "20%" },
-            { "data": "comment", "width": "10%" },
-            { "data": "rating", "width": "10%" }
+            { "data": "comment", "width": "45%" },
+            //{ "data": "rating", "width": "10%" },
              
- //             {
- //               "data": "id",
- //               "render": function (data, type, row, meta) {
- //                   return `
- 
- //<div class="rating-stars d-flex mr-5">
- //                                       <input id="input-3" name="input-3" value="4" class="rating-loading">      
- //                                       </div>`
- //               }, "width": "40%"
+              {
+                  "data": "rating",
+                
+                  "render": function (data, type, row, meta) {
+                      //alert(data);
+                      var i;
+                      var str = "<div>";
+                      for (i = 0; i < 5; i++) {
+                          if (i < data) {
+                              str += "<span class='fas fa-star checked text-info'></span>"
+                          }
+                          else {
+                              str += "<span class='fas fa-star'></span>"
+                          }
+                      }
+                      str += "</div>";
+                      return `${str}`
 
- //           }
+                }, "width": "15%"
+
+            }
            
            
         ]
@@ -74,6 +84,6 @@ function loadtable() {
 //    });
 
 //}
-$(function () {
-    $('span.stars').stars();
-});
+//$(function () {
+//    $('span.stars').stars();
+//});
