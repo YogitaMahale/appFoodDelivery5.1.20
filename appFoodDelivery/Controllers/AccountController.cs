@@ -788,26 +788,36 @@ namespace appFoodDelivery.Controllers
 
         }
 
-        [HttpPost]
-        public IActionResult Lockunlock([FromBody] string id)
+       
+        [HttpGet]
+        [Authorize(Roles = SD.Role_Admin)]
+        public async Task<IActionResult> Lockunlock(string id)
         {
-            //var objfromdb = _db.applicationUsers.FirstOrDefault(u => u.Id == id);
-            //if (objfromdb == null)
-            //{
-            //    return Json(new { success = false, message = "error while locking / unlocking" });
-            //}
-            //if (objfromdb.LockoutEnd != null && objfromdb.LockoutEnd > DateTime.Now)
-            //{
-            //    objfromdb.LockoutEnd = DateTime.Now;
-            //}
-            //else
-            //{
-            //    objfromdb.LockoutEnd = DateTime.Now.AddYears(1000);
-            //}
-            //_db.SaveChanges();
-            return Json(new { success = true, message = "Operation successful" });
-        }
 
+
+            var users =   _storedetailsServices.GetAll().Where(x => x.storeid == id).FirstOrDefault() ;
+           
+            if (users == null)
+            {
+                ViewBag.ErrorMessgae = "User with id =" + id + "cannot be found";
+                return View("NotFound");
+            }
+            else
+            {
+                if (users.status == "unavailable")
+                {
+                    users.status = "available";
+                }
+                else if (users.status == "available")
+                {
+                    users.status = "unavailable";
+                }
+                await _storedetailsServices.UpdateAsync(users);
+                ViewBag.ErrorMessgae = "Status Update Successfully";
+
+            }
+            return RedirectToAction("StoreListDetails");
+        }
     }
 }
 

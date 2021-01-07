@@ -94,3 +94,12 @@ E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoo
 E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
 E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
 E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.csprojAssemblyReference.cache
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb

@@ -163,3 +163,18 @@ E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoo
 E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Persistence\obj\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
 E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Persistence\obj\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
 E:\yogita 6.8.19\asp.net core\Final backup 4.9.20\pic usercode  25.9.2020\appFoodDelivery\21.10.20\13.11.20\appFoodDelivery\appFoodDelivery.Persistence\obj\Release\netcoreapp2.1\appFoodDelivery.Persistence.genruntimeconfig.cache
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.deps.json
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.runtimeconfig.json
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.runtimeconfig.dev.json
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\bin\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\obj\Release\netcoreapp2.1\appFoodDelivery.Persistence.csprojAssemblyReference.cache
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\obj\Release\netcoreapp2.1\appFoodDelivery.Persistence.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\obj\Release\netcoreapp2.1\appFoodDelivery.Persistence.AssemblyInfoInputs.cache
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\obj\Release\netcoreapp2.1\appFoodDelivery.Persistence.AssemblyInfo.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\obj\Release\netcoreapp2.1\appFoodDelivery.Persistence.csproj.CopyComplete
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\obj\Release\netcoreapp2.1\appFoodDelivery.Persistence.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\obj\Release\netcoreapp2.1\appFoodDelivery.Persistence.pdb
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Persistence\obj\Release\netcoreapp2.1\appFoodDelivery.Persistence.genruntimeconfig.cache

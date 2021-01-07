@@ -1,9 +1,8 @@
 ﻿
 
-
 var datatable;
-$(document).ready(function () {   
-        loadtable();    
+$(document).ready(function () {
+    loadtable();
 });
 
 function loadtable() {
@@ -60,7 +59,7 @@ function loadtable() {
         ]
     });
 }
- 
+
 
 
 //function Delete(url) {
