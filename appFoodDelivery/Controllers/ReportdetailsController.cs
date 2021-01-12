@@ -22,12 +22,20 @@ using System.Net;
 using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+//using appFoodDelivery.PDF;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using Syncfusion.Drawing;
+using System.IO;
+
 
 namespace appFoodDelivery.Controllers
 {
     public class ReportdetailsController : Controller
     {
+      //  ExportToPDF objexportToPDF = new ExportToPDF();
         // GET: /<controller>/
         private readonly ISP_Call _ispcall;
         private readonly UserManager<ApplicationUser> _usermanager;
@@ -200,20 +208,43 @@ namespace appFoodDelivery.Controllers
             paramter.Add("@to", to1);
 
 
-
-            var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAllSearch", paramter);
-            //  return View(orderheaderList1.ToList());
+            //old
+          //  var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAllSearch", paramter);
+            var orderheaderList1 = _ISP_Call.List<orderselectallViewModelNew>("orderSelectAllSearch", paramter);
             int PageSize = 10;
-            return View(OrderPagination<orderselectallViewModel>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
+            return View(OrderPagination<orderselectallViewModelNew>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
 
 
 
 
         }
+        //protected void DownloadPDF(System.IO.MemoryStream PDFData)
+        //{
+        //    // Clear response content & headers
+        //    HttpContext.Current.Response.Clear();
+        //    HttpContext.Current.Response.ClearContent();
+        //    HttpContext.Current.Response.ClearHeaders();
+        //    HttpContext.Current.Response.ContentType = "application/pdf";
+        //    HttpContext.Current.Response.Charset = string.Empty;
+        //    HttpContext.Current.Response.Cache.SetCacheability(System.Web.HttpCacheability.Public);
+        //    HttpContext.Current.Response.AddHeader("Content-Disposition", string.Format("attachment;filename=Invoice-{0}.pdf", "OrderNo"));
+        //    HttpContext.Current.Response.OutputStream.Write(PDFData.GetBuffer(), 0, PDFData.GetBuffer().Length);
+
+        //    //  HttpContext.Current.Response.OutputStream.
+        //    HttpContext.Current.Response.OutputStream.Flush();
+        //    HttpContext.Current.Response.OutputStream.Close();
+        //    HttpContext.Current.Response.End();
+
+
+
+
+
+        //}
 
         [HttpPost]
-        public async Task<IActionResult> Index(int? PageNumber, string from1, string to1, string status, string search, string ExcelFileDownload)
+        public async Task<IActionResult> Index(int? PageNumber, string from1, string to1, string status, string search, string ExcelFileDownload,string ExcelPdf)
         {
+            
             IEnumerable<SelectListItem> obj1 = _driverRegistrationServices.GetAllstatus();
             ViewData["OrderStatus"] = obj1;
 
@@ -245,11 +276,12 @@ namespace appFoodDelivery.Controllers
                 paramter.Add("@from", l1);
                 paramter.Add("@to", l2);
 
-                var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAllSearch", paramter);
+                //var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAllSearch", paramter);
+                var orderheaderList1 = _ISP_Call.List<orderselectallViewModelNew>("orderSelectAllSearch", paramter);
                 //  return View(orderheaderList1.ToList());
                 int PageSize = 10;
 
-                return View(OrderPagination<orderselectallViewModel>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
+                return View(OrderPagination<orderselectallViewModelNew>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
 
             }
             else if (ExcelFileDownload != null)
@@ -271,22 +303,84 @@ namespace appFoodDelivery.Controllers
                 paramter.Add("@from", l1);
                 paramter.Add("@to", l2);
 
-                var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAllSearch", paramter);
+                //var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAllSearch", paramter);
 
-
+                var orderheaderList1 = _ISP_Call.List<orderselectallViewModelNew>("orderSelectAllSearch", paramter);
 
                 var builder = new StringBuilder();
-                builder.AppendLine("Order ID,Store Name,CustomerName,Amount,Date");
-                decimal amount = 0;
+                //builder.AppendLine("Order ID,Store Name,CustomerName,Amount,Date");
+                //decimal amount = 0;
+                //foreach (var item in orderheaderList1)
+                //{
+                //    amount += item.finalamt;
+                //    builder.AppendLine($"{item.id},{item.storename},{item.customerName},{item.finalamt},{item.placedate}");
+                //}
+                //builder.AppendLine($"{""},{""},{"Total :"},{amount },{""}");
+
+                decimal tot_Finalamt = 0;
+                decimal tot_hotelamt = 0;
+                decimal tot_packingcharges = 0;
+                decimal tot_subtotal1 = 0;
+                decimal tot_storecommission = 0;
+                decimal tot_tofozamt = 0;
+                decimal tot_netpayable = 0;
+                decimal tot_servicestax = 0;
+                decimal tot_TCStax = 0;
+
+
+                builder.AppendLine(" Order Id ,Date,Customer ,Store,Final Amount  ,Hotel Amount ,Packing Charges ,Subtotal ,Commission (%) ,TOFOZ Amount , Service tax, TCS, Netpayable, Tax, Promo Code, Status, Deliveryboy,Order Status");
                 foreach (var item in orderheaderList1)
                 {
-                    amount += item.amount;
-                    builder.AppendLine($"{item.id},{item.storeid},{item.customerName},{item.amount},{item.placedate}");
+
+                    tot_Finalamt += Convert.ToDecimal(item.finalamt);
+                    tot_hotelamt += Convert.ToDecimal(item.hotelamount);
+                    tot_packingcharges += item.packingcharges;
+                    tot_subtotal1 += item.subtotal1;
+                    tot_storecommission += item.storecommission;
+                    tot_tofozamt += item.tofozamt;
+                    tot_netpayable += item.netpayable;
+                    tot_servicestax += item.storetax;
+                    tot_TCStax += item.TCS;
+
+                    builder.AppendLine($"{item.id},{item.placedate },{item.customerName },{item.storename },{item.finalamt},{item.hotelamount  },{item.packingcharges },{item.subtotal1  },{item.storecommission},{item.tofozamt },{item.servicetax  },{item.TCS},{item.netpayable   },{item.storetax},{item.promocode},{item.storetaxStatus},{item.deliveryboyName   },{item.orderstatus}");
+
                 }
-                builder.AppendLine($"{""},{""},{"Total :"},{amount },{""}");
+                builder.AppendLine($"{""},{"" },{"" },{"Total :" },{tot_Finalamt.ToString()},{tot_hotelamt },{tot_packingcharges},{tot_subtotal1 },{tot_storecommission},{tot_tofozamt },{tot_servicestax   },{tot_TCStax },{tot_netpayable   },{""},{""   },{""},{""}");
+
+
+
                 return File(Encoding.UTF8.GetBytes(builder.ToString()), "text/csv", "Report.csv");
             }
+            else if (ExcelPdf != null)
+            {
+                //var paramter = new DynamicParameters();
+                //if (roles == "Admin")
+                //{
+                //    paramter.Add("@storeid", "");
+                //}
+                //else
+                //{
+                //    paramter.Add("@storeid", usr.Id);
+                //}
+                //DateTime l1 = DateTime.ParseExact(from1, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                //DateTime l2 = DateTime.ParseExact(to1, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
+                //paramter.Add("@status", status);
+                //paramter.Add("@from", l1);
+                //paramter.Add("@to", l2);
+                //var orderheaderList1 = _ISP_Call.List<HotelEarningViewModel>("orderSelectAllSearch", paramter);
+
+
+                //MemoryStream stream=objexportToPDF.GeneratePDF()
+                ////return File(report1.ReportContent, "application/pdf", "test.pdf");
+                //return File(stream.ToArray(), System.Net.Mime.MediaTypeNames.Application.Pdf, "Output.pdf");
+
+
+
+                //   DownloadPDF(GeneratePDF());
+                return View();
+            }
+            //ExcelPdf
 
             else
             {
@@ -1484,5 +1578,38 @@ namespace appFoodDelivery.Controllers
         }
 
 
+
+        [HttpGet]
+        public IActionResult CreateDocument()
+        {
+            PdfDocument document = new PdfDocument();
+
+            //Add a page to the document
+            PdfPage page = document.Pages.Add();
+
+            //Create PDF graphics for the page
+            PdfGraphics graphics = page.Graphics;
+
+            //Set the standard font
+            PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+
+            //Draw the text
+            graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+
+            //Saving the PDF to the MemoryStream
+            MemoryStream stream = new MemoryStream();
+
+            document.Save(stream);
+
+            //Set the position as '0'.
+            stream.Position = 0;
+
+            //Download the PDF document in the browser
+            FileStreamResult fileStreamResult = new FileStreamResult(stream, "application/pdf");
+
+            fileStreamResult.FileDownloadName = "Sample.pdf";
+
+            return fileStreamResult;
+        }
     }
 }

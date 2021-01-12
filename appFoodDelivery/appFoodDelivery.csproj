@@ -25,6 +25,7 @@
     <Compile Remove="Models\StoreOwnerEditViewModel.cs" />
     <Compile Remove="Models\StoreOwnerIndexViewModel.cs" />
     <Compile Remove="Notification\fcmNotification - Copy.cs" />
+    <Compile Remove="PDF\ExportToPDF.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,10 +51,12 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.5" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="Nancy" Version="2.0.0" />
+    <PackageReference Include="Syncfusion.Pdf.Net.Core" Version="18.4.0.33" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="PDF\" />
     <Folder Include="Views\StoreOwner\" />
     <Folder Include="wwwroot\uploads\driver\drivingLicence\" />
     <Folder Include="wwwroot\uploads\driver\profilephoto\" />
@@ -98,6 +101,12 @@
     <ProjectReference Include="..\appFoodDelivery.Entity\appFoodDelivery.Entity.csproj" />
     <ProjectReference Include="..\appFoodDelivery.Persistence\appFoodDelivery.Persistence.csproj" />
     <ProjectReference Include="..\appFoodDelivery.Services\appFoodDelivery.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>C:\Users\Admin\Desktop\itextsharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

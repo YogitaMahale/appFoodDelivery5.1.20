@@ -1,4 +1,5 @@
-﻿@model appFoodDelivery.pagination.OrderPagination<orderselectallViewModel>
+﻿@*@model appFoodDelivery.pagination.OrderPagination<orderselectallViewModel>*@
+@model appFoodDelivery.pagination.OrderPagination<orderselectallViewModelNew>
 @*@model IEnumerable<orderHistoryReportViewModel>*@
 @{
     ViewBag.Title = "Orders Details";
@@ -47,7 +48,7 @@
                                         <span class="glyphicon glyphicon-th"></span>
                                     </div>
                                 </div>*@
-                            <input type="text" id="datepicker2" autocomplete="off" class="datepicker" value="@ViewBag.to1"  name="to1">
+                            <input type="text" id="datepicker2" autocomplete="off" class="datepicker" value="@ViewBag.to1" name="to1">
                             @*<input type="date" value="@DateTime.Now" name="to" />*@
                         </div>
                         <div class="form-group col-md-1">
@@ -57,90 +58,178 @@
                             @Html.DropDownList("status", (IEnumerable<SelectListItem>)ViewData["OrderStatus"], new { @class = "form-control" })
                             @*<select name="status" class="form-control" va>
 
-            <option value="All" selected>-- All --</option>
-            <option value="Placed">Pending</option>
-            <option value="approved">Approved</option>
-            <option value="processorders">Process</option>
-            <option value="ongoingorders">On Going</option>
-            <option value="completedorders">Completed</option>
-            <option value="cancelledorders">Cancelled</option>
+                                    <option value="All" selected>-- All --</option>
+                                    <option value="Placed">Pending</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="processorders">Process</option>
+                                    <option value="ongoingorders">On Going</option>
+                                    <option value="completedorders">Completed</option>
+                                    <option value="cancelledorders">Cancelled</option>
 
-        </select>*@
+                                </select>*@
                         </div>
                         <div class="form-group col-md-3">
                             <input type="submit" name="search" value="Search" class="btn btn-primary" />
                             <input type="submit" name="ExcelFileDownload" value="Excel Download" class="btn btn-primary" />
+                            <input type="submit" style="display:none;" name="ExcelPdf" value="PDF Download" class="btn btn-primary" />
                         </div>
                     </div>
                 }
 
                 <div class="row">
-                    <div class="col-md-12 table-responsive-md">
+                    <div class="col-md-12 table-responsive-md" style="width:100px;overflow:auto;">
                         @*<a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> New Driver</a>*@
                         <b>  <h4>@ViewBag.message</h4> </b>
                         <table class="table table-bordered tblShow">
                             <thead>
                                 <tr>
-                                    @*id, customerid, amount, placedate, deliveryboyid, paymentstatus, orderstatus,
-                    isdeleted, discount, storeid, deliveryaddress, paymenttype, promocode, transactionid*@
+
+                                    @*<th>Order Id</th>
+        <th>Date</th>
+        <th>Store</th>
+        <th>Customer Name</th>
+        <th>Amount</th>
+        <th>Status</th>*@
 
                                     <th>Order Id</th>
                                     <th>Date</th>
+                                    <th>Customer</th>
                                     <th>Store</th>
-                                    <th>Customer Name</th>
-                                    <th>Amount</th>
-                                    <th>Status</th>
 
-                                    @*<th class="text-warning">Actions</th>*@
+
+                                    <th>Final Amount</th>
+                                    <th>Hotel Amount</th>
+                                    <th>Packing Charges</th>
+                                    <th>Subtotal</th>
+                                    <th>Commission (%)</th>
+                                    <th>TOFOZ Amount</th>
+                                    <th>Service tax</th>
+                                    <th>TCS</th>
+                                    @*<th>Service tax ( 18% on tofoz amount ) </th>
+        <th>TCS ( 1 % on hotel amount) </th>*@
+                                    <th>Netpayable</th>
+                                    <th>Deliveryboy Charges</th>
+                                    <th>Tax</th>
+                                    <th>Promo Code</th>
+                                    <th>Status</th>
+                                    <th>Deliveryboy</th>
                                 </tr>
                             </thead>
+                            @{
+                                decimal finalamt1 = 0;
+                                decimal hotelamount1 = 0;
+                                decimal packingcharges1 = 0;
+                                decimal subtotal11 = 0;
+                                decimal storecommission1 = 0;
+
+                                decimal tofozamt1 = 0;
+                                decimal servicetax1 = 0;
+                                decimal TCS1 = 0;
+                                decimal netpayable1 = 0;
+                                decimal deliveryboycharges1 = 0;
+                            }
+
                             <tbody>
                                 @foreach (var item in Model)
                                 {
 
-                                    <tr>
-                                        <td>
+                                <tr>
+                                    @*<td>
 
 
-                                            @item.id
+            @item.id
 
-                                        </td>
-                                        <td>@item.placedate</td>
-                                        <td>
+        </td>
+        <td>@item.placedate</td>
+        <td>
 
-                                            @item.storeid
+            @item.storeid
 
-                                        </td>
-                                        <td>
-                                            @item.customerName
-                                        </td>
-                                        <td>@item.amount  </td>
+        </td>
+        <td>
+            @item.customerName
+        </td>
+        <td>@item.amount  </td>
 
-                                        <td>@item.orderstatusPropername</td>
-                                        @*<td>
-                            <a class="text-success" asp-action="Edit" asp-route-id="@item.id">
-                                <i class="fas fa-edit"></i> Details
-                            </a>
+        <td>@item.orderstatusPropername</td>*@
+                                    <td> @item.id     </td>
+                                    <td>@item.placedate</td>
+                                    <td>@item.customerName</td>
 
-                        </td>*@
-                                    </tr>
+                                    <td> @item.storename  </td>
+
+                                    @{
+                                        finalamt1 += item.finalamt;
+                                        hotelamount1 += Convert.ToDecimal(item.hotelamount);
+                                        packingcharges1 += item.packingcharges;
+                                        subtotal11 += item.subtotal1;
+                                        storecommission1 += item.storecommission;
+
+                                        tofozamt1 += item.tofozamt;
+                                        servicetax1 += item.servicetax;
+                                        TCS1 += item.TCS;
+                                        netpayable1 += item.netpayable;
+                                        deliveryboycharges1 += item.deliveryboycharges;
+
+                                    }
+
+
+                                    <td>@item.finalamt</td>
+                                    <td>@item.hotelamount    </td>
+                                    <td>@item.packingcharges    </td>
+                                    <td>@item.subtotal1    </td>
+                                    <td>@item.storecommission    </td>
+                                    <td>@item.tofozamt    </td>
+                                    <td>@item.servicetax    </td>
+                                    <td>@item.TCS      </td>
+                                    <td>@item.netpayable    </td>
+                                    <td>@item.deliveryboycharges    </td>
+                                    <td>@item.storetaxStatus    </td>
+                                    <td>@item.promocode    </td>
+                                    <td>@item.orderstatus      </td>
+                                    <td>@item.deliveryboyName    </td>
+
+                                </tr>
                                 }
                             </tbody>
+                            <tfoot>
+                                <tr>
+
+
+                                    <th> </th>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th>Total  </th>
+                                    <th>@finalamt1</th>
+                                    <th>@hotelamount1</th>
+                                    <th>@packingcharges1</th>
+                                    <th>@subtotal11</th>
+                                    <th></th>
+                                    <th>@tofozamt1</th>
+                                    <th>@servicetax1</th>
+                                    <th>@TCS1</th>
+                                    <th>@netpayable1</th>
+                                    <th>@deliveryboycharges1 </th>
+                                    <th> </th>
+                                    <th>   </th>
+                                    <th> </th>
+                                    <th> </th>
+                                </tr>
+                            </tfoot>
                         </table>
 
 
                         <br />
                         @{
-                            var disablePrevious = !Model.IsPreviousAvailable ? "disabled" : "";
-                            var disableNext = !Model.IsNextAvailable ? "disabled" : "";
-                        }
+                                                var disablePrevious = !Model.IsPreviousAvailable ? "disabled" : "";
+                                                var disableNext = !Model.IsNextAvailable ? "disabled" : "";
+                                            }
 
                         <a asp-action="Index"
                            asp-route-pageNumber="@(Model.PageIndex - 1)"
                            asp-route-from1="@ViewBag.from1"
-                           asp-route-to1="@ViewBag.to1" 
+                           asp-route-to1="@ViewBag.to1"
                            asp-route-status="@ViewBag.status1"
-                           
                            class="btn btn-primary @disablePrevious">
                             Previous
                         </a>
@@ -148,7 +237,7 @@
                            asp-route-pageNumber="@(Model.PageIndex + 1)"
                            asp-route-from1="@ViewBag.from1"
                            asp-route-to1="@ViewBag.to1"
-                             asp-route-status="@ViewBag.status1"
+                           asp-route-status="@ViewBag.status1"
                            class="btn btn-primary @disableNext">
                             Next
                         </a>
@@ -162,22 +251,22 @@
 <script src="~/lib/jquery/dist/jquery.js"></script>
 
 @*<script>
-    //$('.abc').datepicker({
-    //    autoclose: true,
-    //    format: 'dd/mm/yyyy'
-    //});
-    $('#datepicker2').datepicker({
-        autoclose: true,
-        format: 'dd/mm/yyyy'
-    });
+        //$('.abc').datepicker({
+        //    autoclose: true,
+        //    format: 'dd/mm/yyyy'
+        //});
+        $('#datepicker2').datepicker({
+            autoclose: true,
+            format: 'dd/mm/yyyy'
+        });
 
 
-</script>*@
+    </script>*@
 
 @*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
 <script>
     $(function () {
         //$("#datepicker1").datepicker({

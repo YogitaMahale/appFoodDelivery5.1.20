@@ -8,8 +8,6 @@ namespace appFoodDelivery.Models
     public class orderselectallViewModel
     {
 
-        //       id, customerid, amount, placedate, deliveryboyid, paymentstatus, orderstatus, isdeleted, discount, 
-        //storeid, deliveryaddress, paymenttype, promocode, transactionid,customerName,mobileno,storename
         public int id { get; set; }
 
         public int customerid { get; set; }
@@ -62,27 +60,4 @@ namespace appFoodDelivery.Models
         public decimal deliverycharges { get; set; }
     }
 }
-//"id": 749,
-//      "customerid": 7,
-//      "logintype": "admin",
-//      "storeid": "93bb55c0-e6dd-4875-8928-ffa0cf51f40a",
-//      "customerName": "yogesh",
-//      "mobileno": "7276541222",
-//      "storename": "All In One",
-//      "amount": 62.50,
-//      "placedate": "19/09/2020",
-//      "deliveryboyid": 2,
-//      "orderstatus": "ongoingorders",
-//      "orderstatusPropername": "Shipped",
-//      "promocode": "Welcome",
-//      "discount": 10.00,
-//      "deliveryaddress": "37, Makhmalabad Rd, Ganesh Nagar, Janata Raja Colony, Nashik, Maharashtra 422003, India",
-//      "paymenttype": "Cash on Delivery",
-//      "paymentstatus": "Cash on Delivery",
-//      "transactionid": null,
-//      "storeaddress": null,
-//      "isdeleted": false,
-//      "isactive": false,
-//      "deliveryboyname": "raju",
-//      "time": "8:17:44",
-//      "instructions": null
+ 

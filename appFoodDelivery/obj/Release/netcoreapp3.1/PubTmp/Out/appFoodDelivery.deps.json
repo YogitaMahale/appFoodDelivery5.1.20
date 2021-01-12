@@ -38,6 +38,7 @@
           "appFoodDelivery.Entity": "1.0.0",
           "appFoodDelivery.Persistence": "1.0.0",
           "appFoodDelivery.Services": "1.0.0",
+          "itextsharp": "4.1.2.0",
           "Microsoft.AspNetCore.Antiforgery.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies.Reference": "3.1.0.0",
@@ -2698,6 +2699,17 @@
         },
         "compile": {
           "appFoodDelivery.Services.dll": {}
+        }
+      },
+      "itextsharp/4.1.2.0": {
+        "runtime": {
+          "itextsharp.dll": {
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.1.2.0"
+          }
+        },
+        "compile": {
+          "itextsharp.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery.Reference/3.1.0.0": {
@@ -5768,6 +5780,11 @@
     },
     "appFoodDelivery.Services/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "itextsharp/4.1.2.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
