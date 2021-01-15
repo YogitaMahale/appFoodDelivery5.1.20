@@ -54,8 +54,8 @@ namespace appFoodDelivery.Notification
                         data = new
                         {
 
-                            key1 = "value1",
-                            key2 = "value2"
+                            key1 = "AAAA4lmKnwA:APA91bHnS9ND3VSqid8vKdUTQukqJrBJytbmQKZJADNrEbxs9ZDNxoI_Cq0rhuvqkw9954fvUSuC9McpOfTAc7K3OgTvovghBkazWnIgQ0qn0TPjz1nTCZAgbrbNCYWLRei-5vzlBlYj",
+                            key2 = "972164865792"
                         }
 
                     };
@@ -136,8 +136,8 @@ namespace appFoodDelivery.Notification
                         },
                         data = new
                         {
-                            key1 = "value1",
-                            key2 = "value2"
+                            key1 = "AAAAc8e3Y_U:APA91bFazykIu69LFlv6Z8YCnMqTAfeib8573H-TWiBuykE6Xk68OVl12c_-NGuXtUXjLqoyfS0AQYN_48RYogbCdMtMVFcSTdEhT02K1oUHZYbaD7b1b3y63zcPzU_MaV_HfR6xHrKy",
+                            key2 = "497271923701"
                         }
 
                     };
@@ -213,8 +213,8 @@ namespace appFoodDelivery.Notification
                     },
                     data = new
                     {
-                        key1 = "value1",
-                        key2 = "value2"
+                        key1 = "AAAA-grvO4U:APA91bG1TeBl5uVNLOHGyjSYSJ_-PZiOFKeSUkjhx4do27iECafs1dVdAyhE6-QvMDON6xrz-YOa10tMgFdmy_w1amPXVHsXLWrAggDh8oU0c1F8CvdBW6aGc1wrqP8OlQ86ZzxzkTuS",
+                        key2 = "1073925274501"
                     }
 
                 };
@@ -289,9 +289,9 @@ namespace appFoodDelivery.Notification
                         data = new
                         {
                             body = message,
-                            title = title
-                            //key1 = "value1",
-                            //key2 = "value2"
+                            title = title,
+                            key1 = "AAAAc8e3Y_U:APA91bFazykIu69LFlv6Z8YCnMqTAfeib8573H-TWiBuykE6Xk68OVl12c_-NGuXtUXjLqoyfS0AQYN_48RYogbCdMtMVFcSTdEhT02K1oUHZYbaD7b1b3y63zcPzU_MaV_HfR6xHrKy",
+                            key2 = "497271923701"
                         }
 
                     };
@@ -373,8 +373,8 @@ namespace appFoodDelivery.Notification
                         data = new
                         {
 
-                            key1 = "value1",
-                            key2 = "value2"
+                            key1 = "AAAAy59LHmI:APA91bHSycDTW4wkecEo0VYKz9La63n_df88zorphF797kU0SKUJ7eN2pgoXj8l36yjNadVfqdQP_lDwHt7N0f8Z46hXKu4-GT5VQwfL77Axc4R9DBSUfYo1nAN7hVvRBbwHndfEBtHr",
+                            key2 = "874550861410"
                         }
 
                     };
@@ -446,8 +446,8 @@ namespace appFoodDelivery.Notification
                         data = new
                         {
 
-                            key1 = "value1",
-                            key2 = "value2"
+                            key1 = "AAAA4lmKnwA:APA91bHnS9ND3VSqid8vKdUTQukqJrBJytbmQKZJADNrEbxs9ZDNxoI_Cq0rhuvqkw9954fvUSuC9McpOfTAc7K3OgTvovghBkazWnIgQ0qn0TPjz1nTCZAgbrbNCYWLRei-5vzlBlYj",
+                            key2 = "972164865792"
                         }
 
                     };

@@ -38,7 +38,7 @@ namespace appFoodDelivery.Controllers
                 {
                     string message = model.description;
                     string title = model.title;
-                    var storeobj = _customerRegistrationservices.GetAll().Where(x => x.isdeleted == false && x.deviceid != null).Select(x=>x.deviceid).ToList();
+                    var storeobj = _customerRegistrationservices.GetAll().Where(x => x.isdeleted == false && x.deviceid != null&&x.mobileno1=="9021517586").Select(x=>x.deviceid).ToList();
                     //foreach (var item in storeobj)
                     //{
                     //    if (item.deviceid.Trim() == "" || item.deviceid == null)

@@ -3732,6 +3732,9 @@ E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\Nancy.d
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\Syncfusion.Compression.Portable.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\Syncfusion.Pdf.Portable.dll
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
@@ -3809,6 +3812,9 @@ E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\appFood
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\appFoodDelivery.Persistence.pdb
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\appFoodDelivery.Services.pdb
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.csprojAssemblyReference.cache
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.csproj.CoreCompileInputs.cache
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.MvcApplicationPartsAssemblyInfo.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.MvcApplicationPartsAssemblyInfo.cache
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.RazorAssemblyInfo.cache
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.RazorAssemblyInfo.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.AssemblyInfoInputs.cache
@@ -3891,6 +3897,7 @@ E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\V
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\RadiusMaster\Edit.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\RadiusMaster\Index.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Reportdetails\collectionReport.cshtml.g.cs
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Reportdetails\CreateDocument.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Reportdetails\DeliveryboyReport.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Reportdetails\deliveryboySalary.cshtml.g.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Reportdetails\deliveryboyWiseDetails.cshtml.g.cs
@@ -3932,10 +3939,3 @@ E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\staticw
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.dll
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.pdb
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.genruntimeconfig.cache
-E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.csproj.CoreCompileInputs.cache
-E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.MvcApplicationPartsAssemblyInfo.cs
-E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFoodDelivery.MvcApplicationPartsAssemblyInfo.cache
-E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\Syncfusion.Compression.Portable.dll
-E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
-E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\Syncfusion.Pdf.Portable.dll
-E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Reportdetails\CreateDocument.cshtml.g.cs

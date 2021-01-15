@@ -1498,6 +1498,7 @@ namespace appFoodDelivery.Controllers
 
 
             var orderheaderList1 = _ISP_Call.List<deliveryboyWiseDetailsspModel>("deliveryboyWiseDetailssp", paramter);
+           // orderheaderList1=orderheaderList1.Where(x => x.NetBanking != 0 && x.CashonDelivery != 0);
             //  return View(orderheaderList1.ToList());
             int PageSize = 10;
             return View(OrderPagination<deliveryboyWiseDetailsspModel>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
@@ -1533,6 +1534,7 @@ namespace appFoodDelivery.Controllers
                 paramter.Add("@to", l2);
 
                 var orderheaderList1 = _ISP_Call.List<deliveryboyWiseDetailsspModel>("deliveryboyWiseDetailssp", paramter);
+              //  orderheaderList1 = orderheaderList1.Where(x => x.NetBanking != 0 && x.CashonDelivery != 0);
                 //  return View(orderheaderList1.ToList());
                 int PageSize = 10;
 
@@ -1557,13 +1559,18 @@ namespace appFoodDelivery.Controllers
 
                 var builder = new StringBuilder();
                 builder.AppendLine("Deliveryboy Name,Amount");
-                decimal amount = 0;
+                decimal CashonDelivery = 0;
+                decimal NetBanking = 0;
+                decimal total = 0;
                 foreach (var item in orderheaderList1)
                 {
-                    amount += item.amt;
-                    builder.AppendLine($"{item.deliveryboyname},{item.amt }");
+                    CashonDelivery += item.CashonDelivery;
+                    NetBanking += item.NetBanking;
+                    decimal tot = item.NetBanking + item.CashonDelivery;
+                    total += tot;
+                    builder.AppendLine($"{item.deliveryboyname},{item.CashonDelivery },{item.NetBanking},{tot}");
                 }
-                builder.AppendLine($"{"Total :"},{amount }");
+                builder.AppendLine($"{"Total :"},{CashonDelivery },{NetBanking},{total}");
                 return File(Encoding.UTF8.GetBytes(builder.ToString()), "text/csv", "DEliveryboyAmount.csv");
             }
 

@@ -346,8 +346,8 @@ namespace appFoodDelivery.API
                                 },
                                 data = new
                                 {
-                                    key1 = "value1",
-                                    key2 = "value2"
+                                    key1 = "AAAA4lmKnwA:APA91bHnS9ND3VSqid8vKdUTQukqJrBJytbmQKZJADNrEbxs9ZDNxoI_Cq0rhuvqkw9954fvUSuC9McpOfTAc7K3OgTvovghBkazWnIgQ0qn0TPjz1nTCZAgbrbNCYWLRei-5vzlBlYj",
+                                    key2 = "972164865792"
                                 }
 
                             };
@@ -427,8 +427,8 @@ namespace appFoodDelivery.API
                                     },
                                     data = new
                                     {
-                                        key1 = "value1",
-                                        key2 = "value2"
+                                        key1 = "AAAA-grvO4U:APA91bG1TeBl5uVNLOHGyjSYSJ_-PZiOFKeSUkjhx4do27iECafs1dVdAyhE6-QvMDON6xrz-YOa10tMgFdmy_w1amPXVHsXLWrAggDh8oU0c1F8CvdBW6aGc1wrqP8OlQ86ZzxzkTuS",
+                                        key2 = "1073925274501"
                                     }
 
                                 };
@@ -647,8 +647,8 @@ namespace appFoodDelivery.API
                         },
                         data = new
                         {
-                            key1 = "value1",
-                            key2 = "value2"
+                            key1 = "AAAAxJW0hf8:APA91bG1ipIsec--9KYV5bv6kagmly4PfFHH-UCLsbsqVxuZsoBPvw-AuRy_DhBa0sT2raF5D0DJhbx8G59lKV2fg6WbUDMzvWsyqxlQLjz-Epk3p04lujWk1c-enH5o3CLq_ejPVqr4",
+                            key2 = "844325225983"
                         }
 
                     };

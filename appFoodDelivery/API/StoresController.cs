@@ -412,50 +412,59 @@ namespace appFoodDelivery.API
 
         [HttpPut]
         [Route("updateStoreDeviceId")]
-        public async Task<IActionResult> updateStoreDeviceId(string deviceId, string storeid)
+        public async Task<IActionResult> updateStoreDeviceId(string deviceId, string storeid,bool flg)
         {
-            try
+            if (flg)
             {
-                string myJson = "";
-                var users = await _usermanager.FindByIdAsync(storeid);
-                if (users == null)
+
+
+                try
                 {
-                    myJson = "{\"Message\": " + "\"Not Found\"" + "}";
-                    return NotFound(myJson);
-
-
-
-                }
-                else
-                {
-                    users.deviceid = deviceId;
-
-                    var res = await _usermanager.UpdateAsync(users);
-                    if (res.Succeeded)
+                    string myJson = "";
+                    var users = await _usermanager.FindByIdAsync(storeid);
+                    if (users == null)
                     {
-                        myJson = "{\"message\": " + "\"Device Id Updated Successfully\"" + "}";
+                        myJson = "{\"Message\": " + "\"Not Found\"" + "}";
+                        return NotFound(myJson);
 
-                        return Ok(myJson);
+
 
                     }
                     else
                     {
-                        myJson = "{\"Message\": " + "\"Bad Request\"" + "}";
+                        users.deviceid = deviceId;
 
-                        return BadRequest(myJson);
+                        var res = await _usermanager.UpdateAsync(users);
+                        if (res.Succeeded)
+                        {
+                            myJson = "{\"message\": " + "\"Device Id Updated Successfully\"" + "}";
 
+                            return Ok(myJson);
+
+                        }
+                        else
+                        {
+                            myJson = "{\"Message\": " + "\"Bad Request\"" + "}";
+
+                            return BadRequest(myJson);
+
+                        }
                     }
+                    myJson = "{\"Message\": " + "\"Bad Request\"" + "}";
+
+
+                    return BadRequest(myJson);
+
+
                 }
-                myJson = "{\"Message\": " + "\"Bad Request\"" + "}";
-
-
-                return BadRequest(myJson);
-
-
+                catch (Exception obj)
+                {
+                    return Ok(obj.Message);
+                }
             }
-            catch (Exception obj)
+            else
             {
-                return Ok(obj.Message);
+                return NotFound();
             }
         }
 
@@ -655,12 +664,12 @@ namespace appFoodDelivery.API
 
         [HttpGet]
         [Route("selectallTodayOrders")]
-        public async Task<IActionResult> selectallTodayOrders()
+        public async Task<IActionResult> selectallTodayOrders(bool flg=false)
         {
-            //var paramter = new DynamicParameters();
-            //paramter.Add("@storeid", storedid);
+            var paramter = new DynamicParameters();
+            paramter.Add("@flg", flg);
             //paramter.Add("@status", "approved");
-            var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("selectallOrderstoday", null);
+            var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("selectallOrderstoday", paramter);
             orderheaderList1 = orderheaderList1.Where(x => x.placedate.ToString() == DateTime.Today.ToString("dd/MM/yyyy").Replace("-", "/"));
             //var cusineList = _productcuisinemasterservices.GetAll().Where(cusineList => cusineid.Contains(cusineid.p)).ToList();
 

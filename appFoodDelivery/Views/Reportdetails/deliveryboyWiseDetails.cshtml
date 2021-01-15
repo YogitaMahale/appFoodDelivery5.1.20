@@ -61,17 +61,23 @@
                             <thead>
                                 <tr>
                                     @*id, customerid, amount, placedate, deliveryboyid, paymentstatus, orderstatus,
-                    isdeleted, discount, storeid, deliveryaddress, paymenttype, promocode, transactionid*@
+        isdeleted, discount, storeid, deliveryaddress, paymenttype, promocode, transactionid*@
 
                                     <th>Deliveryboy Name</th>
-                                    <th>Amount</th>
-                                    
-                                    
+                                    <th>Cash on Delivery</th>
+                                    <th>Net Banking</th>
+                                    <th>Total</th>
+
+
 
                                     @*<th class="text-warning">Actions</th>*@
                                 </tr>
                             </thead>
                             <tbody>
+                                @{
+                                    decimal tot = 0;
+                                    
+                                }
                                 @foreach (var item in Model)
                                 {
 
@@ -82,9 +88,17 @@
                                             @item.deliveryboyname
 
                                         </td>
-                                        <td>@item.amt</td>
-                                       
-                                    
+                                        <td>@item.CashonDelivery</td>
+                                        <td>@item.NetBanking</td>
+                                        <td>
+                                            @{
+                                                
+                                                tot = (item.CashonDelivery + item.NetBanking);
+                                            }
+                                            @tot
+                                        </td>
+
+
                                     </tr>
                                 }
                             </tbody>

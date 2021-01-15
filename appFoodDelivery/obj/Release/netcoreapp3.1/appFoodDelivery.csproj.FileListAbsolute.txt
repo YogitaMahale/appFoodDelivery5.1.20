@@ -5242,4 +5242,7 @@ E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\stati
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.dll
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.pdb
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.genruntimeconfig.cache
-E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\itextsharp.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\Syncfusion.Compression.Portable.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\Syncfusion.Licensing.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\Syncfusion.Pdf.Portable.dll
+E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Reportdetails\CreateDocument.cshtml.g.cs
