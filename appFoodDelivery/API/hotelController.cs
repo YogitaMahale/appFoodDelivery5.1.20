@@ -696,7 +696,35 @@ namespace appFoodDelivery.API
             }
             //return BadRequest();
         }
+        [HttpGet]
+        [Route("hotelselectallbyLocationPaging")]
+        public async Task<IActionResult> hotelselectallbyLocationPaging(decimal Latitude, decimal Longitude, string page)
+        {
+            //Int64 rowCount = 10;
+            //Int64 startIndex = 0;
+            //startIndex = (rowCount * Convert.ToInt64(page));
 
+            var paramter = new DynamicParameters();
+            paramter.Add("@Latitude", Latitude);
+            paramter.Add("@Longitude", Longitude);
+            //paramter.Add("@distance", 5);
+            paramter.Add("@pagingStart", Convert.ToInt64(page));
+            //paramter.Add("@NoofRecord", rowCount);
+           
+
+            //storedetailsListViewmodel
+            var storeList = _ISP_Call.List<storedetailsListViewmodelPaging>("getNearestStoredbyLocationNewPaging", paramter);
+            if (storeList != null)
+            {
+                return Ok(storeList);
+
+            }
+            else
+            {
+                return NotFound();
+            }
+            //return BadRequest();
+        }
     }
 
 }

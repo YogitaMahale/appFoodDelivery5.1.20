@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Remove="storeowner.cs" />
+    <Compile Remove="tbl_pagingNoofRows.cs" />
   </ItemGroup>
 
   <ItemGroup>

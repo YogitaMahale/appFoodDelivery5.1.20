@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using appFoodDelivery.Entity;
 namespace appFoodDelivery.Persistence
 {
+
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -14,7 +16,7 @@ namespace appFoodDelivery.Persistence
         {
         }
 
-       //public  DbSet<storeowner> storeowner { get; set; }
+        //public  DbSet<storeowner> storeowner { get; set; }
         public DbSet<radiusmaster> radiusmaster { get; set; }
         public DbSet<deliverytimemaster> deliverytimemaster { get; set; }
 
@@ -50,9 +52,9 @@ namespace appFoodDelivery.Persistence
         public DbSet<StoredPayamount> StoredPayamount { get; set; }
         public DbSet<DriverPayamount> DriverPayamount { get; set; }
 
-        
-        public DbSet<AssignDeliveryboyToManager> AssignDeliveryboyToManager { get; set; }
 
+        public DbSet<AssignDeliveryboyToManager> AssignDeliveryboyToManager { get; set; }
+        //public DbSet<tbl_pagingNoofRows> tbl_pagingNoofRows { get; set; }
         public DbSet<AdminCollection> AdminCollection { get; set; }
     }
 }

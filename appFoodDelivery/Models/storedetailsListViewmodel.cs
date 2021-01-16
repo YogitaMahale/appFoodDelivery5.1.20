@@ -33,4 +33,5 @@ namespace appFoodDelivery.Models
         public string status { get; set; }
 
     }
+  
 }
