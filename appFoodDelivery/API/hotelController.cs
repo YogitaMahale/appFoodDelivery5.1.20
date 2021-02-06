@@ -66,15 +66,32 @@ namespace appFoodDelivery.API
         {
 
 
-            var customer = _storedetailsServices.GetAll();
-            if (customer == null)
+            //var customer = _storedetailsServices.GetAll();
+            //if (customer == null)
+            //{
+            //    return NotFound();
+            //}
+            //else
+            //{
+            //    return Ok(customer);
+            //}
+
+            var paramter = new DynamicParameters();
+            //paramter.Add("@Latitude", Latitude);
+            //paramter.Add("@Longitude", Longitude);
+            //paramter.Add("@distance", 5);
+            //storedetailsListViewmodel
+            var storeList = _ISP_Call.List<hotelSelectSPViewModel>("hotelSelectSP", null);
+            if (storeList != null)
             {
-                return NotFound();
+                return Ok(storeList);
+
             }
             else
             {
-                return Ok(customer);
+                return NotFound();
             }
+
             //return BadRequest();
         }
         [HttpGet]
@@ -181,30 +198,33 @@ namespace appFoodDelivery.API
         [Route("getHotelCuisineId")]
         public async Task<IActionResult> getHotelCuisineId(int Cuisineid)
         {
-            //var CanadaCustomers = from c in db.Customers.Where(cust => cust.region == "Canada")
-            //                      select new { c.custId, c.name };
-
-            // SqlParameter category = new SqlParameter("@CategoryName", "Test");
-
-            //List<storedetails> obj = await _db.Database.ExecuteSqlCommandAsync("NewCategory @CategoryName", category);
-            //var parameter = 1;
-            //var query = db.Database.SqlQuery<TestProcedure>("TestProcedure @parameter1",
-            //               new SqlParameter("@parameter1", parameter)).ToList();
-            //return Json(query, JsonRequestBehavior.AllowGet);
-
-            //  var res = from a in _db.product where a.productcuisineid==2 select a;
-            var storeidd = _productservices.GetAll().Where(x => x.productcuisineid == Cuisineid).Select(x => x.storeid).Distinct().ToList();
-            var hotels = _storedetailsServices.GetAll().Where(hotels => storeidd.Contains(hotels.storeid)).ToList();
-
-            //var customer = _productservices.GetAll().Where(x => x.productcuisineid == Cuisineid && x.productcuisineid == Cuisineid && x.isdeleted == false).Distinct();
-            if (hotels == null)
+            var paramter = new DynamicParameters();
+            paramter.Add("@Cuisineid", Cuisineid);
+            //paramter.Add("@Longitude", Longitude);
+            //paramter.Add("@distance", 5);
+            //storedetailsListViewmodel
+            var storeList = _ISP_Call.List<hotelSelectSPViewModel>("getHotelCuisineId", paramter);
+            if (storeList != null)
             {
-                return NotFound();
+                return Ok(storeList);
+
             }
             else
             {
-                return Ok(hotels);
+                return NotFound();
             }
+
+            //var storeidd = _productservices.GetAll().Where(x => x.productcuisineid == Cuisineid).Select(x => x.storeid).Distinct().ToList();
+            //var hotels = _storedetailsServices.GetAll().Where(hotels => storeidd.Contains(hotels.storeid)).ToList();
+
+            //if (hotels == null)
+            //{
+            //    return NotFound();
+            //}
+            //else
+            //{
+            //    return Ok(hotels);
+            //}
 
             //return BadRequest();
         }
@@ -351,7 +371,7 @@ namespace appFoodDelivery.API
                                         notification = new
                                         {
                                             //body = "New Order No. - " + OrderId + " insert",
-                                            body = "New Order Received",
+                                            body = "Order Received",
                                             title = "New Order",
                                             badge = 1
                                         },
@@ -400,7 +420,7 @@ namespace appFoodDelivery.API
                             var users1 = await _usermanager.FindByIdAsync("6852cc0f-f62e-42a4-8dc7-5fd0478ba197");
                             string deviceid1 = users1.deviceid;
                             fcmNotification obj = new fcmNotification();
-                            obj.adminNotification(deviceid1, "New Order Insert", "", "New Order");
+                            obj.adminNotification(deviceid1, "Order Received", "", "New Order");
                         }
                     }
                     if (OrderId == 0)

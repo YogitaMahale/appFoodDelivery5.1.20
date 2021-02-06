@@ -415,14 +415,14 @@ namespace appFoodDelivery.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = SD.Role_Admin)]
+       // [Authorize(Roles = SD.Role_Admin)]
         public IActionResult forgetpassword()
         {
             var model = new storeForgetPasswordViewModel();
             return View(model);
         }
         [HttpPost]
-        [Authorize(Roles = SD.Role_Admin)]
+       // [Authorize(Roles = SD.Role_Admin)]
         public async Task<IActionResult> forgetpassword(storeForgetPasswordViewModel model)
         {
             if (ModelState.IsValid)
@@ -486,7 +486,7 @@ namespace appFoodDelivery.Controllers
             mail.From = new MailAddress("support@picindia.in", "Food Delivery");
             //mail.From = new MailAddress("info@all-stationery.com", "Stationery Registration");
 
-            mail.Subject = "Registration Done Successfully";
+            mail.Subject = "Forgot Password";
             mail.Body = oSB.ToString();
             //string Filepath = Server.MapPath("~\\PDF\\") + "Invoice" + count + ".pdf";
 
@@ -634,7 +634,7 @@ namespace appFoodDelivery.Controllers
         //}
 
         [HttpGet]
-        [Authorize(Roles = SD.Role_Admin)]
+        //[Authorize(Roles = SD.Role_Admin)]
         public IActionResult ResetPassword(string token, string email)
         {
             if (token == null || email == null)
@@ -645,7 +645,7 @@ namespace appFoodDelivery.Controllers
             return View();
         }
         [HttpPost]
-        [Authorize(Roles = SD.Role_Admin)]
+      //  [Authorize(Roles = SD.Role_Admin)]
         public async Task<IActionResult> ResetPassword(storeResetPasswordViewmodel model)
         {
             if (ModelState.IsValid)

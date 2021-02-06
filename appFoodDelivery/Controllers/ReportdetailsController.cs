@@ -1477,9 +1477,10 @@ namespace appFoodDelivery.Controllers
         public async Task<IActionResult>deliveryboyWiseDetails(int? PageNumber, string from1, string to1)
         {
 
-
             ViewBag.from1 = from1;
             ViewBag.to1 = to1;
+            //ViewBag.from1 = from1;
+            //ViewBag.to1 = to1;
 
             ApplicationUser usr = await GetCurrentUserAsync();
             var user = await _usermanager.FindByIdAsync(usr.Id);
@@ -1490,10 +1491,26 @@ namespace appFoodDelivery.Controllers
             string s1 = DateTime.Now.ToShortDateString().ToString();
 
             var paramter = new DynamicParameters();
+            DateTime l1 = new DateTime();
+            DateTime l2 = new DateTime();
 
+            if (!string.IsNullOrEmpty(from1)&& !string.IsNullOrEmpty(to1))
+            {
+                  l1 = DateTime.ParseExact(from1, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                  l2 = DateTime.ParseExact(to1, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-            paramter.Add("@from", from1);
-            paramter.Add("@to", to1);
+            }
+            else
+            {
+                l1 = DateTime.Now;
+                l2 = DateTime.Now;
+                ViewBag.from1 = DateTime.Now.ToString("dd/MM/yyyy").Replace("-","/"); 
+                ViewBag.to1 = DateTime.Now.ToString("dd/MM/yyyy").Replace("-", "/");
+            }
+           
+
+            paramter.Add("@from", l1);
+            paramter.Add("@to", l2);
 
 
 

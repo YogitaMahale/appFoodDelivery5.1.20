@@ -5385,11 +5385,12 @@
       ]
     },
     "System.Collections.Specialized/4.3.0": {
-      "sha512": "R59cA6Eps2pVuvYhsJFagxkmvKcEEFI3R06JbLF1xc+3uAlypbgXNl1ChxiYfB8nizaA0cQU2evMgc5jfdSiCw==",
+      "sha512": "Epx8PoVZR0iuOnJJDzp7pWvdfMMOAvpUo95pC4ScH2mJuXkKA2Y4aR3cG9qt2klHgSons1WFh4kcGW7cSXvrxg==",
       "type": "package",
       "path": "system.collections.specialized/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5570,11 +5571,12 @@
       ]
     },
     "System.ComponentModel.Primitives/4.3.0": {
-      "sha512": "u49fT84FDpFj8EMG8uDs1F1Oz9D+f7r3TCjyxF85u8HFpE2U5M56LkyLNBauLifIHqCQaw6jYvNAE6kpNoHlXQ==",
+      "sha512": "j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
       "type": "package",
       "path": "system.componentmodel.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7467,11 +7469,12 @@
       ]
     },
     "System.Runtime.Serialization.Formatters/4.3.0": {
-      "sha512": "gi911wH1hbCBLiIsayMMWSBXxh2m+dAoIFjmIiVTDM9UDQJcKM+1bNhrs18+t/OBkqCN5s6VDiobh9howUd5yw==",
+      "sha512": "KT591AkTNFOTbhZlaeMVvfax3RqhH1EJlcwF50Wm7sfnBLuHiOeZRRKrr1ns3NESkM20KPZ5Ol/ueMq5vg4QoQ==",
       "type": "package",
       "path": "system.runtime.serialization.formatters/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8802,23 +8805,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery\\appFoodDelivery.csproj",
+      "projectUniqueName": "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery\\appFoodDelivery.csproj",
       "projectName": "appFoodDelivery",
-      "projectPath": "E:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery\\appFoodDelivery.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery\\obj\\",
+      "projectPath": "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery\\appFoodDelivery.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8826,19 +8825,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://www.nuget.org/api/v2": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Entity\\appFoodDelivery.Entity.csproj": {
-              "projectPath": "E:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Entity\\appFoodDelivery.Entity.csproj"
+            "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Entity\\appFoodDelivery.Entity.csproj": {
+              "projectPath": "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Entity\\appFoodDelivery.Entity.csproj"
             },
-            "E:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Persistence\\appFoodDelivery.Persistence.csproj": {
-              "projectPath": "E:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Persistence\\appFoodDelivery.Persistence.csproj"
+            "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Persistence\\appFoodDelivery.Persistence.csproj": {
+              "projectPath": "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Persistence\\appFoodDelivery.Persistence.csproj"
             },
-            "E:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Services\\appFoodDelivery.Services.csproj": {
-              "projectPath": "E:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Services\\appFoodDelivery.Services.csproj"
+            "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Services\\appFoodDelivery.Services.csproj": {
+              "projectPath": "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Services\\appFoodDelivery.Services.csproj"
             }
           }
         }
@@ -8851,6 +8851,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Dapper": {
             "target": "Package",
@@ -8919,7 +8920,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   },

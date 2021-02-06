@@ -103,3 +103,12 @@ E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
 E:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.deps.json
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\bin\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.csprojAssemblyReference.cache
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfoInputs.cache
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.AssemblyInfo.cs
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.csproj.CoreCompileInputs.cache
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.dll
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Entity\obj\Release\netcoreapp2.1\appFoodDelivery.Entity.pdb

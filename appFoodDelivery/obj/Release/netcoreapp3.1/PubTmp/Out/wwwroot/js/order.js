@@ -66,6 +66,8 @@ function loadDataTable(url) {
         "columns": [
             { "data": "id", "width": "10%" },
 
+           
+            { "data": "cityName", "width": "10%" },
             { "data": "storename", "width": "10%" },
             { "data": "customerName", "width": "10%" },
             {
@@ -79,7 +81,7 @@ function loadDataTable(url) {
                 }
                 , "width": "10%"
             },
-            { "data": "placedate", "width": "20%" },
+            { "data": "placedate", "width": "10%" },
             { "data": "orderstatusPropername", "width": "10%" },
             { "data": "deliveryboyname", "width": "10%" },
             {
