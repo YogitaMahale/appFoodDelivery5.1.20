@@ -103,9 +103,7 @@ F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTm
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\driver\profilephoto\215943276th (1).jpg
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\driver\vehicleinsurancephoto\202836054download.jpg
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\driver\vehicleinsurancephoto\204322140th (3).jpg
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\licPhoto\204357315download (1).jpg
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\licPhoto\204422251download.jpg
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\licPhoto\204849557th (2).jpg
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\licPhoto\213729427download (2).jfif
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\product\201517877th (1).jpg
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\product\201639573th (1).jpg
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\product\202244935download (1).jpg
@@ -143,11 +141,11 @@ F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTm
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeBannerPhoto\202903937download (2).jpg
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeBannerPhoto\203601956th (1).jpg
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeBannerPhoto\204841901th (2).jpg
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeowner\200827153th (3).jpg
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeowner\201213846download (2).jpg
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeowner\201426248download.jpg
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeowner\202949089th (2).jpg
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeowner\205843935download (1).jpg
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeBannerPhoto\211400282download (2).jfif
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeBannerPhoto\213024537download.jfif
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeBannerPhoto\213150231download (2).jfif
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeBannerPhoto\214237321download (2).jfif
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\uploads\storeBannerPhoto\214242543download (1).jfif
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.AspNetCore.Antiforgery.dll

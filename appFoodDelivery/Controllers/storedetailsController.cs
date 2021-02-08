@@ -133,8 +133,9 @@ namespace appFoodDelivery.Controllers
                     await storedetailsServices.UpdateAsync(store);
                 }
 
-
-                return RedirectToAction("Index", "Home");
+                TempData["success"] = "Record Saved Successfully";
+                return RedirectToAction("ContactPersonDetails");
+                //return RedirectToAction("Index", "Home");
 
             }
             else
@@ -334,8 +335,8 @@ namespace appFoodDelivery.Controllers
                 }
                 model.latitude = store.latitude;
                 model.longitude = store.longitude;
-
-
+                model.storeBannerPhotoName = store.storeBannerPhoto;
+                
                 model.accountno = store.accountno;
                 model.bankname = store.bankname;
                 model.banklocation = store.banklocation;
@@ -356,6 +357,7 @@ namespace appFoodDelivery.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 ApplicationUser usr = await GetCurrentUserAsync();
                 var id = usr.Id;
                 //  var idd = storedetailsServices.GetAll().Where(x => x.storeid == id).FirstOrDefault().id;
@@ -409,6 +411,7 @@ namespace appFoodDelivery.Controllers
                         details.storeBannerPhoto = '/' + uploadDir + '/' + fileName;
 
                     }
+                    
                     await storedetailsServices.CreateAsync(details);
                 }
                 else
@@ -452,15 +455,20 @@ namespace appFoodDelivery.Controllers
                         store.storeBannerPhoto = '/' + uploadDir + '/' + fileName;
 
                     }
+                    
                     await storedetailsServices.UpdateAsync(store);
                 }
-
-
-                return RedirectToAction("Index", "Home");
+                TempData["success"] = "Record Saved Successfully";
+                return RedirectToAction("StoreDetails");
+                
+                //return RedirectToAction("Index", "Home");
 
             }
             else
             {
+                ViewBag.Countries = _CountryRegistrationservices.GetAll().ToList();
+                ViewBag.radiusList = _RadiusMasterServices.GetAll().ToList();
+                ViewBag.deliveryList = _DeliveryTimeMasterServices.GetAll().ToList();
                 return View(model);
             }
 
@@ -477,7 +485,14 @@ namespace appFoodDelivery.Controllers
             var id = usr.Id;
             var store = storedetailsServices.GetAll().Where(x => x.storeid == id).FirstOrDefault();
             var model = new storedetaildocumentationviewmodel();
-
+            if(store!=null)
+            {
+                if(!string.IsNullOrEmpty(store.licPhoto))
+                {
+                    model.licPhotoName = store.licPhoto;
+                }
+            }
+           
 
 
             return View(model);
@@ -526,25 +541,39 @@ namespace appFoodDelivery.Controllers
                     //             storename, radiusid, deliverytimeid, orderMinAmount, packagingCharges, storeBannerPhoto, 
                     //address, description, storetim
                     //store.id = idd;
+                    var webRootPath = _hostingEnvironment.WebRootPath;
 
-
-                    if (model.licPhoto != null && model.licPhoto.Length > 0)
+                    if (store.licPhoto != null && store.licPhoto.Length > 0)
                     {
-                        var uploadDir = @"uploads/licPhoto";
+                        if(!string.IsNullOrEmpty(store.licPhoto))
+                        {
+                           
+                            var filePath1 = _hostingEnvironment.WebRootPath + store.licPhoto.ToString().Replace("/", "\\");
+                            FileInfo file = new FileInfo(filePath1);
+                            if (file.Exists)
+                            {
+                                file.Delete();
+                            }
+                             
+                        }
+
+                    }
+
+                    var uploadDir = @"uploads/licPhoto";
                         var fileName = Path.GetFileNameWithoutExtension(model.licPhoto.FileName);
                         var extesion = Path.GetExtension(model.licPhoto.FileName);
-                        var webRootPath = _hostingEnvironment.WebRootPath;
+                        
                         fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                         var path = Path.Combine(webRootPath, uploadDir, fileName);
                         await model.licPhoto.CopyToAsync(new FileStream(path, FileMode.Create));
                         store.licPhoto = '/' + uploadDir + '/' + fileName;
 
-                    }
+                   
                     await storedetailsServices.UpdateAsync(store);
                 }
-
-
-                return RedirectToAction("Index", "Home");
+                TempData["success"] = "Record Saved Successfully";
+                return RedirectToAction("Documentation");
+                //return RedirectToAction("Index", "Home");
 
             }
             else
@@ -572,63 +601,77 @@ namespace appFoodDelivery.Controllers
                 name = users.name,
                 mobileno = users.mobileno,
                 gender = users.gender,
-                UserName = users.UserName
+                UserName = users.UserName,
+               profilephotoName=users.profilephoto
 
-            };
+    };
             return View(model);
         }
         [HttpPost]
         [Authorize(Roles = SD.Role_Store)]
         public async Task<IActionResult> EditStoreProfile(EditRegisterViewModel model1)
         {
-            ApplicationUser usr = await GetCurrentUserAsync();
-            var id = usr.Id;
-            var users = await usermanager.FindByIdAsync(id);
-            if (users == null)
+            if (ModelState.IsValid)
             {
-                ViewBag.ErrorMessgae = "User with id =" + model1.Id + "cannot be found";
-                return View("NotFound");
-            }
-            else
-            {
-                var chkduplicate = usermanager.Users.Where(x => x.UserName == model1.UserName && x.Id != id).FirstOrDefault();
-                if (chkduplicate == null)
+
+                ApplicationUser usr = await GetCurrentUserAsync();
+                var id = usr.Id;
+                var users = await usermanager.FindByIdAsync(id);
+                if (users == null)
                 {
-                    users.name = model1.name;
-                    users.gender = model1.gender;
-                    users.mobileno = model1.mobileno;
-                    users.Email = model1.Email;
-                    users.UserName = model1.UserName;
-                    if (model1.profilephoto != null && model1.profilephoto.Length > 0)
-                    {
-                        var uploadDir = @"uploads/storeowner";
-                        var fileName = Path.GetFileNameWithoutExtension(model1.profilephoto.FileName);
-                        var extesion = Path.GetExtension(model1.profilephoto.FileName);
-                        var webRootPath = _hostingEnvironment.WebRootPath;
-                        fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
-                        var path = Path.Combine(webRootPath, uploadDir, fileName);
-                        await model1.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
-                        users.profilephoto = '/' + uploadDir + '/' + fileName;
-
-                    }
-                    var res = await usermanager.UpdateAsync(users);
-                    if (res.Succeeded)
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
-                    foreach (var error in res.Errors)
-                    {
-                        ModelState.AddModelError("", error.Description);
-
-                    }
+                    ViewBag.ErrorMessgae = "User with id =" + model1.Id + "cannot be found";
+                    return View("NotFound");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Duplicate User Name");
+                    var chkduplicate = usermanager.Users.Where(x => x.UserName == model1.UserName && x.Id != id).FirstOrDefault();
+                    if (chkduplicate == null)
+                    {
+                        users.name = model1.name;
+                        users.gender = model1.gender;
+                        users.mobileno = model1.mobileno;
+                        users.Email = model1.Email;
+                        users.UserName = model1.UserName;
+                        if (model1.profilephoto != null && model1.profilephoto.Length > 0)
+                        {
+                            var uploadDir = @"uploads/storeowner";
+                            var fileName = Path.GetFileNameWithoutExtension(model1.profilephoto.FileName);
+                            var extesion = Path.GetExtension(model1.profilephoto.FileName);
+                            var webRootPath = _hostingEnvironment.WebRootPath;
+                            fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
+                            var path = Path.Combine(webRootPath, uploadDir, fileName);
+                            await model1.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                            users.profilephoto = '/' + uploadDir + '/' + fileName;
 
+                        }
+                        var res = await usermanager.UpdateAsync(users);
+                        if (res.Succeeded)
+                        {
+                            //  return RedirectToAction("Index", "Home");
+                            TempData["success"] = "Record Save Successfully";
+                            return RedirectToAction("EditStoreProfile");
+                        }
+                        foreach (var error in res.Errors)
+                        {
+                            
+                            ModelState.AddModelError("", error.Description);
+
+                        }
+                    }
+                    else
+                    {
+                        TempData["error"] = "Duplicate User Name";
+                        ModelState.AddModelError("", "Duplicate User Name");
+
+                    }
                 }
+                
+               return RedirectToAction("EditStoreProfile");
             }
-            return View(model1);
+            else
+            {
+                return View(model1);
+            }
         }
         [HttpGet]
         [Authorize(Roles = SD.Role_Store)]

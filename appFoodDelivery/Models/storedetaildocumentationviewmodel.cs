@@ -14,7 +14,7 @@ namespace appFoodDelivery.Models
         [Display(Name = "Licence Photo")]
         public IFormFile licPhoto { get; set; }
 
-
+        public string  licPhotoName { get; set; }
         public Boolean isdeleted { get; set; }
     }
 }

@@ -37,11 +37,14 @@
                         <label asp-for="radiusid" style="text-align:right;"></label>
                     </div>
                     <div class="form-group col-md-3">
+ 
+
                         <select name="radiusid" id="radiusid" asp-for="radiusid" class="form-control"
                                 asp-items="@(new SelectList(ViewBag.radiusList,"id","name"))">
+                            <option value=""></option>
+                            @*<option> Select </option>
 
-
-                            <option>--- Select  ---</option>
+        <option value="0"> Select </option>*@
                         </select>
                         <span asp-validation-for="radiusid" class="text-danger"></span>
                     </div>
@@ -55,9 +58,10 @@
 
                         <select name="deliverytimeid" id="deliverytimeid" asp-for="deliverytimeid" class="form-control"
                                 asp-items="@(new SelectList(ViewBag.deliveryList,"id","name"))">
+                            <option value=""></option>
+                            @*<option> Select </option>*@
 
-
-                            <option>--- Select  ---</option>
+                            @*<option value="0"> Select </option>*@
                         </select>
                         <span asp-validation-for="deliverytimeid" class="text-danger"></span>
 
@@ -105,16 +109,20 @@
                         <span asp-validation-for="description" class="text-danger"></span>
 
                     </div>
-
                     <div class="form-group col-md-2">
-                        <label asp-for="storetime"></label>
+                      
                     </div>
-                    <div class="form-group col-md-2"> From :
-                        <input  asp-for="FromTime" class="form-control timepicker" placeholder="" />
+                    @*<div class="form-group col-md-2">
+                        <label asp-for="storetime"></label>
+                    </div>*@
+                    <div class="form-group col-md-2">
+                        Store Time  From :
+                        <input asp-for="FromTime" class="form-control timepicker" placeholder="" />
 
                     </div>
-                    <div class="form-group col-md-2"> To :
-                        <input  asp-for="ToTime" class="form-control timepicker" placeholder="Enter Store  Time.." />
+                    <div class="form-group col-md-2">
+                        To :
+                        <input asp-for="ToTime" class="form-control timepicker" placeholder="Enter Store  Time.." />
 
 
 
@@ -148,14 +156,21 @@
                         <label asp-for="storeBannerPhoto"></label>
                     </div>
                     <div class="form-group col-md-3">
-                        <div class="btn btn-primary btn-icon-text">
+                        <div class="btn btn-primary btn-icon-text" style="width:170px;">
                             <i class="fas fa-cloud-upload-alt"></i>
                             <input asp-for="storeBannerPhoto" type="file" value="Upload" />
                             <span asp-validation-for="storeBannerPhoto" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group col-md-2">
-
+                        @if (Model.storeBannerPhotoName == null || Model.storeBannerPhotoName == "")
+                        {
+                            @*<img src="@Model.storeBannerPhotoName" alt="img">*@
+                        }
+                        else
+                        {
+                            <img src="@Model.storeBannerPhotoName" alt="img" style="height:70px;width:120px;">
+                        }
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="countryid"></label>
@@ -169,8 +184,8 @@
                         <select name="countryid" id="countryid" asp-for="countryid" class="form-control"
                                 asp-items="@(new SelectList(ViewBag.Countries,"id","countryname"))">
 
-
-                            <option>--- Select  ---</option>
+                            <option value=""></option>
+                            @*<option value="0"> Select </option>*@
                         </select>
                         <span asp-validation-for="countryid" class="text-danger"></span>
 
@@ -190,9 +205,9 @@
                         <select name="stateid" id="stateid" asp-for="stateid" class="form-control"
                                 asp-items="@ViewBag.States">
                             @*disabled="@(ViewBag.StateEnabled == false ? "disabled" : null)"*@
-                            <option>--- Select  ---</option>
+                            @*<option value="0"> Select </option>*@
                         </select>
-
+                        <option value=""></option>
 
                         <span asp-validation-for="stateid" class="text-danger"></span>
                     </div>
@@ -206,8 +221,8 @@
                         <select name="cityid" id="cityid" asp-for="cityid" class="form-control"
                                 asp-items="@ViewBag.Cities">
 
-
-                            <option>--- Select  ---</option>
+                            <option value=""></option>
+                            @*<option value="0"> Select </option>*@
                         </select>
 
 

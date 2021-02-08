@@ -10,21 +10,20 @@ namespace appFoodDelivery.Models
     public class StoreDetailsViewModel
     {
         public int id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Store name is required")]
         [Display(Name = "Store Name")]
         [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Use letters only please")]
         public string storename { get; set; }
-        [Required]
-
+        [Required(ErrorMessage = "- Select Radious -")]
         [Display(Name = "Delivery Radius")]
         public int radiusid { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Country is required")]
 
         [Display(Name = "Select Country")]
         public int countryid { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "State is required")]
         [Display(Name = "Select State")]
         public int stateid { get; set; }
 
@@ -32,14 +31,14 @@ namespace appFoodDelivery.Models
 
         public string longitude { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "City is required")]
         [Display(Name = "Select City")]
         public int cityid { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Delivery Time is required")]
         [Display(Name = "Estimated Delivery Time")]
         public int deliverytimeid { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Minimum Amount is required")]
         [Display(Name = "Order Minimum Amount")]
         public decimal orderMinAmount { get; set; }
 
@@ -48,6 +47,7 @@ namespace appFoodDelivery.Models
         public decimal packagingCharges { get; set; }
         [Display(Name = "Banner Photo")]
         public IFormFile storeBannerPhoto { get; set; }
+        public string  storeBannerPhotoName { get; set; }
         [Display(Name = "Address")]
         public string address { get; set; }
         [Display(Name = "Description")]
