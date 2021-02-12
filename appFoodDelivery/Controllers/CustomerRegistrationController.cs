@@ -37,9 +37,9 @@ namespace appFoodDelivery.Controllers
                 DOB = x.DOB,
                 createddate = x.createddate,
 
-            }).ToList();
+            }).OrderByDescending(x=>x.id).ToList();
             // return View(affilatemaster);
-            int PageSize = 10;
+            int PageSize = 30;
             return View(CustomerRegPagination<CustomerRegistrationIndexViewModel>.Create(customer, PageNumber ?? 1, PageSize));
         }
         [HttpGet]
@@ -112,7 +112,11 @@ namespace appFoodDelivery.Controllers
                         var webRootPath = _hostingEnvironment.WebRootPath;
                         fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                         var path = Path.Combine(webRootPath, uploadDir, fileName);
-                        await model.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        // await model.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        FileStream fs = new FileStream(path, FileMode.Create);
+                        await model.profilephoto.CopyToAsync(fs);
+                        fs.Close();
+
                         objcustomerRegistration.profilephoto = '/' + uploadDir + '/' + fileName;
 
                     }
@@ -198,9 +202,25 @@ namespace appFoodDelivery.Controllers
                     var fileName = Path.GetFileNameWithoutExtension(model.profilephoto.FileName);
                     var extesion = Path.GetExtension(model.profilephoto.FileName);
                     var webRootPath = _hostingEnvironment.WebRootPath;
+
+                    if (customerobj.profilephoto != null)
+                    {
+                        var imagePath = webRootPath + customerobj.profilephoto.ToString().Replace("/", "\\");
+                        if (System.IO.File.Exists(imagePath))
+                        {
+                            System.IO.File.Delete(imagePath);
+                        }
+
+                    }
+
+
                     fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                     var path = Path.Combine(webRootPath, uploadDir, fileName);
-                    await model.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                    //  await model.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                    FileStream fs = new FileStream(path, FileMode.Create);
+                    await model.profilephoto.CopyToAsync(fs);
+                    fs.Close();
+
                     customerobj.profilephoto = '/' + uploadDir + '/' + fileName;
 
                 }

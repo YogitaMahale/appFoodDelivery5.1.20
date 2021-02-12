@@ -84,7 +84,10 @@ namespace appFoodDelivery.Controllers
                     var webRootPath = _hostingEnvironment.WebRootPath;
                     fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                     var path = Path.Combine(webRootPath, uploadDir, fileName);
-                    await model.name.CopyToAsync(new FileStream(path, FileMode.Create));
+                    FileStream fs = new FileStream(path, FileMode.Create);
+
+                    await model.name.CopyToAsync(fs);
+                    fs.Close();
                     store.name = '/' + uploadDir + '/' + fileName;
 
                 }
@@ -139,9 +142,22 @@ namespace appFoodDelivery.Controllers
                     var fileName = Path.GetFileNameWithoutExtension(model.name.FileName);
                     var extesion = Path.GetExtension(model.name.FileName);
                     var webRootPath = _hostingEnvironment.WebRootPath;
+
+                    if (storeobj.name != null)
+                    {
+                        var imagePath = webRootPath + storeobj.name.ToString().Replace("/", "\\");
+                        if (System.IO.File.Exists(imagePath))
+                        {
+                            System.IO.File.Delete(imagePath);
+                        }
+
+                    }
                     fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                     var path = Path.Combine(webRootPath, uploadDir, fileName);
-                    await model.name.CopyToAsync(new FileStream(path, FileMode.Create));
+                    FileStream fs = new FileStream(path, FileMode.Create);
+
+                    await model.name.CopyToAsync(fs);
+                    fs.Close();
                     storeobj.name = '/' + uploadDir + '/' + fileName;
 
                 }

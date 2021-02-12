@@ -347,9 +347,23 @@ namespace appFoodDelivery.Controllers
                     var fileName = Path.GetFileNameWithoutExtension(model1.profilephoto.FileName);
                     var extesion = Path.GetExtension(model1.profilephoto.FileName);
                     var webRootPath = _hostingEnvironment.WebRootPath;
+                    if (users.profilephoto != null)
+                    {
+                        var imagePath = webRootPath + users.profilephoto.ToString().Replace("/", "\\");
+                        if (System.IO.File.Exists(imagePath))
+                        {
+                            System.IO.File.Delete(imagePath);
+                        }
+
+                    }
+
+
                     fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                     var path = Path.Combine(webRootPath, uploadDir, fileName);
-                    await model1.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                    FileStream fs = new FileStream(path, FileMode.Create);
+
+                    await model1.profilephoto.CopyToAsync(fs);
+                    fs.Close();
                     users.profilephoto = '/' + uploadDir + '/' + fileName;
 
                 }

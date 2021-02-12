@@ -85,7 +85,11 @@ namespace appFoodDelivery.Controllers
                     var webRootPath = _hostingEnvironment.WebRootPath;
                     fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                     var path = Path.Combine(webRootPath, uploadDir, fileName);
-                    await model.img.CopyToAsync(new FileStream(path, FileMode.Create));
+                    //await model.img.CopyToAsync(new FileStream(path, FileMode.Create));
+                    FileStream fs = new FileStream(path, FileMode.Create);
+
+                    await model.img.CopyToAsync(fs);
+                    fs.Close();
                     store.img = '/' + uploadDir + '/' + fileName;
 
                 }
@@ -132,13 +136,39 @@ namespace appFoodDelivery.Controllers
                 storeobj.name = model.name;
                 if (model.img != null && model.img.Length > 0)
                 {
+                    if (storeobj.img != null && storeobj.img.Length > 0)
+                    {
+                        if (!string.IsNullOrEmpty(storeobj.img))
+                        {
+                            try
+                            {
+                                var filePath1 = _hostingEnvironment.WebRootPath + storeobj.img.ToString().Replace("/", "\\");                               
+                              
+                                if (System.IO.File.Exists(filePath1))
+                                {
+                                    System.IO.File.Delete(filePath1);
+                                }
+
+                            }
+                            catch { }
+
+
+                        }
+
+                    }
+
                     var uploadDir = @"uploads/cuisine";
                     var fileName = Path.GetFileNameWithoutExtension(model.img.FileName);
                     var extesion = Path.GetExtension(model.img.FileName);
                     var webRootPath = _hostingEnvironment.WebRootPath;
                     fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                     var path = Path.Combine(webRootPath, uploadDir, fileName);
-                    await model.img.CopyToAsync(new FileStream(path, FileMode.Create));
+                    FileStream fs = new FileStream(path, FileMode.Create);
+
+                    await model.img.CopyToAsync(fs);
+                    fs.Close();
+
+                    //  await model.img.CopyToAsync(new FileStream(path, FileMode.Create));
                     storeobj.img = '/' + uploadDir + '/' + fileName;
 
                 }

@@ -127,7 +127,11 @@ namespace appFoodDelivery.Controllers
                     var webRootPath = _hostingEnvironment.WebRootPath;
                     fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                     var path = Path.Combine(webRootPath, uploadDir, fileName);
-                    await model.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                    // await model.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                    FileStream fs = new FileStream(path, FileMode.Create);
+
+                    await model.profilephoto.CopyToAsync(fs);
+                    fs.Close();
                     store.profilephoto = '/' + uploadDir + '/' + fileName;
 
                 }
@@ -139,7 +143,11 @@ namespace appFoodDelivery.Controllers
                     var webRootPath = _hostingEnvironment.WebRootPath;
                     fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                     var path = Path.Combine(webRootPath, uploadDir, fileName);
-                    await model.drivinglicphoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                    //await model.drivinglicphoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                    FileStream fs = new FileStream(path, FileMode.Create);
+
+                    await model.drivinglicphoto.CopyToAsync(fs);
+                    fs.Close();
                     store.drivinglicphoto = '/' + uploadDir + '/' + fileName;
 
                 }
@@ -151,7 +159,11 @@ namespace appFoodDelivery.Controllers
                     var webRootPath = _hostingEnvironment.WebRootPath;
                     fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                     var path = Path.Combine(webRootPath, uploadDir, fileName);
-                    await model.vehicleinsurancephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                    //  await model.vehicleinsurancephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                    FileStream fs = new FileStream(path, FileMode.Create);
+
+                    await model.vehicleinsurancephoto.CopyToAsync(fs);
+                    fs.Close();
                     store.vehicleinsurancephoto = '/' + uploadDir + '/' + fileName;
 
                 }
@@ -246,9 +258,23 @@ namespace appFoodDelivery.Controllers
                         var fileName = Path.GetFileNameWithoutExtension(model.profilephoto.FileName);
                         var extesion = Path.GetExtension(model.profilephoto.FileName);
                         var webRootPath = _hostingEnvironment.WebRootPath;
+                        if (storeobj.profilephoto != null)
+                        {
+                            var imagePath = webRootPath + storeobj.profilephoto.ToString().Replace("/", "\\");
+                            if (System.IO.File.Exists(imagePath))
+                            {
+                                System.IO.File.Delete(imagePath);
+                            }
+
+                        }
+
                         fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                         var path = Path.Combine(webRootPath, uploadDir, fileName);
-                        await model.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        // await model.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        FileStream fs = new FileStream(path, FileMode.Create);
+
+                        await model.profilephoto.CopyToAsync(fs);
+                        fs.Close();
                         storeobj.profilephoto = '/' + uploadDir + '/' + fileName;
 
                     }
@@ -258,9 +284,23 @@ namespace appFoodDelivery.Controllers
                         var fileName = Path.GetFileNameWithoutExtension(model.drivinglicphoto.FileName);
                         var extesion = Path.GetExtension(model.drivinglicphoto.FileName);
                         var webRootPath = _hostingEnvironment.WebRootPath;
+                        if (storeobj.drivinglicphoto != null)
+                        {
+                            var imagePath = webRootPath + storeobj.drivinglicphoto.ToString().Replace("/", "\\");
+                            if (System.IO.File.Exists(imagePath))
+                            {
+                                System.IO.File.Delete(imagePath);
+                            }
+
+                        }
+
                         fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                         var path = Path.Combine(webRootPath, uploadDir, fileName);
-                        await model.drivinglicphoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        // await model.drivinglicphoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        FileStream fs = new FileStream(path, FileMode.Create);
+
+                        await model.drivinglicphoto.CopyToAsync(fs);
+                        fs.Close();
                         storeobj.drivinglicphoto = '/' + uploadDir + '/' + fileName;
 
                     }
@@ -270,9 +310,22 @@ namespace appFoodDelivery.Controllers
                         var fileName = Path.GetFileNameWithoutExtension(model.vehicleinsurancephoto.FileName);
                         var extesion = Path.GetExtension(model.vehicleinsurancephoto.FileName);
                         var webRootPath = _hostingEnvironment.WebRootPath;
+                        if (storeobj.vehicleinsurancephoto != null)
+                        {
+                            var imagePath = webRootPath + storeobj.vehicleinsurancephoto.ToString().Replace("/", "\\");
+                            if (System.IO.File.Exists(imagePath))
+                            {
+                                System.IO.File.Delete(imagePath);
+                            }
+
+                        }
                         fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                         var path = Path.Combine(webRootPath, uploadDir, fileName);
-                        await model.vehicleinsurancephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        //   await model.vehicleinsurancephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        FileStream fs = new FileStream(path, FileMode.Create);
+
+                        await model.vehicleinsurancephoto.CopyToAsync(fs);
+                        fs.Close();
                         storeobj.vehicleinsurancephoto = '/' + uploadDir + '/' + fileName;
 
                     }

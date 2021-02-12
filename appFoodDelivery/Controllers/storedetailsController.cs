@@ -405,9 +405,23 @@ namespace appFoodDelivery.Controllers
                         var fileName = Path.GetFileNameWithoutExtension(model.storeBannerPhoto.FileName);
                         var extesion = Path.GetExtension(model.storeBannerPhoto.FileName);
                         var webRootPath = _hostingEnvironment.WebRootPath;
+                        if (store.storeBannerPhoto != null)
+                        {
+                            var imagePath = webRootPath + store.storeBannerPhoto.ToString().Replace("/", "\\");
+                            if (System.IO.File.Exists(imagePath))
+                            {
+                                System.IO.File.Delete(imagePath);
+                            }
+
+                        }
+
                         fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                         var path = Path.Combine(webRootPath, uploadDir, fileName);
-                        await model.storeBannerPhoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        //   await model.storeBannerPhoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        FileStream fs = new FileStream(path, FileMode.Create);
+                        await model.storeBannerPhoto.CopyToAsync(fs);
+                        fs.Close();
+
                         details.storeBannerPhoto = '/' + uploadDir + '/' + fileName;
 
                     }
@@ -445,13 +459,44 @@ namespace appFoodDelivery.Controllers
                     store.taxstatusPer = model.taxstatusPer;
                     if (model.storeBannerPhoto != null && model.storeBannerPhoto.Length > 0)
                     {
+                        if (!string.IsNullOrEmpty(store.storeBannerPhoto))
+                        {
+                            try
+                            {
+                                var filePath1 = _hostingEnvironment.WebRootPath + store.storeBannerPhoto.ToString().Replace("/", "\\");
+                                FileInfo file = new FileInfo(filePath1);
+                                if (file.Exists)
+                                {
+                                    file.Delete();
+                                }
+                            }
+                            catch { }
+
+
+                        }
+
                         var uploadDir = @"uploads/storeBannerPhoto";
                         var fileName = Path.GetFileNameWithoutExtension(model.storeBannerPhoto.FileName);
                         var extesion = Path.GetExtension(model.storeBannerPhoto.FileName);
                         var webRootPath = _hostingEnvironment.WebRootPath;
+
+                        if (store.storeBannerPhoto != null)
+                        {
+                            var imagePath = webRootPath + store.storeBannerPhoto.ToString().Replace("/", "\\");
+                            if (System.IO.File.Exists(imagePath))
+                            {
+                                System.IO.File.Delete(imagePath);
+                            }
+
+                        }
+
                         fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                         var path = Path.Combine(webRootPath, uploadDir, fileName);
-                        await model.storeBannerPhoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        // await model.storeBannerPhoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        FileStream fs = new FileStream(path, FileMode.Create);
+                        await model.storeBannerPhoto.CopyToAsync(fs);
+                        fs.Close();
+
                         store.storeBannerPhoto = '/' + uploadDir + '/' + fileName;
 
                     }
@@ -528,9 +573,22 @@ namespace appFoodDelivery.Controllers
                         var fileName = Path.GetFileNameWithoutExtension(model.licPhoto.FileName);
                         var extesion = Path.GetExtension(model.licPhoto.FileName);
                         var webRootPath = _hostingEnvironment.WebRootPath;
+                        if (details.licPhoto != null)
+                        {
+                            var imagePath = webRootPath + details.licPhoto.ToString().Replace("/", "\\");
+                            if (System.IO.File.Exists(imagePath))
+                            {
+                                System.IO.File.Delete(imagePath);
+                            }
+
+                        }
+
                         fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                         var path = Path.Combine(webRootPath, uploadDir, fileName);
-                        await model.licPhoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        //    await model.licPhoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                        FileStream fs = new FileStream(path, FileMode.Create);
+                        await model.licPhoto.CopyToAsync(fs);
+                        fs.Close();
                         details.licPhoto = '/' + uploadDir + '/' + fileName;
 
                     }
@@ -542,22 +600,18 @@ namespace appFoodDelivery.Controllers
                     //address, description, storetim
                     //store.id = idd;
                     var webRootPath = _hostingEnvironment.WebRootPath;
-
-                    if (store.licPhoto != null && store.licPhoto.Length > 0)
+                    if (store.licPhoto != null)
                     {
-                        if(!string.IsNullOrEmpty(store.licPhoto))
+                        var imagePath = webRootPath + store.licPhoto.ToString().Replace("/", "\\");
+                        if (System.IO.File.Exists(imagePath))
                         {
-                           
-                            var filePath1 = _hostingEnvironment.WebRootPath + store.licPhoto.ToString().Replace("/", "\\");
-                            FileInfo file = new FileInfo(filePath1);
-                            if (file.Exists)
-                            {
-                                file.Delete();
-                            }
-                             
+                            System.IO.File.Delete(imagePath);
                         }
 
                     }
+
+
+
 
                     var uploadDir = @"uploads/licPhoto";
                         var fileName = Path.GetFileNameWithoutExtension(model.licPhoto.FileName);
@@ -565,8 +619,11 @@ namespace appFoodDelivery.Controllers
                         
                         fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                         var path = Path.Combine(webRootPath, uploadDir, fileName);
-                        await model.licPhoto.CopyToAsync(new FileStream(path, FileMode.Create));
-                        store.licPhoto = '/' + uploadDir + '/' + fileName;
+                    // await model.licPhoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                    FileStream fs = new FileStream(path, FileMode.Create);
+                    await model.licPhoto.CopyToAsync(fs);
+                    fs.Close();
+                    store.licPhoto = '/' + uploadDir + '/' + fileName;
 
                    
                     await storedetailsServices.UpdateAsync(store);
@@ -632,15 +689,37 @@ namespace appFoodDelivery.Controllers
                         users.mobileno = model1.mobileno;
                         users.Email = model1.Email;
                         users.UserName = model1.UserName;
+
+                       
                         if (model1.profilephoto != null && model1.profilephoto.Length > 0)
                         {
+                            if (!string.IsNullOrEmpty(users.profilephoto))
+                            {
+                                try
+                                {
+                                    var filePath1 = _hostingEnvironment.WebRootPath + users.profilephoto.ToString().Replace("/", "\\");
+                                    FileInfo file = new FileInfo(filePath1);
+                                    if (file.Exists)
+                                    {
+                                        file.Delete();
+                                    }
+                                }
+                                catch { }
+
+
+                            }
+
                             var uploadDir = @"uploads/storeowner";
                             var fileName = Path.GetFileNameWithoutExtension(model1.profilephoto.FileName);
                             var extesion = Path.GetExtension(model1.profilephoto.FileName);
                             var webRootPath = _hostingEnvironment.WebRootPath;
                             fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extesion;
                             var path = Path.Combine(webRootPath, uploadDir, fileName);
-                            await model1.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                            //   await model1.profilephoto.CopyToAsync(new FileStream(path, FileMode.Create));
+                            FileStream fs = new FileStream(path, FileMode.Create);
+                            await model1.profilephoto.CopyToAsync(fs);
+                            fs.Close();
+
                             users.profilephoto = '/' + uploadDir + '/' + fileName;
 
                         }
