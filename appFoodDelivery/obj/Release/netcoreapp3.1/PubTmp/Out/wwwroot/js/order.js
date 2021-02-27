@@ -257,12 +257,12 @@ function loadDataTable(url) {
                 }
                 , "width": "15%"
             }
-            , { "data": "id", "width": "10%" },
+            , { "data": "id", "width": "5%" },
 
 
             { "data": "cityName", "width": "10%" },
-            { "data": "storename", "width": "10%" },
-            { "data": "customerName", "width": "10%" },
+            { "data": "storename", "width": "20%" },
+            { "data": "customerName", "width": "20%" },
             {
                 "data": "amount",
                 "render": function (data, type, row, meta) {
@@ -272,7 +272,7 @@ function loadDataTable(url) {
                                 </div>
                             `;
                 }
-                , "width": "10%"
+                , "width": "5%"
             },
             { "data": "placedate", "width": "10%" },
             { "data": "orderstatusPropername", "width": "10%" },
@@ -288,9 +288,9 @@ function loadDataTable(url) {
                 }
                 , "width": "10%"
             },
-            { "data": "paymenttype", "width": "5%" },
-            { "data": "paymentstatus", "width": "5%" },
-            { "data": "deliveryboyCheckStaus", "width": "5%" }
+            { "data": "paymenttype", "width": "5%" }
+            //{ "data": "paymentstatus", "width": "5%" },
+            //{ "data": "deliveryboyCheckStaus", "width": "5%" }
 
             //, { "data": "logintype", "width": "10%" },
         ],

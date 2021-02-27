@@ -65,7 +65,7 @@ namespace appFoodDelivery
 
             services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
 
 

@@ -261,8 +261,8 @@ function loadDataTable(url) {
 
 
             { "data": "cityName", "width": "10%" },
-            { "data": "storename", "width": "15%" },
-            { "data": "customerName", "width": "15%" },
+            { "data": "storename", "width": "20%" },
+            { "data": "customerName", "width": "20%" },
             {
                 "data": "amount",
                 "render": function (data, type, row, meta) {
@@ -288,9 +288,9 @@ function loadDataTable(url) {
                 }
                 , "width": "10%"
             },
-            { "data": "paymenttype", "width": "5%" },
-            { "data": "paymentstatus", "width": "5%" },
-            { "data": "deliveryboyCheckStaus", "width": "5%" }
+            { "data": "paymenttype", "width": "5%" }
+            //{ "data": "paymentstatus", "width": "5%" },
+            //{ "data": "deliveryboyCheckStaus", "width": "5%" }
 
             //, { "data": "logintype", "width": "10%" },
         ],
