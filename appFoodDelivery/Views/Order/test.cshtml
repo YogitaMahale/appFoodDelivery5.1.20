@@ -48,7 +48,7 @@
 <div class="border p-3 bg-white">
     <h2 class="text-primary">Order's List</h2>
 
-     
+
 
 
 
@@ -69,7 +69,7 @@
                 <a style="text-decoration:none;" asp-controller="Order" asp-action="test" asp-route-status="pending">
                     <li class="list-group-item @pending">Pending</li>
                 </a>
-                <a style="text-decoration:none;" asp-controller="Order" asp-action="test" asp-route-status="approved" >
+                <a style="text-decoration:none;" asp-controller="Order" asp-action="test" asp-route-status="approved">
                     <li class="list-group-item @approved">Approved</li>
                 </a>
                 <a style="text-decoration:none;" asp-controller="Order" asp-action="test" asp-route-status="processorders">
@@ -94,26 +94,33 @@
     <br />
 
 
-
-    <table id="DT_load" class="table  table-bordered" style="width:100%">
-        <thead class="thead-dark">
-            <tr class="table-info">
-                <th>Order No.</th>
+    <div style="overflow-x: scroll;">
 
 
-                <th>City</th>
-                <th>Store Name</th>
-                <th>Customer Name</th>
-                <th>Amount</th>
-                <th>Order Date</th>
-                <th>Status</th>
-                <th>Delivery Boy</th>
-                <th>Time</th>
-                <th>Action</th>
-                @*<th>logintype</th>*@
-            </tr>
-        </thead>
-    </table>
+        <table id="DT_load" class="table  table-bordered" style="width:100%">
+            <thead class="thead-dark">
+                <tr class="table-info">
+                    <th>Action</th>
+                    <th>Order No.</th>
+
+
+                    <th>City</th>
+                    <th>Store Name</th>
+                    <th>Customer Name</th>
+                    <th>Amount</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                    <th>Delivery Boy</th>
+                    <th>Time</th>
+                    <th>Payment Type</th>
+                    <th>Payment Status</th>
+                    <th>Deliveryboy Status</th>
+
+                    @*<th>logintype</th>*@
+                </tr>
+            </thead>
+        </table>
+    </div>
     <br />
     <br />
     <br />
@@ -121,15 +128,115 @@
     <br />
 
 </div>
+
+
+<div class="modal fade" id="myModal">
+
+
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            @*<div class="modal-header" style="background-color: #67bbe6;">*@
+                <div class="modal-header btn-info " >
+                    @*<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*@
+                    <h4 class="modal-title text-center">Cash Payment Details </h4>
+                </div>
+                <div class="modal-body" style="background-color: white;">
+                       <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <br />
+                            <label>  Payment Status :</label>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="Unpaid" value="Unpaid" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Unpaid
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="Paid" value="Paid">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Paid
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    @*<input type="radio" id="Unpaid" name="paymentstatus" class="form-control" value="Unpaid">
+        <label for="male">Unpaid</label>
+        <input type="radio" id="Paid" name="paymentstatus" class="form-control" value="Paid">
+        <label for="female">Paid</label>*@
+
+
+                    <input type="hidden" name="OrderId" id="OrderId" value="" />
+
+
+                    @*@{Html.Action("Index", "Accounts");}*@
+
+                </div>
+            <div class="modal-footer"  style="background-color: white">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="btnCashPayment" class="btn  btn-info">Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+
+
+</div><!-- /.modal -->
+
 @section Scripts{
     <script src="~/js/order.js"></script>
-
-}
-@*@if (ViewBag.Message != null)
-{
     <script type="text/javascript">
-            window.onload = function () {
-                alert("@ViewBag.Message");
-            };
+        $(document).ready(function () {
+            $(document).on("click", ".open-AddBookDialog", function () {
+                var myBookId = $(this).data('id');
+                $(".modal-body #OrderId").val(myBookId);
+                $('#myModal').modal('show');
+            });
+
+            $("#btnCashPayment").click(function () {
+                var Id = $(".modal-body #OrderId").val();
+                var status = $("input[name='paymentstatus']:checked").val();
+                $.ajax({
+            type: "POST",
+                 url: "@Url.Action("ChangeCashPaymentStatus", "Order")",
+
+                    data: { paymentstatus: status, oid: Id},
+                      dataType: "text",
+                    success: function (msg) {
+                       
+                        if(msg == "success")
+                        {
+                            window.location.href = '/Order/changeorderStatus?id=' + Id + '&status=' + "completedorders";
+                        }
+                           
+
+            },
+            error: function (req, status, error) {
+                console.log(error);
+            }
+             });
+
+            });
+
+        });
     </script>
-}*@
+}
+
+@*@if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+                window.onload = function () {
+                    alert("@ViewBag.Message");
+                };
+        </script>
+    }*@

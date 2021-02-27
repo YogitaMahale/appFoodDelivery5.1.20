@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+ 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace appFoodDelivery.Controllers
@@ -38,8 +38,10 @@ namespace appFoodDelivery.Controllers
                 {
                     string message = model.description;
                     string title = model.title;
-                    //var storeobj = _customerRegistrationservices.GetAll().Where(x => x.isdeleted == false && x.deviceid != null&&x.mobileno1=="9021517586").Select(x=>x.deviceid).ToList();
-                    var storeobj = _customerRegistrationservices.GetAll().Where(x => x.isdeleted == false && x.deviceid != null).Select(x => x.deviceid).ToList();
+                   var storeobj = _customerRegistrationservices.GetAll().Where(x => x.isdeleted == false && x.deviceid != null&&x.mobileno1=="9021517586").Select(x=>x.deviceid).ToList();
+                    //var storeobj =  _customerRegistrationservices.GetAll().Where(x => x.isdeleted == false && x.deviceid != null).Select(x => x.deviceid).ToList();
+
+                //  var storeobj = _customerRegistrationservices.GetAll().Where(x => x.isdeleted == false && x.deviceid != null).Select(x => x.deviceid).ToList();
                     //foreach (var item in storeobj)
                     //{
                     //    if (item.deviceid.Trim() == "" || item.deviceid == null)

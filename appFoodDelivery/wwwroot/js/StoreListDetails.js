@@ -60,6 +60,12 @@ function loadtable() {
                                    
                             </div>`;
                     }
+                    else if (data == "Select") {
+                        return `<div class="text-center">                           
+                                    NA
+                                   
+                            </div>`;
+                    }
                 }, "width": "10% "
                                 
             },         

@@ -5787,3 +5787,4 @@ F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFo
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.dll
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.pdb
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.genruntimeconfig.cache
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Order\ChangeCashPaymentStatus.cshtml.g.cs

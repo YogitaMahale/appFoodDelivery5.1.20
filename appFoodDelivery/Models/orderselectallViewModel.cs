@@ -59,6 +59,7 @@ namespace appFoodDelivery.Models
         public decimal productCost { get; set; }
         public decimal deliverycharges { get; set; }
         public string cityName { get; set; }
+        public string deliveryboyCheckStaus { get; set; }
     }
 }
  

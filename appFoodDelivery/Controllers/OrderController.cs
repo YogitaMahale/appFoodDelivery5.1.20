@@ -156,12 +156,36 @@ namespace appFoodDelivery.Controllers
 
             return View(ordervm);
         }
-        public async Task<IActionResult> test()
+
+
+        [HttpPost]
+
+        public async Task<string> ChangeCashPaymentStatus(string paymentstatus,int oid)
+        {
+            orders obj = _ordersServices.GetById(oid);// await _usermanager.GetUserAsync(User); 
+            if (obj == null)
+            {
+                return "NotFound";
+                
+            }
+            else
+            {
+                obj.deliveryboyCheckStaus = "completed";
+                obj.paymentstatus = paymentstatus;
+                await _ordersServices.UpdateAsync(obj);
+                return "success";
+            }
+            return "";
+        }
+        
+         
+          public async Task<IActionResult> test()
         {
             // ViewBag.Message = string.Format("Hello {0}.\\nCurrent Date and Time: ", DateTime.Now.ToString());
             return View();
         }
         #region API Calls
+
         public async Task<IActionResult> GetOrderList(string status)
         {
 

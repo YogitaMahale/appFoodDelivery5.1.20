@@ -64,49 +64,82 @@ function loadDataTable(url) {
 
 
         "columns": [
-            { "data": "id", "width": "10%" },
-
-           
-            { "data": "cityName", "width": "10%" },
-            { "data": "storename", "width": "10%" },
-            { "data": "customerName", "width": "10%" },
-            {
-                "data": "amount",
-                "render": function (data, type, row, meta) {
-                    return `<div class="text-center">                           
-                                  
-                                 <i class="fas fa-rupee-sign fa-lg text-primary" style="margin-right:0.7em"></i> ${row['amount']}              
-                                </div>
-                            `;
-                }
-                , "width": "10%"
-            },
-            { "data": "placedate", "width": "10%" },
-            { "data": "orderstatusPropername", "width": "10%" },
-            { "data": "deliveryboyname", "width": "10%" },
-            {
-                "data": "time",
-                "render": function (data, type, row, meta) {
-                    return `<div class="text-center">                           
-                                  
-                                   <i class="fas fa-clock fa-lg text-primary" style="margin-right:0.7em"></i> ${row['time']}  Minutes ago              
-                                </div>
-                            `;
-                }
-                , "width": "10%"
-            },
-
             {
                 "data": "id",
                 "render": function (data, type, row, meta) {
                     //alert(row['orderstatus'] + " -----" + row['id']);
                     if (row['logintype'] == "admin") {
-                        return `<div class="text-center">                           
+                        if (row['paymenttype'] == "Cash on Delivery") {
+
+
+                            if (row['orderstatus'] == "completedorders" || row['orderstatus'] == "cancelledorders") {
+                                return `<div class="text-center">                           
+                                  
+                                  <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+                                  
+                                      
+                            `;
+                            }
+                            else {
+                                return `<div class="text-center">                           
+                                  
+                                  <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+                                  
+                                      <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+  <a data-toggle="modal" data-id=${row['id']} data-toggle="modal" title="Add this item" class="open-AddBookDialog btn btn-success text-white btn-lg"  style='cursor:pointer; width:80px;' href="#myModal">Complete COD </a> 
+            
+                                
+                            `;
+
+                            }
+  //                          return `<div class="text-center">                           
+                                  
+  //                                <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+                                  
+  //                                    <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+  //<a data-toggle="modal" data-id=${row['id']} data-toggle="modal" title="Add this item" class="open-AddBookDialog btn btn-success text-white btn-lg"  style='cursor:pointer; width:80px;' href="#myModal">Complete COD </a> 
+            
+                                
+  //                          `;
+
+                        }
+                        else {
+
+
+                            if (row['orderstatus'] == "completedorders" || row['orderstatus'] =="cancelledorders") {
+                                return `<div class="text-center">                           
+                                  
+                                  <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+                                    
+                                 
+                            `;
+                            }
+                            else {
+                                return `<div class="text-center">                           
                                   
                                   <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
                                     <a href="/Order/changeorderStatus?id=${row['id']}&status=completedorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:80px;'>Complete</a>
                                       <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+
+                                 
                             `;
+
+                            }
+
+
+                            //return `<div class="text-center">                           
+                                  
+                            //      <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+                            //        <a href="/Order/changeorderStatus?id=${row['id']}&status=completedorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:80px;'>Complete</a>
+                            //          <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+
+                                 
+                            //`;
+
+                        }
+
+
+                        //paymenttype
                     }
                     else {
                         if (row['orderstatus'] == "Placed") {
@@ -135,24 +168,70 @@ function loadDataTable(url) {
                                  </div>`;
                         }
                         else if (row['orderstatus'] == "processorders") {
-                            return `<div class="text-center">
-                                   <a href="/Order/changeorderStatus?id=${row['id']}&status=ongoingorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:70px;display:none;'>Shipped</a>
+                            if (row['paymenttype'] == "Cash on Delivery") {
+                                return `<div class="text-center">                           
                                   
-                                  <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg'  style='cursor:pointer; width:70px;'>
-                                      Details
-                                  </a> 
-                                    
-                                 </div>`;
+                                  <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+                                  <a href="/Order/changeorderStatus?id=${row['id']}&status=ongoingorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:70px;display:none;'>Shipped</a>
+                                      <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+  <a data-toggle="modal" data-id=${row['id']} data-toggle="modal" title="Add this item" class="open-AddBookDialog btn btn-success text-white btn-lg"  style='cursor:pointer; width:80px;' href="#myModal">Complete COD </a> 
+            
+                                
+                            `;
+                            }
+                            else {
+                                return `<div class="text-center">                           
+                                  
+                                  <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+<a href="/Order/changeorderStatus?id=${row['id']}&status=ongoingorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:70px;display:none;'>Shipped</a>
+                                    <a href="/Order/changeorderStatus?id=${row['id']}&status=completedorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:80px;'>Complete</a>
+                                      <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+ 
+                                 
+                            `;
+
+                            }
+
+                            //return `<div class="text-center">
+                            //       <a href="/Order/changeorderStatus?id=${row['id']}&status=ongoingorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:70px;display:none;'>Shipped</a>
+
+                            //      <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg'  style='cursor:pointer; width:70px;'>
+                            //          Details
+                            //      </a> 
+
+                            //     </div>`;
                         }
                         else if (row['orderstatus'] == "ongoingorders") {
-                            return `<div class="text-center">
-                                   <a href="/Order/changeorderStatus?id=${row['id']}&status=completedorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:70px;display:none;'>Complete</a>
+                            if (row['paymenttype'] == "Cash on Delivery") {
+                                return `<div class="text-center">                           
                                   
-                                  <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg'  style='cursor:pointer; width:70px;'>
-                                      Details
-                                  </a> 
-                                      
-                                 </div>`;
+                                  <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+                                  
+                                      <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+  <a data-toggle="modal" data-id=${row['id']} data-toggle="modal" title="Add this item" class="open-AddBookDialog btn btn-success text-white btn-lg"  style='cursor:pointer; width:80px;' href="#myModal">Complete COD </a> 
+            
+                                
+                            `;
+                            }
+                            else {
+                                return `<div class="text-center">                           
+                                  
+                                  <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+                                    <a href="/Order/changeorderStatus?id=${row['id']}&status=completedorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:80px;'>Complete</a>
+                                      <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+
+                                 
+                            `;
+
+                            }
+                            //return `<div class="text-center">
+                            //       <a href="/Order/changeorderStatus?id=${row['id']}&status=completedorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:70px;display:none;'>Complete</a>
+
+                            //      <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg'  style='cursor:pointer; width:70px;'>
+                            //          Details
+                            //      </a> 
+
+                            //     </div>`;
                         }
                         else if (row['orderstatus'] == "completedorders") {
                             return `<div class="text-center">
@@ -176,8 +255,43 @@ function loadDataTable(url) {
 
 
                 }
-                , "width": "30%"
+                , "width": "15%"
             }
+            , { "data": "id", "width": "5%" },
+
+
+            { "data": "cityName", "width": "10%" },
+            { "data": "storename", "width": "15%" },
+            { "data": "customerName", "width": "15%" },
+            {
+                "data": "amount",
+                "render": function (data, type, row, meta) {
+                    return `<div class="text-center">                           
+                                  
+                                 <i class="fas fa-rupee-sign fa-lg text-primary" style="margin-right:0.7em"></i> ${row['amount']}              
+                                </div>
+                            `;
+                }
+                , "width": "5%"
+            },
+            { "data": "placedate", "width": "10%" },
+            { "data": "orderstatusPropername", "width": "10%" },
+            { "data": "deliveryboyname", "width": "10%" },
+            {
+                "data": "time",
+                "render": function (data, type, row, meta) {
+                    return `<div class="text-center">                           
+                                  
+                                   <i class="fas fa-clock fa-lg text-primary" style="margin-right:0.7em"></i> ${row['time']}  Minutes ago              
+                                </div>
+                            `;
+                }
+                , "width": "10%"
+            },
+            { "data": "paymenttype", "width": "5%" },
+            { "data": "paymentstatus", "width": "5%" },
+            { "data": "deliveryboyCheckStaus", "width": "5%" }
+
             //, { "data": "logintype", "width": "10%" },
         ],
         "language": {
@@ -206,3 +320,5 @@ function loadDataTable(url) {
 //    onclick=Delete('/api/book?id=' + ${ data })>
 //        Delete
 //                        </a >
+
+  //<a href="/Order/changeorderStatus?id=${row['id']}&status=completedorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:80px;'>Complete</a>
