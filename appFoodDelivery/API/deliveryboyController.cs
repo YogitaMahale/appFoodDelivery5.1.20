@@ -1018,6 +1018,17 @@ namespace appFoodDelivery.API
             }
             else
             {
+
+                //string status1 = "";
+                //if(paymentstatus.ToUpper().Trim()== "Cash on Delivery".ToString().ToUpper().Trim())
+                //{
+                //    status1 = "Paid";
+                //}
+                //else if (paymentstatus.ToUpper().Trim() == "Paid".ToString().ToUpper().Trim())
+                //{
+                //    status1 = "Paid";
+
+                //}
                 obj.deliveryboyCheckStaus = status;
                 obj.paymentstatus = paymentstatus;
                 await _ordersServices.UpdateAsync(obj);
