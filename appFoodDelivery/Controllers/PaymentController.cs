@@ -44,7 +44,7 @@ namespace appFoodDelivery.Controllers
             //var paramter = new DynamicParameters();
             ////paramter.Add("@from", from1);          
             //var orderheaderList1 = _ISP_Call.List<collectionViewModel>("collectionReport", null);
-            int PageSize = 10;
+            int PageSize = 30;
             return View(driverPaginational<driverPaymentViewModel>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
         }
         [HttpGet]
@@ -115,7 +115,7 @@ namespace appFoodDelivery.Controllers
             //paramter.Add("@from", from1);          
             //  var orderheaderList1 = _sP_Call.List<collectionViewModel>("storedetailsSelectAll", null);
 
-            int PageSize = 10;
+            int PageSize = 30;
             return View(storepaymentPagination<storePaymentViewModel>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
         }
         [HttpGet]

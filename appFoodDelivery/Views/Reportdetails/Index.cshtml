@@ -105,8 +105,7 @@
                                     <th>TOFOZ Amount</th>
                                     <th>Service tax</th>
                                     <th>TCS</th>
-                                    @*<th>Service tax ( 18% on tofoz amount ) </th>
-        <th>TCS ( 1 % on hotel amount) </th>*@
+                                    
                                     <th>Netpayable</th>
                                     <th>Deliveryboy Charges</th>
                                     <th>Tax</th>
@@ -115,7 +114,7 @@
                                     <th>Deliveryboy</th>
                                 </tr>
                             </thead>
-                            @{
+                            @*@{
                                 decimal finalamt1 = 0;
                                 decimal hotelamount1 = 0;
                                 decimal packingcharges1 = 0;
@@ -127,38 +126,21 @@
                                 decimal TCS1 = 0;
                                 decimal netpayable1 = 0;
                                 decimal deliveryboycharges1 = 0;
-                            }
+                            }*@
 
                             <tbody>
                                 @foreach (var item in Model)
                                 {
 
                                 <tr>
-                                    @*<td>
-
-
-            @item.id
-
-        </td>
-        <td>@item.placedate</td>
-        <td>
-
-            @item.storeid
-
-        </td>
-        <td>
-            @item.customerName
-        </td>
-        <td>@item.amount  </td>
-
-        <td>@item.orderstatusPropername</td>*@
+                                    
                                     <td> @item.id     </td>
                                     <td>@item.placedate</td>
                                     <td>@item.customerName</td>
 
                                     <td> @item.storename  </td>
 
-                                    @{
+                                    @*@{
                                         finalamt1 += item.finalamt;
                                         hotelamount1 += Convert.ToDecimal(item.hotelamount);
                                         packingcharges1 += item.packingcharges;
@@ -171,7 +153,7 @@
                                         netpayable1 += item.netpayable;
                                         deliveryboycharges1 += item.deliveryboycharges;
 
-                                    }
+                                    }*@
 
 
                                     <td>@item.finalamt</td>
@@ -200,16 +182,16 @@
                                     <th> </th>
                                     <th> </th>
                                     <th>Total  </th>
-                                    <th>@finalamt1</th>
-                                    <th>@hotelamount1</th>
-                                    <th>@packingcharges1</th>
-                                    <th>@subtotal11</th>
+                                    <th>@ViewBag.finalamt1</th>
+                                    <th>@ViewBag.hotelamount1</th>
+                                    <th>@ViewBag.packingcharges1</th>
+                                    <th>@ViewBag.subtotal11</th>
                                     <th></th>
-                                    <th>@tofozamt1</th>
-                                    <th>@servicetax1</th>
-                                    <th>@TCS1</th>
-                                    <th>@netpayable1</th>
-                                    <th>@deliveryboycharges1 </th>
+                                    <th>@ViewBag.tofozamt1</th>
+                                    <th>@ViewBag.servicetax1</th>
+                                    <th>@ViewBag.TCS1</th>
+                                    <th>@ViewBag.netpayable1</th>
+                                    <th>@ViewBag.deliveryboycharges1 </th>
                                     <th> </th>
                                     <th>   </th>
                                     <th> </th>

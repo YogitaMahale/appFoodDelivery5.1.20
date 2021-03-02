@@ -42,11 +42,11 @@
                         </div>
                         <div class="form-group col-md-2">
                             @*<div class="input-group date" data-provide="datepicker">
-                        <input type="text" class="form-control" name="to">
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
-                        </div>
-                    </div>*@
+                                    <input type="text" class="form-control" name="to">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>*@
                             <input type="text" id="datepicker2" autocomplete="off" class="datepicker" value="@ViewBag.to1" name="to1">
                             @*<input type="date" value="@DateTime.Now" name="to" />*@
                         </div>
@@ -57,15 +57,15 @@
                             @Html.DropDownList("status", (IEnumerable<SelectListItem>)ViewData["OrderStatus"], new { @class = "form-control" })
                             @*<select name="status" class="form-control">
 
-            <option value="All" selected>-- All --</option>
-            <option value="Placed">Pending</option>
-            <option value="approved">Approved</option>
-            <option value="processorders">Process</option>
-            <option value="ongoingorders">On Going</option>
-            <option value="completedorders">Completed</option>
-            <option value="cancelledorders">Cancelled</option>
+                                    <option value="All" selected>-- All --</option>
+                                    <option value="Placed">Pending</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="processorders">Process</option>
+                                    <option value="ongoingorders">On Going</option>
+                                    <option value="completedorders">Completed</option>
+                                    <option value="cancelledorders">Cancelled</option>
 
-        </select>*@
+                                </select>*@
                         </div>
 
 
@@ -76,7 +76,7 @@
 
                             @Html.DropDownList("storeid", (IEnumerable<SelectListItem>)ViewData["storelist"], new { @class = "form-control" })
                         </div>
-                      
+
                     </div>
                     <div class="row" style="text-align:center;">
                         <div class="form-group col-md-4">
@@ -88,115 +88,135 @@
                         <div class="form-group col-md-4">
                         </div>
                     </div>
+                }
+
+                <div class="row">
+                    <div class="col-md-12 table-responsive-md" style="width:100px;overflow:auto;">
+                        @*<a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> New Driver</a>*@
+                        <b>  <h4>@ViewBag.message</h4> </b>
+                        <table class="table table-bordered tblShow">
+                            <thead>
+                                <tr>
+                                    @*id, storename, customerName, finalamt, orderstatus, deliveryboyName, customeramt, packingcharges,
+                                        subtotal1, storecommission, tofozamt, netpayable, storetax, promocode
+                                        ,  placedate*@
+                                    <th>Order Id</th>
+                                    <th>Date</th>
+                                    <th>Store</th>
+                                    <th>Hotel Amount</th>
+                                    <th>Packing Charges</th>
+                                    <th>Subtotal</th>
+                                    <th>Commission (%)</th>
+                                    <th>TOFOZ Amount</th>
+                                    <th>Service tax</th>
+                                    <th>TCS</th>
+                                    @*<th>Service tax ( 18% on tofoz amount ) </th>
+                                        <th>TCS ( 1 % on hotel amount) </th>*@
+                                    <th>Netpayable</th>
+                                    <th>Tax</th>
+                                    <th>Promo Code</th>
+                                    <th>Status</th>
+                                    <th>Deliveryboy</th>
+
+                                    @*<th class="text-warning">Actions</th>*@
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td> @item.id     </td>
+                                        <td>@item.placedate</td>
+                                        <td> @item.storename  </td>
+                                        <td>@item.hotelamount    </td>
+                                        <td>@item.packingcharges    </td>
+                                        <td>@item.subtotal1    </td>
+                                        <td>@item.storecommission    </td>
+                                        <td>@item.tofozamt    </td>
+                                        <td>@item.servicetax    </td>
+                                        <td>@item.TCS      </td>
+                                        <td>@item.netpayable    </td>
+                                        <td>@item.storetaxStatus    </td>
+                                        <td>@item.promocode    </td>
+                                        <td>@item.orderstatus      </td>
+                                        <td>@item.deliveryboyName    </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>      </td>
+                                    <td></td>
+                                    <td>  </td>
+                                    <td>@ViewBag.hotelamount    </td>
+                                    <td>@ViewBag.packingcharges    </td>
+                                    <td>@ViewBag.subtotal1    </td>
+                                    <td>@ViewBag.storecommission    </td>
+                                    <td>@ViewBag.tofozamt    </td>
+                                    <td>    </td>
+                                    <td     </td>
+                                    <td>@ViewBag.netpayable    </td>
+                                    <td>    </td>
+                                    <td>    </td>
+                                    <td>      </td>
+                                    <td>  </td>
+                                   
+                                </tr>
+                            </tfoot>
+                        </table><br />
+                        @{
+                            var disablePrevious = !Model.IsPreviousAvailable ? "disabled" : "";
+                            var disableNext = !Model.IsNextAvailable ? "disabled" : "";
                         }
 
-                        <div class="row">
-                            <div class="col-md-12 table-responsive-md" style="width:100px;overflow:auto;">
-                                @*<a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> New Driver</a>*@
-                                <b>  <h4>@ViewBag.message</h4> </b>
-                                <table class="table table-bordered tblShow">
-                                    <thead>
-                                        <tr>
-                                            @*id, storename, customerName, finalamt, orderstatus, deliveryboyName, customeramt, packingcharges,
-        subtotal1, storecommission, tofozamt, netpayable, storetax, promocode
-        ,  placedate*@
-                                            <th>Order Id</th>
-                                            <th>Date</th>
-                                            <th>Store</th>
-                                            <th>Hotel Amount</th>
-                                            <th>Packing Charges</th>
-                                            <th>Subtotal</th>
-                                            <th>Commission (%)</th>
-                                            <th>TOFOZ Amount</th>
-                                            <th>Service tax</th>
-                                            <th>TCS</th>
-                                            @*<th>Service tax ( 18% on tofoz amount ) </th>
-        <th>TCS ( 1 % on hotel amount) </th>*@
-                                            <th>Netpayable</th>
-                                            <th>Tax</th>
-                                            <th>Promo Code</th>
-                                            <th>Status</th>
-                                            <th>Deliveryboy</th>
-                                            
-                                            @*<th class="text-warning">Actions</th>*@
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var item in Model)
-                                        {
-
-                                        <tr>
-                                            <td> @item.id     </td>
-                                            <td>@item.placedate</td>
-                                            <td> @item.storename  </td>
-                                            <td>@item.hotelamount    </td>
-                                            <td>@item.packingcharges    </td>
-                                            <td>@item.subtotal1    </td>
-                                            <td>@item.storecommission    </td>
-                                            <td>@item.tofozamt    </td>
-                                            <td>@item.servicetax    </td>
-                                            <td>@item.TCS      </td>
-                                            <td>@item.netpayable    </td>
-                                            <td>@item.storetaxStatus    </td>
-                                            <td>@item.promocode    </td>
-                                            <td>@item.orderstatus      </td>
-                                            <td>@item.deliveryboyName    </td>
-                                             
-                                        </tr>
-                                        }
-                                    </tbody>
-                                </table><br />
-                                @{
-                                    var disablePrevious = !Model.IsPreviousAvailable ? "disabled" : "";
-                                    var disableNext = !Model.IsNextAvailable ? "disabled" : "";
-                                }
-
-                                <a asp-action="HotelEarningReport"
-                                   asp-route-pageNumber="@(Model.PageIndex - 1)"
-                                   asp-route-from1="@ViewBag.from1"
-                                   asp-route-to1="@ViewBag.to1"
-                                   asp-route-status="@ViewBag.status1"
-                                   asp-route-storeid="@ViewBag.storeid1"
-                                   class="btn btn-primary @disablePrevious">
+                        <a asp-action="HotelEarningReport"
+                           asp-route-pageNumber="@(Model.PageIndex - 1)"
+                           asp-route-from1="@ViewBag.from1"
+                           asp-route-to1="@ViewBag.to1"
+                           asp-route-status="@ViewBag.status1"
+                           asp-route-storeid="@ViewBag.storeid1"
+                           class="btn btn-primary @disablePrevious">
 
 
-                                    Previous
-                                </a>
-                                <a asp-action="HotelEarningReport"
-                                   asp-route-pageNumber="@(Model.PageIndex + 1)"
-                                   asp-route-from1="@ViewBag.from1"
-                                   asp-route-to1="@ViewBag.to1"
-                                   asp-route-status="@ViewBag.status1"
-                                   asp-route-storeid="@ViewBag.storeid1"
-                                   class="btn btn-primary @disableNext">
-                                    Next
-                                </a>
+                            Previous
+                        </a>
+                        <a asp-action="HotelEarningReport"
+                           asp-route-pageNumber="@(Model.PageIndex + 1)"
+                           asp-route-from1="@ViewBag.from1"
+                           asp-route-to1="@ViewBag.to1"
+                           asp-route-status="@ViewBag.status1"
+                           asp-route-storeid="@ViewBag.storeid1"
+                           class="btn btn-primary @disableNext">
+                            Next
+                        </a>
 
-                            </div>
-                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
     </div>
 </div>
 <script src="~/lib/jquery/dist/jquery.js"></script>
 
 @*<script>
-    //$('.abc').datepicker({
-    //    autoclose: true,
-    //    format: 'dd/mm/yyyy'
-    //});
-    $('#datepicker2').datepicker({
-        autoclose: true,
-        format: 'dd/mm/yyyy'
-    });
+        //$('.abc').datepicker({
+        //    autoclose: true,
+        //    format: 'dd/mm/yyyy'
+        //});
+        $('#datepicker2').datepicker({
+            autoclose: true,
+            format: 'dd/mm/yyyy'
+        });
 
 
-</script>*@
+    </script>*@
 
 @*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
 <script>
     $(function () {
         //$("#datepicker1").datepicker({

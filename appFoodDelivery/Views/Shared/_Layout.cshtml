@@ -256,11 +256,23 @@
                                     <li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="orderHistoryReport">Daily Details</a></li>
                                     <li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="HotelEarningReport">Hotel Earning</a></li>
                                     <li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="collectionReport">Collection Details</a></li>
-                                    <li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="deliveryboySalary">Deliveryboy Salary</a></li>
-                                    <li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="StorePayment">Store Payment</a></li>
+                                    @*<li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="deliveryboySalary">Payment Report (Delivery Charges)</a></li>
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="StorePayment">Payment Report (Store)</a></li>*@
                                     <li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="hotelWiseDetails">Storewise Details</a></li>
                                     <li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="deliveryboyWiseDetails">Deliveryboy Details</a></li>
-
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="collapse" href="#PaymentReport" aria-expanded="false" aria-controls="ui-basic">
+                                            @*<i class="fas fa-users fa-lg text-primary" style="margin-right:0.7em"></i>*@
+                                            <span class="menu-title">Payment Report  </span>
+                                            <i class="menu-arrow text-primary"></i>
+                                        </a>
+                                        <div class="collapse" id="PaymentReport">
+                                            <ul class="nav flex-column sub-menu">
+                                                <li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="deliveryboySalary">Delivery Charges</a></li>
+                                                <li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="StorePayment">Store</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
 
                                     @*<li class="nav-item"><a class="nav-link" asp-controller="Reportdetails" asp-action="CreateDocument">Test</a></li>*@
 

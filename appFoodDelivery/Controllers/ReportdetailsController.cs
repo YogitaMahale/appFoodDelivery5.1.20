@@ -212,6 +212,35 @@ namespace appFoodDelivery.Controllers
           //  var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAllSearch", paramter);
             var orderheaderList1 = _ISP_Call.List<orderselectallViewModelNew>("orderSelectAllSearch", paramter);
             int PageSize = 10;
+            //-----column sum-----------------------
+            //decimal finalamt1 = 0;
+            //decimal hotelamount1 = 0;
+            //decimal packingcharges1 = 0;
+            //decimal subtotal11 = 0;
+            //decimal storecommission1 = 0;
+
+            //decimal tofozamt1 = 0;
+            //decimal servicetax1 = 0;
+            //decimal TCS1 = 0;
+            //decimal netpayable1 = 0;
+            //decimal deliveryboycharges1 = 0;
+
+            ViewBag.finalamt1 = orderheaderList1.Sum(x=>x.finalamt);
+            ViewBag.hotelamount1 = orderheaderList1.Sum(x => Convert.ToDecimal(x.hotelamount));
+            ViewBag.packingcharges1 = orderheaderList1.Sum(x => x.packingcharges);
+            ViewBag.subtotal11 = orderheaderList1.Sum(x => x.subtotal1);
+            ViewBag.storecommission1 = orderheaderList1.Sum(x => x.storecommission);
+
+            ViewBag.tofozamt1 = orderheaderList1.Sum(x => x.tofozamt);
+            ViewBag.servicetax1 =orderheaderList1.Sum(x => x.servicetax);
+            ViewBag.TCS1 = orderheaderList1.Sum(x => x.TCS);
+            ViewBag.netpayable1 = orderheaderList1.Sum(x => x.netpayable);
+            ViewBag.deliveryboycharges1 = orderheaderList1.Sum(x => x.deliveryboycharges);
+
+
+
+            //--------------------------------
+
             return View(OrderPagination<orderselectallViewModelNew>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
 
 
@@ -280,7 +309,21 @@ namespace appFoodDelivery.Controllers
                 var orderheaderList1 = _ISP_Call.List<orderselectallViewModelNew>("orderSelectAllSearch", paramter);
                 //  return View(orderheaderList1.ToList());
                 int PageSize = 10;
+                //----------------
+                ViewBag.finalamt1 = orderheaderList1.Sum(x => x.finalamt);
+                ViewBag.hotelamount1 = orderheaderList1.Sum(x => Convert.ToDecimal(x.hotelamount));
+                ViewBag.packingcharges1 = orderheaderList1.Sum(x => x.packingcharges);
+                ViewBag.subtotal11 = orderheaderList1.Sum(x => x.subtotal1);
+                ViewBag.storecommission1 = orderheaderList1.Sum(x => x.storecommission);
 
+                ViewBag.tofozamt1 = orderheaderList1.Sum(x => x.tofozamt);
+                ViewBag.servicetax1 = orderheaderList1.Sum(x => x.servicetax);
+                ViewBag.TCS1 = orderheaderList1.Sum(x => x.TCS);
+                ViewBag.netpayable1 = orderheaderList1.Sum(x => x.netpayable);
+                ViewBag.deliveryboycharges1 = orderheaderList1.Sum(x => x.deliveryboycharges);
+
+
+                //------------
                 return View(OrderPagination<orderselectallViewModelNew>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
 
             }
@@ -453,7 +496,11 @@ namespace appFoodDelivery.Controllers
 
             var orderheaderList1 = _ISP_Call.List<orderHistoryReportViewModel>("orderHistoryReport", paramter);
 
-
+            ViewBag.finalamt = orderheaderList1.Sum(x => x.finalamt);
+            ViewBag.customeramt = orderheaderList1.Sum(x => x.customeramt);
+            ViewBag.customerdeliverycharges = orderheaderList1.Sum(x => x.customerdeliverycharges);
+            ViewBag.deliveryboycharges = orderheaderList1.Sum(x => x.deliveryboycharges);
+          
             //  return View(orderheaderList1.ToList());
             int PageSize = 10;
             return View(OrderPagination<orderHistoryReportViewModel>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
@@ -504,6 +551,11 @@ namespace appFoodDelivery.Controllers
                 paramter.Add("@to", l2);
                 paramter.Add("@deliveryboyid", deliveryboyid);
                 var orderheaderList1 = _ISP_Call.List<orderHistoryReportViewModel>("orderHistoryReport", paramter);
+
+                ViewBag.finalamt = orderheaderList1.Sum(x => x.finalamt);
+                ViewBag.customeramt = orderheaderList1.Sum(x => x.customeramt);
+                ViewBag.customerdeliverycharges = orderheaderList1.Sum(x => x.customerdeliverycharges);
+                ViewBag.deliveryboycharges = orderheaderList1.Sum(x => x.deliveryboycharges);
 
                 //  return View(orderheaderList1.ToList());
                 int PageSize = 10;
@@ -602,6 +654,14 @@ namespace appFoodDelivery.Controllers
 
             var orderheaderList1 = _ISP_Call.List<HotelEarningViewModel>("HotelEarningReport", paramter);
 
+            ViewBag.hotelamount = orderheaderList1.Sum(x => Convert.ToDecimal(x.hotelamount));
+            ViewBag.packingcharges = orderheaderList1.Sum(x => Convert.ToDecimal(x.packingcharges));
+            ViewBag.subtotal1 = orderheaderList1.Sum(x => Convert.ToDecimal(x.subtotal1));
+            ViewBag.storecommission = orderheaderList1.Sum(x => x.storecommission);
+            ViewBag.tofozamt = orderheaderList1.Sum(x => x.tofozamt);
+            ViewBag.netpayable = orderheaderList1.Sum(x => x.netpayable);
+ 
+
             //  return View(orderheaderList1.ToList());
             int PageSize = 10;
             return View(OrderPagination<HotelEarningViewModel>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
@@ -650,6 +710,12 @@ namespace appFoodDelivery.Controllers
                 paramter.Add("@to", l2);
 
                 var orderheaderList1 = _ISP_Call.List<HotelEarningViewModel>("HotelEarningReport", paramter);
+                ViewBag.hotelamount = orderheaderList1.Sum(x => Convert.ToDecimal(x.hotelamount));
+                ViewBag.packingcharges = orderheaderList1.Sum(x => Convert.ToDecimal(x.packingcharges));
+                ViewBag.subtotal1 = orderheaderList1.Sum(x => Convert.ToDecimal(x.subtotal1));
+                ViewBag.storecommission = orderheaderList1.Sum(x => x.storecommission);
+                ViewBag.tofozamt = orderheaderList1.Sum(x => x.tofozamt);
+                ViewBag.netpayable = orderheaderList1.Sum(x => x.netpayable);
 
                 //  return View(orderheaderList1.ToList());
                 int PageSize = 10;
