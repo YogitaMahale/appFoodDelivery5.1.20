@@ -427,6 +427,8 @@ namespace appFoodDelivery.Notification
                     tRequest.Headers.Add(string.Format("Authorization: key={0}", "AAAA4lmKnwA:APA91bHnS9ND3VSqid8vKdUTQukqJrBJytbmQKZJADNrEbxs9ZDNxoI_Cq0rhuvqkw9954fvUSuC9McpOfTAc7K3OgTvovghBkazWnIgQ0qn0TPjz1nTCZAgbrbNCYWLRei-5vzlBlYj"));
 
                     tRequest.Headers.Add(string.Format("Sender: id={0}", "972164865792"));
+
+                 
                     tRequest.ContentType = "application/json";
                     var regIds = deviceRegIds.Skip(skip).Take(batchSize);
                     skip += batchSize;
