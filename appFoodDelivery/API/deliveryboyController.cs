@@ -2,6 +2,7 @@
 using appFoodDelivery.Models;
 using appFoodDelivery.Notification;
 using appFoodDelivery.Services;
+using appFoodDelivery.Utility;
 using Dapper;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -128,36 +129,39 @@ namespace appFoodDelivery.API
                     int n = random.Next(0, 999);
                     no += n.ToString("D4") + "";
                 }
-                #region "sms"
-                try
-                {
+                string Msg = "OTP :" + no + ".  Please Use this OTP.This is usable once and expire in 10 minutes";
+                SendSMS objsendSMS = new SendSMS();
+                bool res = objsendSMS.smsSent(mobileno, Msg);
+                //#region "sms"
+                //try
+                //{
 
-                    string Msg = "OTP :" + no + ".  Please Use this OTP.This is usable once and expire in 10 minutes";
+                    
 
-                    string OPTINS = "STRLIT";
+                //    string OPTINS = "STRLIT";
 
-                    string type = "3";
-                    //  string Password = "9359848251";
-                    string Password = "959595";
-                    string strUrl = "http://bulksms.co/sendmessage.php?user=Aveebroiler&password=" + Password + "&message=" + Msg + "&sender=" + OPTINS + "&mobile=" + mobileno + "&type=" + 3;
-                    //  string strUrl = "https://www.bulksmsgateway.in/sendmessage.php?user=ezacus&password=" + "ezacus@2020" + "&message=" + Msg.ToString() + "&sender=" + OPTINS + "&mobile=" + mobileno + "&type=" + 3;
+                //    string type = "3";
+                //    //  string Password = "9359848251";
+                //    string Password = "959595";
+                //    string strUrl = "http://bulksms.co/sendmessage.php?user=Aveebroiler&password=" + Password + "&message=" + Msg + "&sender=" + OPTINS + "&mobile=" + mobileno + "&type=" + 3;
+                //    //  string strUrl = "https://www.bulksmsgateway.in/sendmessage.php?user=ezacus&password=" + "ezacus@2020" + "&message=" + Msg.ToString() + "&sender=" + OPTINS + "&mobile=" + mobileno + "&type=" + 3;
 
-                    ServicePointManager.Expect100Continue = true;
-                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                    System.Net.WebRequest request = System.Net.WebRequest.Create(strUrl);
-                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                    Stream s = (Stream)response.GetResponseStream();
-                    StreamReader readStream = new StreamReader(s);
-                    string dataString = readStream.ReadToEnd();
-                    response.Close();
-                    s.Close();
-                    readStream.Close();
-                    //    Response.Write("Sent");
-                }
+                //    ServicePointManager.Expect100Continue = true;
+                //    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                //    System.Net.WebRequest request = System.Net.WebRequest.Create(strUrl);
+                //    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                //    Stream s = (Stream)response.GetResponseStream();
+                //    StreamReader readStream = new StreamReader(s);
+                //    string dataString = readStream.ReadToEnd();
+                //    response.Close();
+                //    s.Close();
+                //    readStream.Close();
+                //    //    Response.Write("Sent");
+                //}
 
-                catch
-                { }
-                #endregion
+                //catch
+                //{ }
+                //#endregion
                 string myJson = "{'otpno': " + no + "}";
                 return Ok(myJson);
                 //}
@@ -296,6 +300,7 @@ namespace appFoodDelivery.API
 
 
                     obj.deliveryboyid = deliveryboyid;
+                    obj.acceptedby = "Deliveryboy";
                     //  obj.orderstatus = "acceptbydelivery";
                     await _ordersServices.UpdateAsync(obj);
 
@@ -1139,5 +1144,28 @@ namespace appFoodDelivery.API
 
         }
 
+
+        [HttpGet]
+        [Route("GetAssignOrderbyAdmin")]
+        public async Task<IActionResult> GetAssignOrderbyAdmin(Int64 deliveryboyId)
+        {
+            var paramter = new DynamicParameters();
+            paramter.Add("@deliveryboyid", deliveryboyId);
+            //paramter.Add("@status", "Placed");
+            var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("GetAssignOrderbyAdmin", paramter);
+            
+
+            if (orderheaderList1 == null)
+            {
+                string myJson = "{'message': " + "Not Found" + "}";
+                return NotFound(myJson);
+                // return NotFound();
+            }
+            else
+            {
+                return Ok(orderheaderList1);
+            }
+            //return BadRequest();
+        }
     }
 }

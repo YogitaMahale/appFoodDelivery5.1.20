@@ -58,6 +58,7 @@ namespace appFoodDelivery.Entity
         //[DefaultValue("false")]
         //  public Boolean isactive { get; set; }
         public string  deliveryboyCheckStaus { get; set; } 
-        public string storeCheckStaus { get; set; } 
+        public string storeCheckStaus { get; set; }
+        public string acceptedby { get; set; }
     }
 }

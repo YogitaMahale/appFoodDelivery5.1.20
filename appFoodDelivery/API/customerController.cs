@@ -22,6 +22,7 @@ using System.Net.Http;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using appFoodDelivery.Utility;
 namespace appFoodDelivery.API
 {
     [Route("customer")]
@@ -56,38 +57,41 @@ namespace appFoodDelivery.API
                     int n = random.Next(0, 999);
                     no += n.ToString("D4") + "";
                 }
-                #region "sms"
-                try
-                {
+                string Msg = "OTP :" + no + ".  Please Use this OTP.This is usable once and expire in 10 minutes";
+                SendSMS objsendSMS = new SendSMS();
+                bool res = objsendSMS.smsSent(mobileno, Msg);
+                //#region "sms"
+                //try
+                //{
 
-                    string Msg = "OTP :" + no + ".  Please Use this OTP.This is usable once and expire in 10 minutes";
+                //    string Msg = "OTP :" + no + ".  Please Use this OTP.This is usable once and expire in 10 minutes";
 
-                    string OPTINS = "STRLIT";
-                    //  string Password = "9359848251";
-                    string Password = "959595";
+                //    string OPTINS = "STRLIT";
+                //    //  string Password = "9359848251";
+                //    string Password = "959595";
 
-                    string type = "3";
-                    // string strUrl = "https://www.bulksmsgateway.in/sendmessage.php?user=ezacus&password=" + "ezacus@2020" + "&message=" + Msg.ToString() + "&sender=" + OPTINS + "&mobile=" + mobileno + "&type=" + 3;
-                    //string strUrl = "https://www.bulksmsgateway.in/sendmessage.php?user=ezacus&password=" + "ezacus@2020" + "&message=" + Msg.ToString() + "&sender=" + OPTINS + "&mobile=" + mobileno + "&type=" + 3;
+                //    string type = "3";
+                //    // string strUrl = "https://www.bulksmsgateway.in/sendmessage.php?user=ezacus&password=" + "ezacus@2020" + "&message=" + Msg.ToString() + "&sender=" + OPTINS + "&mobile=" + mobileno + "&type=" + 3;
+                //    //string strUrl = "https://www.bulksmsgateway.in/sendmessage.php?user=ezacus&password=" + "ezacus@2020" + "&message=" + Msg.ToString() + "&sender=" + OPTINS + "&mobile=" + mobileno + "&type=" + 3;
 
 
-                    string strUrl = "http://bulksms.co/sendmessage.php?user=Aveebroiler&password=" + Password + "&message=" + Msg + "&sender=" + OPTINS + "&mobile=" + mobileno + "&type=" + 3;
-                    ServicePointManager.Expect100Continue = true;
-                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                    System.Net.WebRequest request = System.Net.WebRequest.Create(strUrl);
-                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                    Stream s = (Stream)response.GetResponseStream();
-                    StreamReader readStream = new StreamReader(s);
-                    string dataString = readStream.ReadToEnd();
-                    response.Close();
-                    s.Close();
-                    readStream.Close();
-                    //    Response.Write("Sent");
-                }
+                //    string strUrl = "http://bulksms.co/sendmessage.php?user=Aveebroiler&password=" + Password + "&message=" + Msg + "&sender=" + OPTINS + "&mobile=" + mobileno + "&type=" + 3;
+                //    ServicePointManager.Expect100Continue = true;
+                //    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                //    System.Net.WebRequest request = System.Net.WebRequest.Create(strUrl);
+                //    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                //    Stream s = (Stream)response.GetResponseStream();
+                //    StreamReader readStream = new StreamReader(s);
+                //    string dataString = readStream.ReadToEnd();
+                //    response.Close();
+                //    s.Close();
+                //    readStream.Close();
+                //    //    Response.Write("Sent");
+                //}
 
-                catch
-                { }
-                #endregion
+                //catch
+                //{ }
+                //#endregion
 
                 CustomerRegistrationOTPViewModel objCustomerRegistrationOTPViewModel = new CustomerRegistrationOTPViewModel();
                 CustomerRegistration obj = CustomerRegistrationservices.GetAll().Where(x => x.mobileno1 == mobileno && x.isdeleted == false).FirstOrDefault();

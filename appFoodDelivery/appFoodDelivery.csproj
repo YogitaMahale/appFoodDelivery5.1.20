@@ -101,6 +101,7 @@
     <ProjectReference Include="..\appFoodDelivery.Entity\appFoodDelivery.Entity.csproj" />
     <ProjectReference Include="..\appFoodDelivery.Persistence\appFoodDelivery.Persistence.csproj" />
     <ProjectReference Include="..\appFoodDelivery.Services\appFoodDelivery.Services.csproj" />
+    <ProjectReference Include="..\appFoodDelivery.Utility\appFoodDelivery.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>

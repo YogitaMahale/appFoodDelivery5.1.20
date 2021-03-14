@@ -870,6 +870,9 @@ namespace appFoodDelivery.Persistence.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("acceptedby")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("amount")
                         .HasColumnType("decimal(18, 2)");
 

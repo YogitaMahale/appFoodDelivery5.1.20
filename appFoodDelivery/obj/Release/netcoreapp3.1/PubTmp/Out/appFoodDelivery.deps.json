@@ -39,6 +39,7 @@
           "appFoodDelivery.Entity": "1.0.0",
           "appFoodDelivery.Persistence": "1.0.0",
           "appFoodDelivery.Services": "1.0.0",
+          "appFoodDelivery.Utility": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies.Reference": "3.1.0.0",
@@ -2432,6 +2433,14 @@
         },
         "compile": {
           "appFoodDelivery.Services.dll": {}
+        }
+      },
+      "appFoodDelivery.Utility/1.0.0": {
+        "runtime": {
+          "appFoodDelivery.Utility.dll": {}
+        },
+        "compile": {
+          "appFoodDelivery.Utility.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery.Reference/3.1.0.0": {
@@ -5305,6 +5314,11 @@
       "sha512": ""
     },
     "appFoodDelivery.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "appFoodDelivery.Utility/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

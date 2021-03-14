@@ -500,9 +500,11 @@ F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTm
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\appFoodDelivery.Entity.dll
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\appFoodDelivery.Persistence.dll
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\appFoodDelivery.Services.dll
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\appFoodDelivery.Utility.dll
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\appFoodDelivery.Entity.pdb
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\appFoodDelivery.Persistence.pdb
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\appFoodDelivery.Services.pdb
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\appFoodDelivery.Utility.pdb
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Identity\css\site.css
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Identity\favicon.ico
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Identity\js\site.js

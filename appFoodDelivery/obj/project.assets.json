@@ -2792,6 +2792,16 @@
         "runtime": {
           "bin/placeholder/appFoodDelivery.Services.dll": {}
         }
+      },
+      "appFoodDelivery.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/appFoodDelivery.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/appFoodDelivery.Utility.dll": {}
+        }
       }
     }
   },
@@ -8783,6 +8793,11 @@
       "type": "project",
       "path": "../appFoodDelivery.Services/appFoodDelivery.Services.csproj",
       "msbuildProject": "../appFoodDelivery.Services/appFoodDelivery.Services.csproj"
+    },
+    "appFoodDelivery.Utility/1.0.0": {
+      "type": "project",
+      "path": "../appFoodDelivery.Utility/appFoodDelivery.Utility.csproj",
+      "msbuildProject": "../appFoodDelivery.Utility/appFoodDelivery.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8801,7 +8816,8 @@
       "Syncfusion.Pdf.Net.Core >= 18.4.0.33",
       "appFoodDelivery.Entity >= 1.0.0",
       "appFoodDelivery.Persistence >= 1.0.0",
-      "appFoodDelivery.Services >= 1.0.0"
+      "appFoodDelivery.Services >= 1.0.0",
+      "appFoodDelivery.Utility >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8839,6 +8855,9 @@
             },
             "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Services\\appFoodDelivery.Services.csproj": {
               "projectPath": "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Services\\appFoodDelivery.Services.csproj"
+            },
+            "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Utility\\appFoodDelivery.Utility.csproj": {
+              "projectPath": "F:\\yogita 6.8.19\\appFoodDelivery\\appFoodDelivery.Utility\\appFoodDelivery.Utility.csproj"
             }
           }
         }
@@ -8920,7 +8939,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   },

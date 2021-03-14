@@ -1,0 +1,9 @@
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\bin\Release\netcoreapp3.1\appFoodDelivery.Utility.deps.json
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\bin\Release\netcoreapp3.1\appFoodDelivery.Utility.dll
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\bin\Release\netcoreapp3.1\appFoodDelivery.Utility.pdb
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\obj\Release\netcoreapp3.1\appFoodDelivery.Utility.csprojAssemblyReference.cache
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\obj\Release\netcoreapp3.1\appFoodDelivery.Utility.AssemblyInfoInputs.cache
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\obj\Release\netcoreapp3.1\appFoodDelivery.Utility.AssemblyInfo.cs
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\obj\Release\netcoreapp3.1\appFoodDelivery.Utility.csproj.CoreCompileInputs.cache
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\obj\Release\netcoreapp3.1\appFoodDelivery.Utility.dll
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\obj\Release\netcoreapp3.1\appFoodDelivery.Utility.pdb
