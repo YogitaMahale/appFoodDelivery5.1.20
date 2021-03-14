@@ -46,7 +46,7 @@ namespace appFoodDelivery.API
             }
             else
             {
-                if (obj.deliveryboyid.ToString().Trim() == "".ToString().Trim())
+                if (string.IsNullOrEmpty(Convert.ToString(obj.deliveryboyid)))
                 {
 
 
@@ -82,7 +82,7 @@ namespace appFoodDelivery.API
                 }
                 else
                 {
-                    string myJson = "{\"message\": " + "\"Order Not Assign to  delivery boy\"" + "}";
+                    string myJson = "{\"message\": " + "\"This Order Id Already assign delivery boy\"" + "}";
                     return BadRequest(myJson);
                 }
             }

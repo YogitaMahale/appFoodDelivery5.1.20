@@ -18,6 +18,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +34,7 @@ namespace appFoodDelivery.Controllers
         private readonly ISP_Call _ispcall;
         private readonly UserManager<ApplicationUser> _usermanager;
         private readonly IordersServices _ordersServices;
+        private readonly IorderhistoryServices _orderhistoryServices;
         private readonly ICustomerRegistrationservices _CustomerRegistrationservices;
         private readonly ISP_Call _ISP_Call;
         private readonly IdriverRegistrationServices _driverRegistrationServices;
@@ -39,7 +42,7 @@ namespace appFoodDelivery.Controllers
         private readonly IdistanceServices _distanceServices;
         private readonly IdeliveryboyPendingAmtServices _deliveryboyPendingAmtServices;
         public fcmNotification objfcmNotification = new fcmNotification();
-        public OrderController(UserManager<ApplicationUser> usermanager, ISP_Call ispcall, IordersServices ordersServices, ICustomerRegistrationservices CustomerRegistrationservices, ISP_Call ISP_Call, IdriverRegistrationServices driverRegistrationServices, IstoredetailsServices storedetailsServices, IdistanceServices distanceServices, IdeliveryboyPendingAmtServices deliveryboyPendingAmtServices)
+        public OrderController(UserManager<ApplicationUser> usermanager, ISP_Call ispcall, IordersServices ordersServices, ICustomerRegistrationservices CustomerRegistrationservices, ISP_Call ISP_Call, IdriverRegistrationServices driverRegistrationServices, IstoredetailsServices storedetailsServices, IdistanceServices distanceServices, IdeliveryboyPendingAmtServices deliveryboyPendingAmtServices, IorderhistoryServices orderhistoryServices)
         {
             this._usermanager = usermanager;
             _ISP_Call = ispcall;
@@ -50,6 +53,7 @@ namespace appFoodDelivery.Controllers
             _storedetailsServices = storedetailsServices;
             _distanceServices = distanceServices;
             _deliveryboyPendingAmtServices = deliveryboyPendingAmtServices;
+            _orderhistoryServices = orderhistoryServices;
         }
         private Task<ApplicationUser> GetCurrentUserAsync() => _usermanager.GetUserAsync(HttpContext.User);
 
@@ -492,42 +496,64 @@ namespace appFoodDelivery.Controllers
             //return View(model);
         }
         [HttpPost]
-        public IActionResult deliveryboyassignPost(deliveryboyAssignorderViewModel model)
+        public async Task<IActionResult> deliveryboyassignPost(deliveryboyAssignorderViewModel model)
         {
+
             if (ModelState.IsValid)
             {
-                var paramter = new DynamicParameters();
-                paramter.Add("@id", model.id);
-                paramter.Add("@deliveryboyid", model.deliveryboyid);
+
+                orders obj = _ordersServices.GetById(model.id);// await _usermanager.GetUserAsync(User); 
+
+                if (obj == null)
+                {
+                    TempData["error"] = "Order Not Found";
+                   
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(Convert.ToString(obj.deliveryboyid)))
+                    {
 
 
-                //storedetailsListViewmodel
-                _ISP_Call.Execute("orderdeliveryboy_Update", paramter);
+                        obj.deliveryboyid = model.deliveryboyid;
+                        obj.acceptedby = "Admin";
+                        await _ordersServices.UpdateAsync(obj);
 
-                #region "Notification"
-                var deliveryboydetails = _driverRegistrationServices.GetById(model.deliveryboyid);
-                string deliveryboyName = deliveryboydetails.name;
-                string deliveryboyDeviceId = deliveryboydetails.deviceid;
+                        var driverdetails = _driverRegistrationServices.GetById(model.deliveryboyid);
+                        orderhistory objorderhistory = new orderhistory();
+                        objorderhistory.oid = model.id;
+                        objorderhistory.placedate = DateTime.UtcNow;
+                        objorderhistory.orderstatus = "Admin assign Order to this Delivery boy." + driverdetails.name + "  . OrderID  :" + model.id;
+                        await _orderhistoryServices.CreateAsync(objorderhistory);
 
+                        #region "Notification customer and store"
+                        int customerid = obj.customerid;
+                        string customerDeviceId = _CustomerRegistrationservices.GetById(customerid).deviceid;
+                        string customerMsg = driverdetails.name + " will be Delivering Your order";
+                        string customerTitle = "Delivering Your order";
+                        fcmNotification objfcmNotification = new fcmNotification();
+                        objfcmNotification.customerNotification(customerDeviceId, customerMsg, "", customerTitle);
 
-                int customerid = _ordersServices.GetById(model.id).customerid;
-                string customerDeviceId = _CustomerRegistrationservices.GetById(customerid).deviceid;
+                        var storeDeviceId = _usermanager.Users.Where(x => x.Id == obj.storeid).FirstOrDefault().deviceid;
+                        string storeMsg = "Admin Assign delivery boy " + driverdetails.name + " to this Order Id : " + model.id;
+                        string storeTitle = "Assign Deliveryboy";
+                        objfcmNotification.storeNotification(storeDeviceId, storeMsg, "", storeTitle);
 
-                string message = "Your Order No. - " + model.id + " assignt to this " + deliveryboyName;
-                string title = "Assign Deliveryboy";
-                // customerNotification(customerDeviceId, message,"", title);
-                objfcmNotification.customerNotification(customerDeviceId, message, "", title);
+                        #endregion
 
+                        TempData["success"] = "Order Assign To Delivery boy Successfully";
+                        //string myJson = "{\"message\": " + "\"Order Assign To Delivery boy Successfully\"" + "}";
+                        //return Ok(obj);
+                    }
+                    else
+                    {
+                        TempData["error"] = "This Order Id Already assign delivery boy";
+                        //string myJson = "{\"message\": " + "\"This Order Id Already assign delivery boy\"" + "}";
+                        //return BadRequest(myJson);
+                    }
+                }
 
-
-
-                string message1 = "You have assign this Order Id - " + model.id + "by Admin";
-                string title1 = "Assign Order";
-                // customerNotification(customerDeviceId, message,"", title);
-                objfcmNotification.deliveryboyNotification(deliveryboyDeviceId, message1, "", title1);
-
-
-                #endregion
+                
 
 
             }

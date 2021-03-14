@@ -7,11 +7,12 @@ namespace appFoodDelivery.Models
 {
     public class deliveryboyAssignorderViewModel
     {
+        [Display(Name = "Order ID")]
         public int id { get; set; }
 
         [Display(Name = "Select Deliveryboy")]
         public int deliveryboyid { get; set; }
-
+        [Display(Name = "Customer")]
         public string customername { get; set; }
     }
 }

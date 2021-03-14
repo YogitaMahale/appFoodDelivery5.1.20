@@ -87,7 +87,9 @@ function loadDataTable(url) {
                                   
                                       <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
   <a data-toggle="modal" data-id=${row['id']} data-toggle="modal" title="Add this item" class="open-AddBookDialog btn btn-success text-white btn-lg"  style='cursor:pointer; width:80px;' href="#myModal">Complete COD </a> 
-            
+            <a href="/Order/deliveryboyassign?id=${row['id']}" class='btn btn-warning text-white btn-lg'  style='cursor:pointer; width:100px;'>
+                                      Assign Deliveryboy
+                                  </a> 
                                 
                             `;
 

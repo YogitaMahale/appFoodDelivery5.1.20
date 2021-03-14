@@ -1,5 +1,6 @@
 ﻿using appFoodDelivery.Entity;
 using appFoodDelivery.Models;
+using appFoodDelivery.Models.dtos;
 using appFoodDelivery.Notification;
 using appFoodDelivery.Services;
 using appFoodDelivery.Utility;
@@ -1158,6 +1159,30 @@ namespace appFoodDelivery.API
             if (orderheaderList1 == null)
             {
                 string myJson = "{'message': " + "Not Found" + "}";
+                return NotFound(myJson);
+                // return NotFound();
+            }
+            else
+            {
+                return Ok(orderheaderList1);
+            }
+            //return BadRequest();
+        }
+
+
+        [HttpGet]
+        [Route("deliveryboyList")]
+        public async Task<IActionResult> deliveryboyList()
+        {
+            //var paramter = new DynamicParameters();
+            //paramter.Add("@deliveryboyid", deliveryboyId);
+            //paramter.Add("@status", "Placed");
+            var orderheaderList1 = _ISP_Call.List<deliveryboyListViewModel>("deliveryboyList", null);
+
+
+            if (orderheaderList1 == null)
+            {
+                string myJson = "{'message': " + "Record Not Found" + "}";
                 return NotFound(myJson);
                 // return NotFound();
             }
