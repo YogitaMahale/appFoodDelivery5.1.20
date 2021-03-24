@@ -50,14 +50,14 @@ namespace appFoodDelivery.Models
         public string instructions { get; set; }
 
 
-        public string deliverychargers { get; set; }
+       public string deliverychargers { get; set; }
         public string kilometer { get; set; }
 
         public string customerdeliverylatitude { get; set; }
         public string customerdeliverylongitude { get; set; }
-        public decimal deliveryboycharges { get; set; }
+   //     public decimal deliveryboycharges { get; set; }
         public decimal productCost { get; set; }
-        public decimal deliverycharges { get; set; }
+      public decimal deliverycharges { get; set; }
         public string cityName { get; set; }
         public string deliveryboyCheckStaus { get; set; }
     }
