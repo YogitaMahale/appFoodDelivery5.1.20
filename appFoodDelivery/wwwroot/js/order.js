@@ -81,7 +81,10 @@ function loadDataTable(url) {
                             `;
                             }
                             else {
-                                return `<div class="text-center">                           
+
+                                if (row['deliveryboyid'] === undefined || row['deliveryboyid'] == null || row['deliveryboyid'] == "") {
+
+                                    return `<div class="text-center">                           
                                   
                                   <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
                                   
@@ -92,23 +95,37 @@ function loadDataTable(url) {
                                   </a> 
                                 
                             `;
+                                }
+                                else {
+                                    return `<div class="text-center">                           
+                                  
+                                  <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+                                  
+                                      <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+  <a data-toggle="modal" data-id=${row['id']} data-toggle="modal" title="Add this item" class="open-AddBookDialog btn btn-success text-white btn-lg"  style='cursor:pointer; width:80px;' href="#myModal">Complete COD </a> 
+        
+                                
+                            `;
+                                }
+
+
 
                             }
-  //                          return `<div class="text-center">                           
-                                  
-  //                                <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
-                                  
-  //                                    <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
-  //<a data-toggle="modal" data-id=${row['id']} data-toggle="modal" title="Add this item" class="open-AddBookDialog btn btn-success text-white btn-lg"  style='cursor:pointer; width:80px;' href="#myModal">Complete COD </a> 
-            
-                                
-  //                          `;
+                            //                          return `<div class="text-center">                           
+
+                            //                                <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+
+                            //                                    <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+                            //<a data-toggle="modal" data-id=${row['id']} data-toggle="modal" title="Add this item" class="open-AddBookDialog btn btn-success text-white btn-lg"  style='cursor:pointer; width:80px;' href="#myModal">Complete COD </a> 
+
+
+                            //                          `;
 
                         }
                         else {
 
 
-                            if (row['orderstatus'] == "completedorders" || row['orderstatus'] =="cancelledorders") {
+                            if (row['orderstatus'] == "completedorders" || row['orderstatus'] == "cancelledorders") {
                                 return `<div class="text-center">                           
                                   
                                   <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
@@ -117,25 +134,46 @@ function loadDataTable(url) {
                             `;
                             }
                             else {
-                                return `<div class="text-center">                           
+
+
+                                if (row['deliveryboyid'] === undefined || row['deliveryboyid'] == null || row['deliveryboyid'] == "") {
+                                    return `<div class="text-center">                           
                                   
                                   <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
                                     <a href="/Order/changeorderStatus?id=${row['id']}&status=completedorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:80px;'>Complete</a>
                                       <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
-
+                             <a href="/Order/deliveryboyassign?id=${row['id']}" class='btn btn-warning text-white btn-lg'  style='cursor:pointer; width:100px;'>
+                                      Assign Deliveryboy
+                                  </a> 
                                  
                             `;
+                                }
+                                else {
+                                    return `<div class="text-center">                           
+                                  
+                                  <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
+                                    <a href="/Order/changeorderStatus?id=${row['id']}&status=completedorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:80px;'>Complete</a>
+                                      <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
+                           
+                                 
+                            `;
+                                }
+
+
+
+
+
 
                             }
 
 
                             //return `<div class="text-center">                           
-                                  
+
                             //      <a href="/Order/Details?id=${row['id']}" class='btn btn-warning text-white btn-lg btn-block ' style='cursor:pointer; width:70px;'>Details</a>
                             //        <a href="/Order/changeorderStatus?id=${row['id']}&status=completedorders" class='btn btn-success text-white btn-lg' style='cursor:pointer; width:80px;'>Complete</a>
                             //          <a href="/Order/changeorderStatus?id=${row['id']}&status=cancelledorders" class='btn btn-danger text-white btn-lg' style='cursor:pointer; width:80px;'>Cancel</a>
 
-                                 
+
                             //`;
 
                         }
