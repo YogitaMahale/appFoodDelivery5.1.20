@@ -57,7 +57,8 @@ namespace appFoodDelivery.API
                     int n = random.Next(0, 999);
                     no += n.ToString("D4") + "";
                 }
-                string Msg = "OTP :" + no + ".  Please Use this OTP.This is usable once and expire in 10 minutes";
+                //string Msg = "OTP :" + no + ".  Please Use this OTP.This is usable once and expire in 10 minutes";
+                string Msg = "OTP : "+no+" Please Use this OTP to Register with TOFOZ. This is usable once and expire in 10 minutes";
                 SendSMS objsendSMS = new SendSMS();
                 bool res = objsendSMS.smsSent(mobileno, Msg);
                 //#region "sms"

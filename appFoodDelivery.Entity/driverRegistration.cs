@@ -23,8 +23,8 @@ namespace appFoodDelivery.Entity
 
         public string gender { get; set; }
 
-        public string latitude { get; set; }
-        public string longitude { get; set; }
+        public string latitude { get; set; } = "0";
+        public string longitude { get; set; } = "0";
         public string deviceid { get; set; }
         public DateTime createddate { get; set; }
 

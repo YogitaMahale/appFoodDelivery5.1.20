@@ -17,6 +17,10 @@ namespace appFoodDelivery.Utility
         public const string SMS_Password = "78746582";
         public const string SMS_user = "t1pichome";
 
+        //public const string SMS_templateId = "1707161690831867495";
+        public const string SMS_templateId = "1707161725977964602";
+        public const string SMS_EntityId = "1701160171010483055";
+
     }
 }
 

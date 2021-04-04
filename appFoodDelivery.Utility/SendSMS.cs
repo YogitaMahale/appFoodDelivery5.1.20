@@ -13,10 +13,29 @@ namespace appFoodDelivery.Utility
             #region "sms"
             try
             {
+                //                1701160171010483055
+                //entity id
 
 
-              //  string template_id = "123";
-                string strUrl = "https://nimbusit.co.in/api/swsend.asp?username="+SD.SMS_user+"&password="+SD.SMS_Password+"&sender="+SD.SMS_OPTINS+"&sendto="+mobileNo+"&message="+message;
+                //1707161690831867495
+                //templet id
+
+
+
+
+                //http://nimbusit.co.in/api/swsendSingle.asp?username=xxxx&password=xxxx&sender=senderId&sendto=919xxxx&entityID=170134xxxxxxxxx&templateID=158777xxxxxxxxxxx&message=hello
+
+                //                sender id
+                //TOFOZF
+
+
+                //  string template_id = "123";
+                //string strUrl = "https://nimbusit.co.in/api/swsend.asp?username="+SD.SMS_user+"&password="+SD.SMS_Password+"&sender="+SD.SMS_OPTINS+"&sendto="+mobileNo+"&message="+message;
+                string strUrl = "http://nimbusit.co.in/api/swsendSingle.asp?username=" + SD.SMS_user + "&password=" + SD.SMS_Password + "&sender=" + SD.SMS_OPTINS + "&sendto=" + mobileNo + "&entityID=" + SD.SMS_EntityId + "&templateID=" + SD.SMS_templateId + "&message=" + message + "";
+
+                /*
+                string strUrl = "http://nimbusit.co.in/api/swsendSingle.asp?username="+SD.SMS_user+"&password="+SD.SMS_Password+"&sender="+SD.SMS_OPTINS+"&sendto="+mobileNo+"&entityID="+SD.SMS_EntityId+"&templateID="+SD.SMS_templateId+"&message="+message+"";
+                */
 
                 ServicePointManager.Expect100Continue = true;
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
