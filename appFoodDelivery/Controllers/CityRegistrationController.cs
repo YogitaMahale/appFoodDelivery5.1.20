@@ -57,8 +57,15 @@ namespace appFoodDelivery.Controllers
         {
 
             IList<StateRegistration> obj = _StateRegistrationService.GetAll().Where(x => x.countryid == id).ToList();
-            obj.Insert(0, new StateRegistration { id = 0, StateName = "select", isactive = false, isdeleted = false });
+            //obj.Insert(0, new StateRegistration { id = 0, StateName = "select", isactive = false, isdeleted = false });
             return Json(new SelectList(obj, "id", "StateName"));
+        }
+        public JsonResult getCitybyStateid(int stateid)
+        {
+
+            IList<CityRegistration> obj = _CityRegistrationservices.GetAll().Where(x => x.stateid  == stateid).ToList();
+         //   obj.Insert(0, new CityRegistration { id = 0, cityName = "select", isactive = false, isdeleted = false });
+            return Json(new SelectList(obj, "id", "cityName"));
         }
 
         public IActionResult GetStates(string countryid)

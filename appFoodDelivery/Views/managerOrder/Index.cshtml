@@ -1,0 +1,139 @@
+﻿
+@{
+    @*//pending
+        //approved
+        //processorders
+        //ongoingorders
+        //completedorders
+        //cancelledorders*@
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var status = Context.Request.Query["status"];
+    var pending = "text-primary";
+    var approved = "text-primary";
+    var processorders = "text-primary";
+    var ongoingorders = "text-primary";
+    var completedorders = "text-primary";
+    var cancelledorders = "text-primary";
+    var all = "text-primary";
+    switch (status)
+    {
+        //case "pending":
+        //    pending = "active text-primary";
+        //    break;
+        case "approved":
+            approved = "active text-primary";
+            break;
+        case "processorders":
+            processorders = "active text-primary";
+            break;
+        case "ongoingorders":
+            ongoingorders = "active text-primary";
+            break;
+
+        case "completedorders":
+            completedorders = "active text-primary";
+            break;
+        case "cancelledorders":
+            cancelledorders = "active text-primary";
+            break;
+
+        default:
+            pending = "active text-primary";
+            break;
+    }
+
+}
+
+<br />
+<div class="border p-3 bg-white">
+    <h2 class="text-primary">Order's List</h2>
+
+
+
+
+
+    <div class="d-flex justify-content-between ">
+        @*<div class="p-2">
+                <h2 class="text-primary">Order's List</h2>
+            </div>*@
+        <div class="p-12">
+            <ul class="list-group list-group-horizontal-lg" style="text-align:right;">
+                @*//pending
+                    //approved
+                    //processorders
+                    //ongoingorders
+                    //completedorders
+                    //cancelledorders*@
+
+
+                <a style="text-decoration:none;" asp-controller="managerOrder" asp-action="Index" asp-route-status="pending">
+                    <li class="list-group-item @pending">Pending</li>
+                </a>
+                <a style="text-decoration:none;" asp-controller="managerOrder" asp-action="Index" asp-route-status="approved">
+                    <li class="list-group-item @approved">Approved</li>
+                </a>
+                <a style="text-decoration:none;" asp-controller="managerOrder" asp-action="Index" asp-route-status="processorders">
+                    <li class="list-group-item @processorders">Process Orders</li>
+                </a>
+                <a style="text-decoration:none;" asp-controller="managerOrder" asp-action="Index" asp-route-status="ongoingorders">
+                    <li class="list-group-item @ongoingorders">On Going Orders</li>
+                </a>
+                <a style="text-decoration:none;" asp-controller="managerOrder" asp-action="Index" asp-route-status="completedorders">
+                    <li class="list-group-item @completedorders">Completed Orders</li>
+                </a>
+                <a style="text-decoration:none;" asp-controller="managerOrder" asp-action="Index" asp-route-status="cancelledorders">
+                    <li class="list-group-item @cancelledorders">Cancelled Orders</li>
+                </a>
+                @*<a style="text-decoration:none;" asp-controller="Order" asp-action="test" asp-route-status="all">
+                        <li class="list-group-item @all">All</li>
+                    </a>*@
+            </ul>
+        </div>
+    </div>
+    <br />
+    <br />
+
+
+    <div style="overflow-x: scroll;">
+
+
+        <table id="DT_load" class="table  table-bordered" style="width:100%">
+            <thead class="thead-dark">
+                <tr class="table-info">
+                    <th>Action</th>
+                    <th>Order No.</th>
+
+
+                    <th>City</th>
+                    <th>Store Name</th>
+                    <th>Customer Name</th>
+                    <th>Amount</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                    <th>Delivery Boy</th>
+                    <th>Time</th>
+                    <th>Payment Type</th>
+                    @*<th>Payment Status</th>
+                        <th>Deliveryboy Status</th>*@
+
+                    @*<th>logintype</th>*@
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+</div>
+
+ 
+
+@section Scripts{
+    <script src="~/js/managerOrder.js"></script>
+    <script type="text/javascript">
+       
+    </script>
+}

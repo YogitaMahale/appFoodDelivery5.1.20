@@ -36,5 +36,7 @@ namespace appFoodDelivery.Entity
 
         [Column(TypeName = "decimal(18, 2)")]
         public decimal CollectOrderAmtfromDeliveryboy { get; set; } = 0;
+
+        public string managerCity { get; set; }
     }
 }

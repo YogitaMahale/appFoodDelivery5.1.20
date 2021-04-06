@@ -93,9 +93,64 @@
                     </div>
                 </div>
 
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="countryid"></label>
+                    </div>
+                    <div class="form-check col-md-3">
+                        <select name="countryid" id="countryid" asp-for="countryid" class="form-control"
+                                asp-items="@ViewBag.Countries"
+                                onchange="DoPostBack();">
+                            <option value="">select</option>
+                        </select>
+                        <span asp-validation-for="countryid" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2">
 
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="stateid">  </label>
+                    </div>
 
-                
+                    <div class="form-group col-md-3">
+                        
+                        <select class="form-control" name="stateid" id="stateid" asp-for="stateid"
+                                asp-items="@ViewBag.States">
+                            @*onchange="DoPostBack();"*@
+                            @*disabled="@(ViewBag.StateEnabled == false ? "disabled" : null)"*@
+                            <option value="">select</option>
+                        </select>
+                        <span asp-validation-for="stateid" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label class="form-label" asp-for="managerCity"></label>
+                    </div>
+
+                    <div class="form-check col-md-3">
+
+                        @*<select class="form-control" name="cityid" id="cityid" asp-for="managerCity"
+                asp-items="@ViewBag.Cities">
+
+            <option value="">select</option>
+        </select>*@
+                        @*<select data-rel="chosen" asp-for="managerCity" id="managerCity"
+                class="form-control" data-placeholder="select City" asp-items="@ViewBag.Cities" multiple="">
+        </select>*@
+                        <select data-rel="chosen" asp-for="managerCity" id="managerCity"
+                                class="form-control" data-placeholder="select City"  multiple="">
+                        </select>
+                        <span asp-validation-for="managerCity" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group col-md-2" style="display:none;">
+                        <input type="text" asp-for="multipleManagerCity" id="multipleManagerCity" />
+                    </div>
+
+                </div>
+
 
 
 
@@ -120,4 +175,92 @@
 @section Scripts{
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
- 
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("[data-rel='chosen']").chosen();
+        if ($("#multipleManagerCity").val() === undefined || $("#multipleManagerCity").val() == null || $("#multipleManagerCity").val().length <= 0) {
+            // // if (isEmpty($("#managerCity").val()))
+            //{
+            //alert($("#multipleManagerCity").val());
+        }
+        else {
+          //  alert("managerCity load ");
+            //alert($("#multipleManagerCity").val());
+            loadCity($("#stateid").val());
+        }
+
+        $("#managerCity").change(function () {
+            $("#multipleManagerCity").val($("#managerCity").val());
+
+        });
+       
+
+
+
+         $("#stateid").change(function () {
+              loadCity($("#stateid").val());
+          });
+
+    function loadCity(stateIdd) {
+         $("#multipleManagerCity").empty();
+              $("#managerCity").empty();
+           var s = '';
+        $("[data-rel='chosen']").chosen();
+              var url = '@Url.Content("~/")' + 'CityRegistration/getCitybyStateid';
+        //var ddlsource1 = "#stateid";
+        $.getJSON(url, { stateid: stateIdd },
+                function (data) {
+                    $.each(data, function (i, row) {
+                        s += '<option value="' + row.value + '">' + row.text + '</option>';
+                    });
+                    $("#managerCity").html(s);
+
+                    if ($("#multipleManagerCity").val() === undefined || $("#multipleManagerCity").val() == null || $("#multipleManagerCity").val().length <= 0) {
+
+                    }
+                    else {
+                           var str_array = $("#multipleManagerCity").val().split(',');
+                    for (var i = 0; i < str_array.length; i++) {
+                        str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+                    }
+
+                    $('#managerCity').val(str_array).trigger('chosen:updated');
+                    }
+
+                    $("[data-rel='chosen']").trigger("chosen:updated");
+
+                }
+        )
+
+
+    }
+
+    });
+    $("#countryid").change(function () {
+        //alert("test");
+            var url = '@Url.Content("~/")' + 'CityRegistration/getstatebyid';
+            var ddlsource = "#countryid";
+            $.getJSON(url,
+                { id: $(ddlsource).val() },
+                function (data) {
+                //   console.log(data);
+                    var item = ' <option value="">select</option>';
+                    $("#stateid").empty();
+
+                    $("#multipleManagerCity").empty();
+                    $("#managerCity").empty();
+                    $("[data-rel='chosen']").trigger("chosen:updated");
+                    $.each(data, function (i, row) {
+
+                        item += "<option value='" + row.value + "'>" + row.text + "  </option > ";
+                       // alert(row);
+                    });
+                    $("#stateid").html(item);
+                }
+            )
+        });
+
+</script>

@@ -80,13 +80,14 @@
                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                 </div>
             </div>
+          
             <div class="form-row">
-                 
+
                 @if (User.IsInRole(SD.Role_Admin))
                 {
                     <div class="form-group col-md-1">
                         <label asp-for="Role"></label>
-                       
+
                     </div>
 
                     <div class="form-group col-md-4">
@@ -112,15 +113,15 @@
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>*@
             @*<div class="form-group">
-                <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>*@
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmPassword"></label>
+            <input asp-for="ConfirmPassword" class="form-control" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>*@
             <button type="submit" class="btn btn-primary">Register</button>
             <div asp-validation-summary="All" class="text-danger"></div>
         </form>

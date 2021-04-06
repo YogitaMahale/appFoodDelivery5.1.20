@@ -252,6 +252,9 @@ namespace appFoodDelivery.Persistence.Migrations
                     b.Property<string>("longitude")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("managerCity")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("mobileno")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

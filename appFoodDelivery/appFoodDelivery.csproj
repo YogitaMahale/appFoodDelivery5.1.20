@@ -58,6 +58,7 @@
     <Folder Include="Data\" />
     <Folder Include="PDF\" />
     <Folder Include="Views\StoreOwner\" />
+    <Folder Include="wwwroot\dropdownselect\New folder\" />
     <Folder Include="wwwroot\uploads\driver\drivingLicence\" />
     <Folder Include="wwwroot\uploads\driver\profilephoto\" />
     <Folder Include="wwwroot\uploads\driver\vehicleinsurancephoto\" />
@@ -87,6 +88,17 @@
     <None Include="Views\StateRegistration\Create.cshtml" />
     <None Include="Views\StateRegistration\Edit.cshtml" />
     <None Include="Views\StateRegistration\Index.cshtml" />
+    <None Include="wwwroot\dropdownselect\chosen.jquery.js" />
+    <None Include="wwwroot\dropdownselect\chosen.jquery.min.js" />
+    <None Include="wwwroot\dropdownselect\chosen.proto.js" />
+    <None Include="wwwroot\dropdownselect\chosen.proto.min.js" />
+    <None Include="wwwroot\dropdownselect\docsupport\init.js" />
+    <None Include="wwwroot\dropdownselect\docsupport\init.proto.js" />
+    <None Include="wwwroot\dropdownselect\docsupport\jquery-1.12.4.min.js" />
+    <None Include="wwwroot\dropdownselect\docsupport\jquery-3.2.1.min.js" />
+    <None Include="wwwroot\dropdownselect\docsupport\prism.js" />
+    <None Include="wwwroot\dropdownselect\docsupport\prototype-1.7.0.0.js" />
+    <None Include="wwwroot\dropdownselect\LICENSE.md" />
     <None Include="wwwroot\pages\AboutUs.html" />
     <None Include="wwwroot\pages\RefundandCancellation.html" />
     <None Include="wwwroot\pages\Privacypolicy.html" />

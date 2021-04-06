@@ -56,6 +56,18 @@ namespace appFoodDelivery.Models
         public Boolean isdeleted { get; set; } = false;
 
         public Boolean isactive { get; set; } = false;
+        [Required]
+        [Display(Name = "Select Country")]
+        public int countryid { get; set; } = 0;
 
+        [Required]
+        [Display(Name = "Select State")]
+        public int stateid { get; set; } = 0;
+
+
+        [Required]
+        [Display(Name = "Select City")]
+        public string managerCity { get; set; }
+        public string multipleManagerCity { get; set; }
     }
 }

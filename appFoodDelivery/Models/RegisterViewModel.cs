@@ -49,5 +49,19 @@ namespace appFoodDelivery.Models
         public string Role { get; set; }
 
         public IEnumerable<SelectListItem> roleList { get; set; }
+
+        //[Required]
+        //[Display(Name = "Select Country")]
+        //public int countryid { get; set; } = 0;
+        //public IEnumerable<SelectListItem> countryList { get; set; }
+
+        //[Required]
+        //[Display(Name = "Select State")]
+        //public int stateid { get; set; } = 0;
+
+
+        //[Required]
+        //[Display(Name = "Select City")]
+        //public int? cityid { get; set; }
     }
 }

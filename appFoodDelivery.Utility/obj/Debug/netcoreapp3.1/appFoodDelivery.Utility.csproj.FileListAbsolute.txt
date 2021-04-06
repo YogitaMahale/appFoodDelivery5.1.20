@@ -6,3 +6,4 @@ F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\obj\Debug\netcoreapp3.1
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\obj\Debug\netcoreapp3.1\appFoodDelivery.Utility.csproj.CoreCompileInputs.cache
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\obj\Debug\netcoreapp3.1\appFoodDelivery.Utility.dll
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\obj\Debug\netcoreapp3.1\appFoodDelivery.Utility.pdb
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery.Utility\obj\Debug\netcoreapp3.1\appFoodDelivery.Utility.csprojAssemblyReference.cache

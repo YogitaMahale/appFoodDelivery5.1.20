@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 
 namespace appFoodDelivery.Controllers
 {
-    [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Store)]
+    [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Store+","+SD.Role_Manager)]
     public class OrderController : Controller
     {
         private readonly ISP_Call _ispcall;

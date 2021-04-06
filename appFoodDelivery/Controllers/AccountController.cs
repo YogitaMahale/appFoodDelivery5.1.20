@@ -82,6 +82,12 @@ namespace appFoodDelivery.Controllers
                 Text = i,
                 Value = i
             });
+
+            //RegisterViewModelobj.countryList = _CountryRegistrationservices.GetAll().Select(i => new SelectListItem
+            //{
+            //    Text = i.countryname,
+            //    Value = i.id.ToString()
+            //});
             return View(RegisterViewModelobj);
         }
         [HttpPost]
@@ -307,6 +313,33 @@ namespace appFoodDelivery.Controllers
 
 
             var users = await usermanager.FindByIdAsync(id);
+
+            ViewBag.Countries = _CountryRegistrationservices.GetAll().Select(x => new SelectListItem()
+            {
+                Text = x.countryname,
+                Value = x.id.ToString()
+            });
+
+            int countryiddd = 0, stateid = 0, countryid = 0;
+
+            if (users.managerCity != null)
+            {
+                string  cityiddd = users.managerCity;
+                var paramter = new DynamicParameters();
+                paramter.Add("@cityId", cityiddd);               
+                var stateobj = _sP_Call.OneRecord<GetStatebyCityIdViewModel>("GetStatebyCityId", paramter);
+                if (stateobj != null)
+                {
+                    stateid = stateobj.stateid;
+
+                }
+                else
+                {
+                    stateid = 0;
+                }                
+                countryid = _StateRegistrationService.GetById(stateid).countryid;
+            }
+
             if (users == null)
             {
                 ViewBag.ErrorMessgae = "User with id =" + id + "cannot be found";
@@ -319,9 +352,28 @@ namespace appFoodDelivery.Controllers
                 name = users.name,
                 mobileno = users.mobileno,
                 gender = users.gender,
-                UserName = users.UserName
+                UserName = users.UserName,
+                managerCity = users.managerCity,
+                multipleManagerCity =users.managerCity
 
             };
+            if (users.managerCity != null)
+            {
+                model.countryid = countryid;
+                model.stateid = stateid;
+                model.managerCity = users.managerCity;
+
+                ViewBag.States = _StateRegistrationService.GetAll().Where(x => x.isdeleted == false && x.countryid == model.countryid).Select(x => new SelectListItem()
+                {
+                    Text = x.StateName,
+                    Value = x.id.ToString()
+                });
+            //    ViewBag.Cities = _cityRegistrationservices.GetAll().Where(x => x.isdeleted == false && x.stateid == model.stateid).Select(x => new SelectListItem()
+            //    {
+            //        Text = x.cityName,
+            //        Value = x.id.ToString()
+            //    });
+            }
             return View(model);
         }
         [HttpPost]
@@ -341,6 +393,7 @@ namespace appFoodDelivery.Controllers
                 users.mobileno = model1.mobileno;
                 users.Email = model1.Email;
                 users.UserName = model1.UserName;
+                users.managerCity = model1.multipleManagerCity;
                 if (model1.profilephoto != null && model1.profilephoto.Length > 0)
                 {
                     var uploadDir = @"uploads/storeowner";
@@ -370,6 +423,7 @@ namespace appFoodDelivery.Controllers
                 var res = await usermanager.UpdateAsync(users);
                 if (res.Succeeded)
                 {
+                    TempData["success"] = "Record Update successfully";
                     return RedirectToAction("Index", "Home");
                     //return RedirectToAction("ListUsers");
 
