@@ -46,7 +46,8 @@ namespace appFoodDelivery.Controllers
         private readonly IstoredetailsServices _storedetailsServices;
         private readonly IdistanceServices _distanceServices;
         public fcmNotification objfcmNotification = new fcmNotification();
-        public ReportdetailsController(UserManager<ApplicationUser> usermanager, ISP_Call ispcall, IordersServices ordersServices, ICustomerRegistrationservices CustomerRegistrationservices, ISP_Call ISP_Call, IdriverRegistrationServices driverRegistrationServices, IstoredetailsServices storedetailsServices, IdistanceServices distanceServices)
+        private readonly ICountryRegistrationservices _countryRegistrationservices;
+        public ReportdetailsController(UserManager<ApplicationUser> usermanager, ISP_Call ispcall, IordersServices ordersServices, ICustomerRegistrationservices CustomerRegistrationservices, ISP_Call ISP_Call, IdriverRegistrationServices driverRegistrationServices, IstoredetailsServices storedetailsServices, IdistanceServices distanceServices, ICountryRegistrationservices countryRegistrationservices)
         {
             this._usermanager = usermanager;
             _ISP_Call = ispcall;
@@ -56,6 +57,7 @@ namespace appFoodDelivery.Controllers
             _driverRegistrationServices = driverRegistrationServices;
             _storedetailsServices = storedetailsServices;
             _distanceServices = distanceServices;
+            _countryRegistrationservices = countryRegistrationservices;
         }
         private Task<ApplicationUser> GetCurrentUserAsync() => _usermanager.GetUserAsync(HttpContext.User);
 
@@ -434,6 +436,228 @@ namespace appFoodDelivery.Controllers
 
         }
 
+        //---------------------------------------------------
+        [HttpGet]
+        public async Task<IActionResult> cityReport(int? PageNumber, string from1, string to1, string status,int cityId)
+        {
+            IEnumerable<SelectListItem> obj1 = _driverRegistrationServices.GetAllstatus();
+            ViewData["OrderStatus"] = obj1;
+
+            ViewBag.from1 = from1;
+            ViewBag.to1 = to1;
+            ViewBag.status1 = status;
+            ApplicationUser usr = await GetCurrentUserAsync();
+            var user = await _usermanager.FindByIdAsync(usr.Id);
+            var role = await _usermanager.GetRolesAsync(user);
+            string roles = role[0].ToString();
+
+
+            string s1 = DateTime.Now.ToShortDateString().ToString();
+
+            var paramter = new DynamicParameters();
+            //if (roles == "Admin")
+            //{
+            //    paramter.Add("@storeid", "");
+            //}
+            //else
+            //{
+            //    paramter.Add("@storeid", usr.Id);
+            //}
+            paramter.Add("@status", status);
+
+            paramter.Add("@from", from1);
+            paramter.Add("@to", to1);
+            paramter.Add("@cityId", cityId);
+
+            //old
+            //  var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAllSearch", paramter);
+            var orderheaderList1 = _ISP_Call.List<orderselectallViewModelNew>("cityreport", paramter);
+            int PageSize = 10;
+            //-----column sum-----------------------
+            //decimal finalamt1 = 0;
+            //decimal hotelamount1 = 0;
+            //decimal packingcharges1 = 0;
+            //decimal subtotal11 = 0;
+            //decimal storecommission1 = 0;
+
+            //decimal tofozamt1 = 0;
+            //decimal servicetax1 = 0;
+            //decimal TCS1 = 0;
+            //decimal netpayable1 = 0;
+            //decimal deliveryboycharges1 = 0;
+
+            ViewBag.finalamt1 = orderheaderList1.Sum(x => x.finalamt);
+            ViewBag.hotelamount1 = orderheaderList1.Sum(x => Convert.ToDecimal(x.hotelamount));
+            ViewBag.packingcharges1 = orderheaderList1.Sum(x => x.packingcharges);
+            ViewBag.subtotal11 = orderheaderList1.Sum(x => x.subtotal1);
+            ViewBag.storecommission1 = orderheaderList1.Sum(x => x.storecommission);
+
+            ViewBag.tofozamt1 = orderheaderList1.Sum(x => x.tofozamt);
+            ViewBag.servicetax1 = orderheaderList1.Sum(x => x.servicetax);
+            ViewBag.TCS1 = orderheaderList1.Sum(x => x.TCS);
+            ViewBag.netpayable1 = orderheaderList1.Sum(x => x.netpayable);
+            ViewBag.deliveryboycharges1 = orderheaderList1.Sum(x => x.deliveryboycharges);
+
+            ViewBag.Countries = _countryRegistrationservices.GetAll().Select(x => new SelectListItem()
+            {
+                Text = x.countryname,
+                Value = x.id.ToString()
+            });
+
+            //--------------------------------
+
+            return View(OrderPagination<orderselectallViewModelNew>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
+
+
+
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> cityReport(int? PageNumber, string from1, string to1, string status, string search, string ExcelFileDownload, string ExcelPdf, int cityId)
+        {
+
+            IEnumerable<SelectListItem> obj1 = _driverRegistrationServices.GetAllstatus();
+            ViewData["OrderStatus"] = obj1;
+
+            ViewBag.from1 = from1;
+            ViewBag.to1 = to1;
+            ViewBag.status1 = status;
+            //ApplicationUser usr = await GetCurrentUserAsync();
+            //var user = await _usermanager.FindByIdAsync(usr.Id);
+            //var role = await _usermanager.GetRolesAsync(user);
+            //string roles = role[0].ToString();
+
+            if (search != null)
+            {
+
+                var paramter = new DynamicParameters();
+                //if (roles == "Admin")
+                //{
+                //    paramter.Add("@storeid", "");
+                //}
+                //else
+                //{
+                //    paramter.Add("@storeid", usr.Id);
+                //}
+
+                DateTime l1 = DateTime.ParseExact(from1, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                DateTime l2 = DateTime.ParseExact(to1, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+                paramter.Add("@status", status);
+                paramter.Add("@from", l1);
+                paramter.Add("@to", l2);
+                paramter.Add("@cityId", cityId);
+
+                //var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAllSearch", paramter);
+                var orderheaderList1 = _ISP_Call.List<orderselectallViewModelNew>("cityreport", paramter);
+                //  return View(orderheaderList1.ToList());
+                int PageSize = 10;
+                //----------------
+                ViewBag.finalamt1 = orderheaderList1.Sum(x => x.finalamt);
+                ViewBag.hotelamount1 = orderheaderList1.Sum(x => Convert.ToDecimal(x.hotelamount));
+                ViewBag.packingcharges1 = orderheaderList1.Sum(x => x.packingcharges);
+                ViewBag.subtotal11 = orderheaderList1.Sum(x => x.subtotal1);
+                ViewBag.storecommission1 = orderheaderList1.Sum(x => x.storecommission);
+
+                ViewBag.tofozamt1 = orderheaderList1.Sum(x => x.tofozamt);
+                ViewBag.servicetax1 = orderheaderList1.Sum(x => x.servicetax);
+                ViewBag.TCS1 = orderheaderList1.Sum(x => x.TCS);
+                ViewBag.netpayable1 = orderheaderList1.Sum(x => x.netpayable);
+                ViewBag.deliveryboycharges1 = orderheaderList1.Sum(x => x.deliveryboycharges);
+
+                ViewBag.Countries = _countryRegistrationservices.GetAll().Select(x => new SelectListItem()
+                {
+                    Text = x.countryname,
+                    Value = x.id.ToString()
+                });
+
+                //------------
+                return View(OrderPagination<orderselectallViewModelNew>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
+
+            }
+            else if (ExcelFileDownload != null)
+            {
+
+                var paramter = new DynamicParameters();
+                //if (roles == "Admin")
+                //{
+                //    paramter.Add("@storeid", "");
+                //}
+                //else
+                //{
+                //    paramter.Add("@storeid", usr.Id);
+                //}
+                DateTime l1 = DateTime.ParseExact(from1, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                DateTime l2 = DateTime.ParseExact(to1, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+                paramter.Add("@status", status);
+                paramter.Add("@from", l1);
+                paramter.Add("@to", l2);
+                paramter.Add("@cityId", cityId);
+                //var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("orderSelectAllSearch", paramter);
+
+                var orderheaderList1 = _ISP_Call.List<orderselectallViewModelNew>("cityreport", paramter);
+
+                var builder = new StringBuilder();
+                //builder.AppendLine("Order ID,Store Name,CustomerName,Amount,Date");
+                //decimal amount = 0;
+                //foreach (var item in orderheaderList1)
+                //{
+                //    amount += item.finalamt;
+                //    builder.AppendLine($"{item.id},{item.storename},{item.customerName},{item.finalamt},{item.placedate}");
+                //}
+                //builder.AppendLine($"{""},{""},{"Total :"},{amount },{""}");
+
+                decimal tot_Finalamt = 0;
+                decimal tot_hotelamt = 0;
+                decimal tot_packingcharges = 0;
+                decimal tot_subtotal1 = 0;
+                decimal tot_storecommission = 0;
+                decimal tot_tofozamt = 0;
+                decimal tot_netpayable = 0;
+                decimal tot_servicestax = 0;
+                decimal tot_TCStax = 0;
+
+
+                builder.AppendLine(" Order Id ,Date,Customer ,Store,Final Amount  ,Hotel Amount ,Packing Charges ,Subtotal ,Commission (%) ,TOFOZ Amount , Service tax, TCS, Netpayable, Tax, Promo Code, Status, Deliveryboy,Order Status");
+                foreach (var item in orderheaderList1)
+                {
+
+                    tot_Finalamt += Convert.ToDecimal(item.finalamt);
+                    tot_hotelamt += Convert.ToDecimal(item.hotelamount);
+                    tot_packingcharges += item.packingcharges;
+                    tot_subtotal1 += item.subtotal1;
+                    tot_storecommission += item.storecommission;
+                    tot_tofozamt += item.tofozamt;
+                    tot_netpayable += item.netpayable;
+                    tot_servicestax += item.storetax;
+                    tot_TCStax += item.TCS;
+
+                    builder.AppendLine($"{item.id},{item.placedate },{item.customerName },{item.storename },{item.finalamt},{item.hotelamount  },{item.packingcharges },{item.subtotal1  },{item.storecommission},{item.tofozamt },{item.servicetax  },{item.TCS},{item.netpayable   },{item.storetax},{item.promocode},{item.storetaxStatus},{item.deliveryboyName   },{item.orderstatus}");
+
+                }
+                builder.AppendLine($"{""},{"" },{"" },{"Total :" },{tot_Finalamt.ToString()},{tot_hotelamt },{tot_packingcharges},{tot_subtotal1 },{tot_storecommission},{tot_tofozamt },{tot_servicestax   },{tot_TCStax },{tot_netpayable   },{""},{""   },{""},{""}");
+
+
+
+                return File(Encoding.UTF8.GetBytes(builder.ToString()), "text/csv", "Report.csv");
+            }
+            else if (ExcelPdf != null)
+            {
+                
+                return View();
+            }
+            //ExcelPdf
+
+            else
+            {
+                return View();
+            }
+
+
+
+        }
 
         //--------------------------------------------------
         [HttpGet]

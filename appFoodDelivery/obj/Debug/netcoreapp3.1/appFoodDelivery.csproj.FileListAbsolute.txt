@@ -4484,3 +4484,4 @@ F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\appFood
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\appFoodDelivery.Utility.dll
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Debug\netcoreapp3.1\appFoodDelivery.Utility.pdb
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\managerOrder\Index.cshtml.g.cs
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Debug\netcoreapp3.1\Razor\Views\Reportdetails\cityReport.cshtml.g.cs

@@ -1,0 +1,339 @@
+﻿@*@model appFoodDelivery.pagination.OrderPagination<orderselectallViewModel>*@
+@model appFoodDelivery.pagination.OrderPagination<orderselectallViewModelNew>
+@*@model IEnumerable<orderHistoryReportViewModel>*@
+@{
+    ViewBag.Title = "City Report";
+}
+
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+
+
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">City Report</li>
+                    </ol>
+                </nav><br />
+                @using (Html.BeginForm("cityReport", "Reportdetails", FormMethod.Post))
+                {
+                    <div class="row">
+                        <div class="form-group col-md-1">
+                            <label>Country</label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            @*<select name="countryid" id="countryid" class="form-control"
+                                    asp-items="@ViewBag.Countries"
+                                    onchange="DoPostBack();">
+                                <option value="">select</option>
+                            </select>*@
+                            @Html.DropDownList("countryid", (IEnumerable<SelectListItem>)ViewBag.Countries, "Please select a country", new { @class = "form-control",id= "countryid" })
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label>State</label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            
+                            <select class="form-control" name="stateid" id="stateid">
+            <option value="">select</option>
+        </select>
+                            @*asp-items="@ViewBag.States"*@
+
+
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label>City</label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <select class="form-control" name="cityId" id="cityId"
+                                    @*asp-items="@ViewBag.States"*@>
+                                <option value="">select</option>
+                            </select>
+                            @*<select data-rel="chosen" id="managerCity"
+                                        class="form-control" data-placeholder="select City" multiple="">
+                                </select>*@
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-1">
+                            <label>From Date</label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="input-group date" data-provide="datepicker">
+                                @*<input type="text" class="" name="from">*@
+                                <input type="text" id="datepicker1" autocomplete="off" class="form-control datepicker" value="@ViewBag.from1" name="from1">
+
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label>To Date</label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            @*<div class="input-group date" data-provide="datepicker">
+                                    <input type="text" class="form-control" name="to">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>*@
+                            <input type="text" id="datepicker2" autocomplete="off" class="datepicker" value="@ViewBag.to1" name="to1">
+                            @*<input type="date" value="@DateTime.Now" name="to" />*@
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label>Status</label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            @Html.DropDownList("status", (IEnumerable<SelectListItem>)ViewData["OrderStatus"], new { @class = "form-control" })
+                            @*<select name="status" class="form-control" va>
+
+                                    <option value="All" selected>-- All --</option>
+                                    <option value="Placed">Pending</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="processorders">Process</option>
+                                    <option value="ongoingorders">On Going</option>
+                                    <option value="completedorders">Completed</option>
+                                    <option value="cancelledorders">Cancelled</option>
+
+                                </select>*@
+                        </div>
+                        <div class="form-group col-md-3">
+                            <input type="submit" name="search" value="Search" class="btn btn-primary" />
+                            <input type="submit" name="ExcelFileDownload" value="Excel Download" class="btn btn-primary" />
+                            <input type="submit" style="display:none;" name="ExcelPdf" value="PDF Download" class="btn btn-primary" />
+                        </div>
+                    </div>
+                }
+
+                <div class="row">
+                    <div class="col-md-12 table-responsive-md" style="width:100px;overflow:auto;">
+                        @*<a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> New Driver</a>*@
+                        <b>  <h4>@ViewBag.message</h4> </b>
+                        <table class="table table-bordered tblShow">
+                            <thead>
+                                <tr>
+
+                                    @*<th>Order Id</th>
+                                        <th>Date</th>
+                                        <th>Store</th>
+                                        <th>Customer Name</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>*@
+
+                                    <th>Order Id</th>
+                                    <th>Date</th>
+                                    <th>Customer</th>
+                                    <th>Store</th>
+
+
+                                    <th>Final Amount</th>
+                                    <th>Hotel Amount</th>
+                                    <th>Packing Charges</th>
+                                    <th>Subtotal</th>
+                                    <th>Commission (%)</th>
+                                    <th>TOFOZ Amount</th>
+                                    <th>Service tax</th>
+                                    <th>TCS</th>
+
+                                    <th>Netpayable</th>
+                                    <th>Deliveryboy Charges</th>
+                                    <th>Tax</th>
+                                    <th>Promo Code</th>
+                                    <th>Status</th>
+                                    <th>Deliveryboy</th>
+                                </tr>
+                            </thead>
+                            @*@{
+                                    decimal finalamt1 = 0;
+                                    decimal hotelamount1 = 0;
+                                    decimal packingcharges1 = 0;
+                                    decimal subtotal11 = 0;
+                                    decimal storecommission1 = 0;
+
+                                    decimal tofozamt1 = 0;
+                                    decimal servicetax1 = 0;
+                                    decimal TCS1 = 0;
+                                    decimal netpayable1 = 0;
+                                    decimal deliveryboycharges1 = 0;
+                                }*@
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr>
+
+                                        <td> @item.id     </td>
+                                        <td>@item.placedate</td>
+                                        <td>@item.customerName</td>
+
+                                        <td> @item.storename  </td>
+
+                                        @*@{
+                                                finalamt1 += item.finalamt;
+                                                hotelamount1 += Convert.ToDecimal(item.hotelamount);
+                                                packingcharges1 += item.packingcharges;
+                                                subtotal11 += item.subtotal1;
+                                                storecommission1 += item.storecommission;
+
+                                                tofozamt1 += item.tofozamt;
+                                                servicetax1 += item.servicetax;
+                                                TCS1 += item.TCS;
+                                                netpayable1 += item.netpayable;
+                                                deliveryboycharges1 += item.deliveryboycharges;
+
+                                            }*@
+
+
+                                        <td>@item.finalamt</td>
+                                        <td>@item.hotelamount    </td>
+                                        <td>@item.packingcharges    </td>
+                                        <td>@item.subtotal1    </td>
+                                        <td>@item.storecommission    </td>
+                                        <td>@item.tofozamt    </td>
+                                        <td>@item.servicetax    </td>
+                                        <td>@item.TCS      </td>
+                                        <td>@item.netpayable    </td>
+                                        <td>@item.deliveryboycharges    </td>
+                                        <td>@item.storetaxStatus    </td>
+                                        <td>@item.promocode    </td>
+                                        <td>@item.orderstatus      </td>
+                                        <td>@item.deliveryboyName    </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+
+
+                                    <th> </th>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th>Total  </th>
+                                    <th>@ViewBag.finalamt1</th>
+                                    <th>@ViewBag.hotelamount1</th>
+                                    <th>@ViewBag.packingcharges1</th>
+                                    <th>@ViewBag.subtotal11</th>
+                                    <th></th>
+                                    <th>@ViewBag.tofozamt1</th>
+                                    <th>@ViewBag.servicetax1</th>
+                                    <th>@ViewBag.TCS1</th>
+                                    <th>@ViewBag.netpayable1</th>
+                                    <th>@ViewBag.deliveryboycharges1 </th>
+                                    <th> </th>
+                                    <th>   </th>
+                                    <th> </th>
+                                    <th> </th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+
+                        <br />
+                        @{
+                            var disablePrevious = !Model.IsPreviousAvailable ? "disabled" : "";
+                            var disableNext = !Model.IsNextAvailable ? "disabled" : "";
+                        }
+
+                        <a asp-action="cityReport"
+                           asp-route-pageNumber="@(Model.PageIndex - 1)"
+                           asp-route-from1="@ViewBag.from1"
+                           asp-route-to1="@ViewBag.to1"
+                           asp-route-status="@ViewBag.status1"
+                           class="btn btn-primary @disablePrevious">
+                            Previous
+                        </a>
+                        <a asp-action="cityReport"
+                           asp-route-pageNumber="@(Model.PageIndex + 1)"
+                           asp-route-from1="@ViewBag.from1"
+                           asp-route-to1="@ViewBag.to1"
+                           asp-route-status="@ViewBag.status1"
+                           class="btn btn-primary @disableNext">
+                            Next
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+
+<script>
+    $(function () {
+
+        $(".datepicker").datepicker({
+            autoclose: true,
+            dateFormat: 'dd/mm/yy'
+        });
+    });
+     $("#countryid").change(function () {
+        //alert("test");
+            var url = '@Url.Content("~/")' + 'CityRegistration/getstatebyid';
+            var ddlsource = "#countryid";
+            $.getJSON(url,
+                { id: $(ddlsource).val() },
+                function (data) {
+                //   console.log(data);
+                    var item = ' <option value="">select</option>';
+                    $("#stateid").empty();
+
+                    $("#multipleManagerCity").empty();
+                    $("#managerCity").empty();
+                    $("[data-rel='chosen']").trigger("chosen:updated");
+                    $.each(data, function (i, row) {
+
+                        item += "<option value='" + row.value + "'>" + row.text + "  </option > ";
+                       // alert(row);
+                    });
+                    $("#stateid").html(item);
+                }
+            )
+     });
+
+    $("#stateid").change(function () {
+        loadCity($("#stateid").val());
+    });
+     function loadCity(stateIdd) {
+         //$("#multipleManagerCity").empty();
+         $("#cityId").empty();
+           var s = '';
+        $("[data-rel='chosen']").chosen();
+              var url = '@Url.Content("~/")' + 'CityRegistration/getCitybyStateid';
+        //var ddlsource1 = "#stateid";
+        $.getJSON(url, { stateid: stateIdd },
+                function (data) {
+                    $.each(data, function (i, row) {
+                        s += '<option value="' + row.value + '">' + row.text + '</option>';
+                    });
+                    $("#cityId").html(s);
+
+                    //if ($("#multipleManagerCity").val() === undefined || $("#multipleManagerCity").val() == null || $("#multipleManagerCity").val().length <= 0) {
+
+                    //}
+                    //else {
+                    //       var str_array = $("#multipleManagerCity").val().split(',');
+                    //for (var i = 0; i < str_array.length; i++) {
+                    //    str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+                    //}
+
+                    //$('#managerCity').val(str_array).trigger('chosen:updated');
+                    //}
+
+                   // $("[data-rel='chosen']").trigger("chosen:updated");
+
+                }
+        )
+
+
+    }
+</script>
+ 
