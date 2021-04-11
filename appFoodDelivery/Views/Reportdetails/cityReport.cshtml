@@ -30,16 +30,18 @@
                                     onchange="DoPostBack();">
                                 <option value="">select</option>
                             </select>*@
-                            @Html.DropDownList("countryid", (IEnumerable<SelectListItem>)ViewBag.Countries, "Please select a country", new { @class = "form-control",id= "countryid" })
+                            @Html.DropDownList("countryid", (IEnumerable<SelectListItem>)ViewBag.Countries, "select a country",  new { @class = "form-control",id= "countryid" })
+                            @*@Html.DropDownList("countryid", (IEnumerable<SelectListItem>)ViewBag.Countries, "Please select a country", new { @class = "form-control",id= "countryid" })*@
                         </div>
                         <div class="form-group col-md-1">
                             <label>State</label>
                         </div>
                         <div class="form-group col-md-2">
-                            
-                            <select class="form-control" name="stateid" id="stateid">
-            <option value="">select</option>
-        </select>
+
+                            @*<select class="form-control" name="stateid" id="stateid">
+                                <option value="">select</option>
+                            </select>*@
+                            @Html.DropDownList("stateid", (IEnumerable<SelectListItem>)@ViewBag.States,"select a State",  new { @class = "form-control", id = "stateid" })
                             @*asp-items="@ViewBag.States"*@
 
 
@@ -48,13 +50,11 @@
                             <label>City</label>
                         </div>
                         <div class="form-group col-md-2">
-                            <select class="form-control" name="cityId" id="cityId"
-                                    @*asp-items="@ViewBag.States"*@>
+                            @*asp-items="@ViewBag.States"*@
+                            @*<select class="form-control" name="cityId" id="cityId">
                                 <option value="">select</option>
-                            </select>
-                            @*<select data-rel="chosen" id="managerCity"
-                                        class="form-control" data-placeholder="select City" multiple="">
-                                </select>*@
+                            </select>*@
+                            @Html.DropDownList("cityId", (IEnumerable<SelectListItem>)@ViewBag.citites,"select a City",  new { @class = "form-control", id = "cityId" })
                         </div>
                     </div>
                     <div class="row">
@@ -246,6 +246,10 @@
                            asp-route-from1="@ViewBag.from1"
                            asp-route-to1="@ViewBag.to1"
                            asp-route-status="@ViewBag.status1"
+
+                             asp-route-cityId="@ViewBag.cityId1"
+                            asp-route-countryid="@ViewBag.countryid1"
+                            asp-route-stateid="@ViewBag.stateid1"
                            class="btn btn-primary @disablePrevious">
                             Previous
                         </a>
@@ -254,6 +258,10 @@
                            asp-route-from1="@ViewBag.from1"
                            asp-route-to1="@ViewBag.to1"
                            asp-route-status="@ViewBag.status1"
+
+                            asp-route-cityId="@ViewBag.cityId1"
+                            asp-route-countryid="@ViewBag.countryid1"
+                            asp-route-stateid="@ViewBag.stateid1"
                            class="btn btn-primary @disableNext">
                             Next
                         </a>

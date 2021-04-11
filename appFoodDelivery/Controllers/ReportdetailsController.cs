@@ -47,7 +47,9 @@ namespace appFoodDelivery.Controllers
         private readonly IdistanceServices _distanceServices;
         public fcmNotification objfcmNotification = new fcmNotification();
         private readonly ICountryRegistrationservices _countryRegistrationservices;
-        public ReportdetailsController(UserManager<ApplicationUser> usermanager, ISP_Call ispcall, IordersServices ordersServices, ICustomerRegistrationservices CustomerRegistrationservices, ISP_Call ISP_Call, IdriverRegistrationServices driverRegistrationServices, IstoredetailsServices storedetailsServices, IdistanceServices distanceServices, ICountryRegistrationservices countryRegistrationservices)
+        private readonly IStateRegistrationService _stateRegistrationService;
+        private readonly ICityRegistrationservices _cityRegistrationservices;
+        public ReportdetailsController(UserManager<ApplicationUser> usermanager, ISP_Call ispcall, IordersServices ordersServices, ICustomerRegistrationservices CustomerRegistrationservices, ISP_Call ISP_Call, IdriverRegistrationServices driverRegistrationServices, IstoredetailsServices storedetailsServices, IdistanceServices distanceServices, ICountryRegistrationservices countryRegistrationservices, IStateRegistrationService stateRegistrationService, ICityRegistrationservices cityRegistrationservices)
         {
             this._usermanager = usermanager;
             _ISP_Call = ispcall;
@@ -58,6 +60,8 @@ namespace appFoodDelivery.Controllers
             _storedetailsServices = storedetailsServices;
             _distanceServices = distanceServices;
             _countryRegistrationservices = countryRegistrationservices;
+            _stateRegistrationService = stateRegistrationService;
+            _cityRegistrationservices = cityRegistrationservices;
         }
         private Task<ApplicationUser> GetCurrentUserAsync() => _usermanager.GetUserAsync(HttpContext.User);
 
@@ -438,7 +442,7 @@ namespace appFoodDelivery.Controllers
 
         //---------------------------------------------------
         [HttpGet]
-        public async Task<IActionResult> cityReport(int? PageNumber, string from1, string to1, string status,int cityId)
+        public async Task<IActionResult> cityReport(int? PageNumber, string from1, string to1, string status,int cityId,int countryid,int stateid)
         {
             IEnumerable<SelectListItem> obj1 = _driverRegistrationServices.GetAllstatus();
             ViewData["OrderStatus"] = obj1;
@@ -446,6 +450,12 @@ namespace appFoodDelivery.Controllers
             ViewBag.from1 = from1;
             ViewBag.to1 = to1;
             ViewBag.status1 = status;
+
+
+            ViewBag.cityId1 = cityId;
+            ViewBag.stateid1 = stateid;
+            ViewBag.countryid1 = countryid;
+
             ApplicationUser usr = await GetCurrentUserAsync();
             var user = await _usermanager.FindByIdAsync(usr.Id);
             var role = await _usermanager.GetRolesAsync(user);
@@ -504,6 +514,25 @@ namespace appFoodDelivery.Controllers
                 Value = x.id.ToString()
             });
 
+            
+                ViewBag.States = _stateRegistrationService.GetAll().Where(x => x.countryid==countryid).Select(x => new SelectListItem()
+                {
+                    Text = x.StateName,
+                    Value = x.id.ToString()
+
+                });
+
+          
+
+          
+                ViewBag.citites = _cityRegistrationservices.GetAll().Where(x => x.stateid== stateid).Select(x => new SelectListItem()
+                {
+                    Text = x.cityName,
+                    Value = x.id.ToString()
+
+                });
+            
+           
             //--------------------------------
 
             return View(OrderPagination<orderselectallViewModelNew>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
@@ -514,7 +543,7 @@ namespace appFoodDelivery.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> cityReport(int? PageNumber, string from1, string to1, string status, string search, string ExcelFileDownload, string ExcelPdf, int cityId)
+        public async Task<IActionResult> cityReport(int? PageNumber, string from1, string to1, string status, string search, string ExcelFileDownload, string ExcelPdf, int cityId, int countryid, int stateid)
         {
 
             IEnumerable<SelectListItem> obj1 = _driverRegistrationServices.GetAllstatus();
@@ -523,6 +552,12 @@ namespace appFoodDelivery.Controllers
             ViewBag.from1 = from1;
             ViewBag.to1 = to1;
             ViewBag.status1 = status;
+
+            ViewBag.cityId1 = cityId;
+            ViewBag.stateid1 = stateid;
+            ViewBag.countryid1 = countryid;
+
+
             //ApplicationUser usr = await GetCurrentUserAsync();
             //var user = await _usermanager.FindByIdAsync(usr.Id);
             //var role = await _usermanager.GetRolesAsync(user);
@@ -570,8 +605,21 @@ namespace appFoodDelivery.Controllers
                 {
                     Text = x.countryname,
                     Value = x.id.ToString()
+                     
                 });
 
+                ViewBag.States = _stateRegistrationService.GetAll().Where(x=>x.countryid==countryid).Select(x => new SelectListItem()
+                {
+                    Text = x.StateName,
+                    Value = x.id.ToString()
+
+                });
+                ViewBag.citites = _cityRegistrationservices.GetAll().Where(x => x.stateid==stateid).Select(x => new SelectListItem()
+                {
+                    Text = x.cityName,
+                    Value = x.id.ToString()
+
+                });
                 //------------
                 return View(OrderPagination<orderselectallViewModelNew>.Create(orderheaderList1.ToList(), PageNumber ?? 1, PageSize));
 
