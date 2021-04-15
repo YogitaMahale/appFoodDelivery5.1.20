@@ -5655,9 +5655,11 @@ F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\runti
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\appFoodDelivery.Entity.dll
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\appFoodDelivery.Persistence.dll
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\appFoodDelivery.Services.dll
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\appFoodDelivery.Utility.dll
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\appFoodDelivery.Entity.pdb
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\appFoodDelivery.Persistence.pdb
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\appFoodDelivery.Services.pdb
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\appFoodDelivery.Utility.pdb
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.csprojAssemblyReference.cache
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.AssemblyInfoInputs.cache
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.AssemblyInfo.cs
@@ -5720,10 +5722,12 @@ F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\ManagerCollection\collect.cshtml.g.cs
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\managerOrder\Index.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\menumaster\Create.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\menumaster\Edit.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\menumaster\Index.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\menumaster\test.cshtml.g.cs
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Order\ChangeCashPaymentStatus.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Order\deliveryboyassign.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Order\Details.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Order\Index.cshtml.g.cs
@@ -5746,6 +5750,7 @@ F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\RadiusMaster\Create.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\RadiusMaster\Edit.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\RadiusMaster\Index.cshtml.g.cs
+F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Reportdetails\cityReport.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Reportdetails\collectionReport.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Reportdetails\CreateDocument.cshtml.g.cs
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Reportdetails\DeliveryboyReport.cshtml.g.cs
@@ -5787,8 +5792,3 @@ F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFo
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.dll
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.pdb
 F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\appFoodDelivery.genruntimeconfig.cache
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Order\ChangeCashPaymentStatus.cshtml.g.cs
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\appFoodDelivery.Utility.dll
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\bin\Release\netcoreapp3.1\appFoodDelivery.Utility.pdb
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\managerOrder\Index.cshtml.g.cs
-F:\yogita 6.8.19\appFoodDelivery\appFoodDelivery\obj\Release\netcoreapp3.1\Razor\Views\Reportdetails\cityReport.cshtml.g.cs

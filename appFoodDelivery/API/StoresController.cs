@@ -664,10 +664,11 @@ namespace appFoodDelivery.API
 
         [HttpGet]
         [Route("selectallTodayOrders")]
-        public async Task<IActionResult> selectallTodayOrders(bool flg=false)
+        public async Task<IActionResult> selectallTodayOrders(string userId,bool flg=false)
         {
             var paramter = new DynamicParameters();
             paramter.Add("@flg", flg);
+            paramter.Add("@userId", userId);
             //paramter.Add("@status", "approved");
             var orderheaderList1 = _ISP_Call.List<orderselectallViewModel>("selectallOrderstoday", paramter);
             orderheaderList1 = orderheaderList1.Where(x => x.placedate.ToString() == DateTime.Today.ToString("dd/MM/yyyy").Replace("-", "/"));

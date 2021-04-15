@@ -41,7 +41,7 @@
 
                         <select name="radiusid" id="radiusid" asp-for="radiusid" class="form-control"
                                 asp-items="@(new SelectList(ViewBag.radiusList,"id","name"))">
-                            <option value=""></option>
+                            <option value="">Select Radious</option>
                             @*<option> Select </option>
 
         <option value="0"> Select </option>*@
@@ -58,7 +58,7 @@
 
                         <select name="deliverytimeid" id="deliverytimeid" asp-for="deliverytimeid" class="form-control"
                                 asp-items="@(new SelectList(ViewBag.deliveryList,"id","name"))">
-                            <option value=""></option>
+                            <option value="">Select</option>
                             @*<option> Select </option>*@
 
                             @*<option value="0"> Select </option>*@
@@ -184,7 +184,7 @@
                         <select name="countryid" id="countryid" asp-for="countryid" class="form-control"
                                 asp-items="@(new SelectList(ViewBag.Countries,"id","countryname"))">
 
-                            <option value=""></option>
+                            <option value="">Select Country</option>
                             @*<option value="0"> Select </option>*@
                         </select>
                         <span asp-validation-for="countryid" class="text-danger"></span>
@@ -386,6 +386,7 @@
                     var item = '';
                     $("#stateid").empty();
                     $("#cityid").empty();
+                    item += "<option value='0'>" + "Select State" + "  </option > ";
                     $.each(data, function (i, row) {
 
                         item += "<option value='" + row.value + "'>" + row.text + "  </option > ";
@@ -406,6 +407,7 @@
                 //   console.log(data);
                     var item = '';
                     $("#cityid").empty();
+                    item += "<option value='0'>" + "Select City" + "  </option > ";
                     $.each(data, function (i, row) {
 
                         item += "<option value='" + row.value + "'>" + row.text + "  </option > ";
