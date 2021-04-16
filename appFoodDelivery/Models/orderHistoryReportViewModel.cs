@@ -28,6 +28,7 @@ namespace appFoodDelivery.Models
         public decimal tofozamt { get; set; }
         public decimal netpayable { get; set; }
         public string paymentstatus { get; set; }
+        public string paymenttype { get; set; }
 
         
     }

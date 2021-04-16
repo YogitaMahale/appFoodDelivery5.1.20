@@ -108,6 +108,7 @@
                                             <th>Status</th>
                                             <th style="display:none;">Deliveryboy</th>
                                             <th>Payment Method</th>
+                                            <th>Payment Type</th>
                                             @*<th class="text-warning">Actions</th>*@
                                         </tr>
                                     </thead>
@@ -131,6 +132,7 @@
                                             <td>@item.orderstatus  </td>
                                             <td style="display:none;" >@item.deliveryboyName    </td>
                                             <td>@item.paymentstatus    </td>
+                                            <td>@item.paymenttype    </td>
                                             @*<td>
             <a class="text-success" asp-action="Edit" asp-route-id="@item.id">
                 <i class="fas fa-edit"></i> Details
@@ -146,7 +148,7 @@
                                             <th></th>
                                             <th></th>
 
-                                             
+
                                             <th style="display:none;"></th>
                                             <th>@ViewBag.finalamt</th>
                                             <th>@ViewBag.customeramt</th>
@@ -154,6 +156,8 @@
                                             <th>@ViewBag.deliveryboycharges </th>
                                             <th></th>
                                             <th style="display:none;"></th>
+
+                                            <th></th>
                                             <th></th>
                                             @*<th class="text-warning">Actions</th>*@
                                         </tr>

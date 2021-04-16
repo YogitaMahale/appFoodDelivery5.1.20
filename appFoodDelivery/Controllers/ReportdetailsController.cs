@@ -860,7 +860,7 @@ namespace appFoodDelivery.Controllers
 
 
                 var builder = new StringBuilder();
-                builder.AppendLine("Order ID,Store ,Customer,Fianl Amount,Customer Amount,Customer Delivery Charges,Delivery boy Charges,Order Status,Deliveryboy ,Date,Payment Method");
+                builder.AppendLine("Order ID,Store ,Customer,Fianl Amount,Customer Amount,Customer Delivery Charges,Delivery boy Charges,Order Status,Deliveryboy ,Date,Payment Method,Payment Type");
                 decimal tot_finalamt = 0;
                 decimal tot_customeramt = 0;
                 decimal tot_customerdeliverycharges = 0;
@@ -871,9 +871,9 @@ namespace appFoodDelivery.Controllers
                     tot_customeramt += item.customeramt;
                     tot_customerdeliverycharges += item.customerdeliverycharges;
                     tot_deliveryboycharges += item.deliveryboycharges;
-                    builder.AppendLine($"{item.id},{item.storename},{item.customerName},{item.finalamt },{item.customeramt},{item.customerdeliverycharges},{item.deliveryboycharges},{item.orderstatus },{item.deliveryboyName},{item.placedate },{item.paymentstatus}");
+                    builder.AppendLine($"{item.id},{item.storename},{item.customerName},{item.finalamt },{item.customeramt},{item.customerdeliverycharges},{item.deliveryboycharges},{item.orderstatus },{item.deliveryboyName},{item.placedate },{item.paymentstatus},{item.paymenttype}");
                 }
-                builder.AppendLine($"{""},{""},{"Total :"},{tot_finalamt },{tot_customeramt},{tot_customerdeliverycharges},{tot_deliveryboycharges},{"" },{""},{"" }");
+                builder.AppendLine($"{""},{""},{"Total :"},{tot_finalamt },{tot_customeramt},{tot_customerdeliverycharges},{tot_deliveryboycharges},{"" },{""},{"" },{"" }");
                 string namee = deliveryname + "_OrderHistory.csv";
                 return File(Encoding.UTF8.GetBytes(builder.ToString()), "text/csv", namee);
             }

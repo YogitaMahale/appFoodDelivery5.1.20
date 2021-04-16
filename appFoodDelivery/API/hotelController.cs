@@ -421,6 +421,22 @@ namespace appFoodDelivery.API
                             string deviceid1 = users1.deviceid;
                             fcmNotification obj = new fcmNotification();
                             obj.adminNotification(deviceid1, "Order Received", "", "New Order");
+
+
+                            //manager Notification
+                            var paramterManager = new DynamicParameters();
+                            paramterManager.Add("@storeid", storedid);
+                            var managerList = _ISP_Call.List<GetManagerList>("GetManagerList", paramterManager);
+
+
+                           foreach(var item in managerList)
+                            {
+                                if (item.deviceid  == null || item.deviceid.ToString().Trim() == "")
+                                {
+                                    obj.adminNotification(item.deviceid, "Order Received", "", "New Order");
+
+                                }
+                            }
                         }
                     }
                     if (OrderId == 0)
