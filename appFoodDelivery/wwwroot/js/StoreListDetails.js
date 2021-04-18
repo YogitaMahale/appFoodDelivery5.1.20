@@ -31,9 +31,10 @@ function loadtable() {
 
             { "data": "ownername", "width": "10%" },
             { "data": "storeName", "width": "10%" },
+            { "data": "cityName", "width": "10%" },
             { "data": "storestatus", "width": "10%" },
-            { "data": "taxstatus", "width": "10%" },
-            { "data": "taxstatusPer", "width": "10%" },
+            { "data": "taxstatus", "width": "5%" },
+            { "data": "taxstatusPer", "width": "5%" },
             {
                 "data": "storestatus",  
                 "render": function(data, type, row, meta) {

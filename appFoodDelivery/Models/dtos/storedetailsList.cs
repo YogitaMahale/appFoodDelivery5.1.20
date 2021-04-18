@@ -16,6 +16,7 @@ namespace appFoodDelivery.Models.dtos
         public decimal taxstatusPer { get; set; }
         public string ownername { get; set; }
         public string storestatus { get; set; }
+        public string cityName { get; set; }
 
 
         //        Id
